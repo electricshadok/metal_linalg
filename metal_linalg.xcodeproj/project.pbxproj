@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BFAC74E62B7AF2AF0034E671 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFAC74E52B7AF2AF0034E671 /* main.cpp */; };
+		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
+		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
+		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
+		BFE2FD862C3C776D00388DA9 /* FunctionOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD812C3C776D00388DA9 /* FunctionOp.cpp */; };
+		BFE2FD872C3C776D00388DA9 /* Tensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD822C3C776D00388DA9 /* Tensor.cpp */; };
+		BFE2FD882C3C776D00388DA9 /* Compute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD832C3C776D00388DA9 /* Compute.cpp */; };
+		BFE2FD892C3C776D00388DA9 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD842C3C776D00388DA9 /* Log.cpp */; };
+		BFE2FD932C3C778D00388DA9 /* blas_level1.metal in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD902C3C778C00388DA9 /* blas_level1.metal */; };
+		BFE2FD942C3C778D00388DA9 /* blas_level2.metal in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD912C3C778C00388DA9 /* blas_level2.metal */; };
+		BFE2FD952C3C778D00388DA9 /* blas_level3.metal in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD922C3C778D00388DA9 /* blas_level3.metal */; };
+		BFE2FDBE2C404B9F00388DA9 /* scal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDB42C404B9F00388DA9 /* scal.cpp */; };
+		BFE2FDBF2C404B9F00388DA9 /* copy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDB62C404B9F00388DA9 /* copy.cpp */; };
+		BFE2FDC02C404B9F00388DA9 /* swap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDB72C404B9F00388DA9 /* swap.cpp */; };
+		BFE2FDC12C404B9F00388DA9 /* axpy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDB92C404B9F00388DA9 /* axpy.cpp */; };
+		BFE2FDC22C404B9F00388DA9 /* dot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDBB2C404B9F00388DA9 /* dot.cpp */; };
+		BFE2FDC52C404BCD00388DA9 /* gemv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDC42C404BCD00388DA9 /* gemv.cpp */; };
+		BFE2FDC82C404BD800388DA9 /* gemm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDC72C404BD800388DA9 /* gemm.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BFAC74E02B7AF2AF0034E671 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BF00857D2B9A79FB004AA80E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BFAC74E22B7AF2AF0034E671 /* metal_linalg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_linalg; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFAC74E52B7AF2AF0034E671 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
+		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BFDDC73F2B7BCA6000F44B87 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		BFE2FD7E2C3C776D00388DA9 /* Tensor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Tensor.hpp; path = src/core/Tensor.hpp; sourceTree = "<group>"; };
+		BFE2FD7F2C3C776D00388DA9 /* Compute.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Compute.hpp; path = src/core/Compute.hpp; sourceTree = "<group>"; };
+		BFE2FD802C3C776D00388DA9 /* Log.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Log.hpp; path = src/core/Log.hpp; sourceTree = "<group>"; };
+		BFE2FD812C3C776D00388DA9 /* FunctionOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FunctionOp.cpp; path = src/core/FunctionOp.cpp; sourceTree = "<group>"; };
+		BFE2FD822C3C776D00388DA9 /* Tensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tensor.cpp; path = src/core/Tensor.cpp; sourceTree = "<group>"; };
+		BFE2FD832C3C776D00388DA9 /* Compute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Compute.cpp; path = src/core/Compute.cpp; sourceTree = "<group>"; };
+		BFE2FD842C3C776D00388DA9 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = src/core/Log.cpp; sourceTree = "<group>"; };
+		BFE2FD852C3C776D00388DA9 /* FunctionOp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FunctionOp.hpp; path = src/core/FunctionOp.hpp; sourceTree = "<group>"; };
+		BFE2FD902C3C778C00388DA9 /* blas_level1.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level1.metal; path = src/metal/blas_level1.metal; sourceTree = SOURCE_ROOT; };
+		BFE2FD912C3C778C00388DA9 /* blas_level2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level2.metal; path = src/metal/blas_level2.metal; sourceTree = SOURCE_ROOT; };
+		BFE2FD922C3C778D00388DA9 /* blas_level3.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level3.metal; path = src/metal/blas_level3.metal; sourceTree = SOURCE_ROOT; };
+		BFE2FDB32C4049EB00388DA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BFE2FDB42C404B9F00388DA9 /* scal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = scal.cpp; path = src/blas/level1/scal.cpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDB52C404B9F00388DA9 /* copy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = copy.hpp; path = src/blas/level1/copy.hpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDB62C404B9F00388DA9 /* copy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = copy.cpp; path = src/blas/level1/copy.cpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDB72C404B9F00388DA9 /* swap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swap.cpp; path = src/blas/level1/swap.cpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDB82C404B9F00388DA9 /* axpy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = axpy.hpp; path = src/blas/level1/axpy.hpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDB92C404B9F00388DA9 /* axpy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = axpy.cpp; path = src/blas/level1/axpy.cpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDBA2C404B9F00388DA9 /* scal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = scal.hpp; path = src/blas/level1/scal.hpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDBB2C404B9F00388DA9 /* dot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dot.cpp; path = src/blas/level1/dot.cpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDBC2C404B9F00388DA9 /* swap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = swap.hpp; path = src/blas/level1/swap.hpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDBD2C404B9F00388DA9 /* dot.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = dot.hpp; path = src/blas/level1/dot.hpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDC32C404BCD00388DA9 /* gemv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gemv.hpp; path = src/blas/level2/gemv.hpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDC42C404BCD00388DA9 /* gemv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gemv.cpp; path = src/blas/level2/gemv.cpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDC62C404BD800388DA9 /* gemm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gemm.hpp; path = src/blas/level3/gemm.hpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDC72C404BD800388DA9 /* gemm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gemm.cpp; path = src/blas/level3/gemm.cpp; sourceTree = SOURCE_ROOT; };
+		BFE2FDC92C404F3300388DA9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFAC74DF2B7AF2AF0034E671 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */,
+				BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */,
+				BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BFAC74D92B7AF2AF0034E671 = {
+			isa = PBXGroup;
+			children = (
+				BFE2FDC92C404F3300388DA9 /* .gitignore */,
+				BFE2FDB32C4049EB00388DA9 /* README.md */,
+				BFE2FD792C3C71A500388DA9 /* src */,
+				BF00857D2B9A79FB004AA80E /* LICENSE */,
+				BFAC74E52B7AF2AF0034E671 /* main.cpp */,
+				BFAC74ED2B7B06DF0034E671 /* third_party */,
+				BFAC74E32B7AF2AF0034E671 /* Products */,
+				BFDDC73A2B7BCA5100F44B87 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BFAC74E32B7AF2AF0034E671 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFAC74E22B7AF2AF0034E671 /* metal_linalg */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFDDC73A2B7BCA5100F44B87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFDDC73F2B7BCA6000F44B87 /* Metal.framework */,
+				BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */,
+				BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFE2FD792C3C71A500388DA9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2FD7D2C3C773700388DA9 /* core */,
+				BFE2FD7B2C3C771600388DA9 /* blas */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		BFE2FD7A2C3C71B100388DA9 /* metal */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2FD902C3C778C00388DA9 /* blas_level1.metal */,
+				BFE2FD912C3C778C00388DA9 /* blas_level2.metal */,
+				BFE2FD922C3C778D00388DA9 /* blas_level3.metal */,
+			);
+			path = metal;
+			sourceTree = "<group>";
+		};
+		BFE2FD7B2C3C771600388DA9 /* blas */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2FD7A2C3C71B100388DA9 /* metal */,
+				BFE2FD982C3C78EF00388DA9 /* level3 */,
+				BFE2FD972C3C78B900388DA9 /* level2 */,
+				BFE2FD962C3C789300388DA9 /* level1 */,
+			);
+			name = blas;
+			sourceTree = "<group>";
+		};
+		BFE2FD7D2C3C773700388DA9 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2FD832C3C776D00388DA9 /* Compute.cpp */,
+				BFE2FD7F2C3C776D00388DA9 /* Compute.hpp */,
+				BFE2FD812C3C776D00388DA9 /* FunctionOp.cpp */,
+				BFE2FD852C3C776D00388DA9 /* FunctionOp.hpp */,
+				BFE2FD842C3C776D00388DA9 /* Log.cpp */,
+				BFE2FD802C3C776D00388DA9 /* Log.hpp */,
+				BFE2FD822C3C776D00388DA9 /* Tensor.cpp */,
+				BFE2FD7E2C3C776D00388DA9 /* Tensor.hpp */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		BFE2FD962C3C789300388DA9 /* level1 */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2FDB92C404B9F00388DA9 /* axpy.cpp */,
+				BFE2FDB82C404B9F00388DA9 /* axpy.hpp */,
+				BFE2FDB62C404B9F00388DA9 /* copy.cpp */,
+				BFE2FDB52C404B9F00388DA9 /* copy.hpp */,
+				BFE2FDBB2C404B9F00388DA9 /* dot.cpp */,
+				BFE2FDBD2C404B9F00388DA9 /* dot.hpp */,
+				BFE2FDB42C404B9F00388DA9 /* scal.cpp */,
+				BFE2FDBA2C404B9F00388DA9 /* scal.hpp */,
+				BFE2FDB72C404B9F00388DA9 /* swap.cpp */,
+				BFE2FDBC2C404B9F00388DA9 /* swap.hpp */,
+			);
+			path = level1;
+			sourceTree = "<group>";
+		};
+		BFE2FD972C3C78B900388DA9 /* level2 */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2FDC42C404BCD00388DA9 /* gemv.cpp */,
+				BFE2FDC32C404BCD00388DA9 /* gemv.hpp */,
+			);
+			path = level2;
+			sourceTree = "<group>";
+		};
+		BFE2FD982C3C78EF00388DA9 /* level3 */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2FDC72C404BD800388DA9 /* gemm.cpp */,
+				BFE2FDC62C404BD800388DA9 /* gemm.hpp */,
+			);
+			path = level3;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFAC74E12B7AF2AF0034E671 /* metal_linalg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFAC74E92B7AF2AF0034E671 /* Build configuration list for PBXNativeTarget "metal_linalg" */;
+			buildPhases = (
+				BFAC74DE2B7AF2AF0034E671 /* Sources */,
+				BFAC74DF2B7AF2AF0034E671 /* Frameworks */,
+				BFAC74E02B7AF2AF0034E671 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = metal_linalg;
+			productName = metal_rig;
+			productReference = BFAC74E22B7AF2AF0034E671 /* metal_linalg */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFAC74DA2B7AF2AF0034E671 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					BFAC74E12B7AF2AF0034E671 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = BFAC74DD2B7AF2AF0034E671 /* Build configuration list for PBXProject "metal_linalg" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFAC74D92B7AF2AF0034E671;
+			productRefGroup = BFAC74E32B7AF2AF0034E671 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFAC74E12B7AF2AF0034E671 /* metal_linalg */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFAC74DE2B7AF2AF0034E671 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE2FD872C3C776D00388DA9 /* Tensor.cpp in Sources */,
+				BFE2FD892C3C776D00388DA9 /* Log.cpp in Sources */,
+				BFE2FDBE2C404B9F00388DA9 /* scal.cpp in Sources */,
+				BFE2FD942C3C778D00388DA9 /* blas_level2.metal in Sources */,
+				BFE2FD882C3C776D00388DA9 /* Compute.cpp in Sources */,
+				BFE2FDC22C404B9F00388DA9 /* dot.cpp in Sources */,
+				BFE2FD932C3C778D00388DA9 /* blas_level1.metal in Sources */,
+				BFE2FD862C3C776D00388DA9 /* FunctionOp.cpp in Sources */,
+				BFE2FDC82C404BD800388DA9 /* gemm.cpp in Sources */,
+				BFE2FDC52C404BCD00388DA9 /* gemv.cpp in Sources */,
+				BFE2FDC02C404B9F00388DA9 /* swap.cpp in Sources */,
+				BFE2FD952C3C778D00388DA9 /* blas_level3.metal in Sources */,
+				BFE2FDBF2C404B9F00388DA9 /* copy.cpp in Sources */,
+				BFAC74E62B7AF2AF0034E671 /* main.cpp in Sources */,
+				BFE2FDC12C404B9F00388DA9 /* axpy.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BFAC74E72B7AF2AF0034E671 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = metal_linalg;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BFAC74E82B7AF2AF0034E671 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = metal_linalg;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BFAC74EA2B7AF2AF0034E671 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(PROJECT_DIR)/third_party",
+					"$(PROJECT_DIR)/third_party/metal-cpp",
+					"$(PROJECT_DIR)/src",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BFAC74EB2B7AF2AF0034E671 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(PROJECT_DIR)/third_party",
+					"$(PROJECT_DIR)/third_party/metal-cpp",
+					"$(PROJECT_DIR)/src",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFAC74DD2B7AF2AF0034E671 /* Build configuration list for PBXProject "metal_linalg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFAC74E72B7AF2AF0034E671 /* Debug */,
+				BFAC74E82B7AF2AF0034E671 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFAC74E92B7AF2AF0034E671 /* Build configuration list for PBXNativeTarget "metal_linalg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFAC74EA2B7AF2AF0034E671 /* Debug */,
+				BFAC74EB2B7AF2AF0034E671 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFAC74DA2B7AF2AF0034E671 /* Project object */;
+}
