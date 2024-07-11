@@ -32,9 +32,9 @@ int main(int argc, const char * argv[])
     // Prepare object and function
     Compute compute = Compute();
     auto device = compute.getDevice();
-    blas::axpy axpy = blas::axpy();
-    blas::scal scal = blas::scal();
-    blas::copy copy = blas::copy();
+    blas::axpy axpy;
+    blas::scal scal;
+    blas::copy copy;
     compute.registerFunction(axpy, "axpy");
     compute.registerFunction(scal, "scal");
     compute.registerFunction(copy, "copy");
