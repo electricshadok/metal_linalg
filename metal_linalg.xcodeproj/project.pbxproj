@@ -138,7 +138,7 @@
 				BFE2FD912C3C778C00388DA9 /* blas_level2.metal */,
 				BFE2FD922C3C778D00388DA9 /* blas_level3.metal */,
 			);
-			path = metal;
+			name = metal;
 			sourceTree = "<group>";
 		};
 		BFE2FD7B2C3C771600388DA9 /* blas */ = {
@@ -181,7 +181,7 @@
 				BFE2FDB72C404B9F00388DA9 /* swap.cpp */,
 				BFE2FDBC2C404B9F00388DA9 /* swap.hpp */,
 			);
-			path = level1;
+			name = level1;
 			sourceTree = "<group>";
 		};
 		BFE2FD972C3C78B900388DA9 /* level2 */ = {
@@ -190,7 +190,7 @@
 				BFE2FDC42C404BCD00388DA9 /* gemv.cpp */,
 				BFE2FDC32C404BCD00388DA9 /* gemv.hpp */,
 			);
-			path = level2;
+			name = level2;
 			sourceTree = "<group>";
 		};
 		BFE2FD982C3C78EF00388DA9 /* level3 */ = {
@@ -199,7 +199,7 @@
 				BFE2FDC72C404BD800388DA9 /* gemm.cpp */,
 				BFE2FDC62C404BD800388DA9 /* gemm.hpp */,
 			);
-			path = level3;
+			name = level3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
