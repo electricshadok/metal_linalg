@@ -33,8 +33,10 @@ void copy::setupEncoder(MTL::ComputeCommandEncoder& encoder)
 
 void copy::getNumThreadGroups(const MTL::Size& threadgroupSize,  MTL::Size& numThreadgroups) const
 {
+    // Determine how many thread groups are needed to cover the entire grid
     size_t size = _x->shape();
-    numThreadgroups = MTL::Size((size + (threadgroupSize.width-1)) / threadgroupSize.width,
+    auto width = (size + (threadgroupSize.width-1)) / threadgroupSize.width;
+    numThreadgroups = MTL::Size(width,
                                 threadgroupSize.height,
                                 threadgroupSize.depth);
 }
