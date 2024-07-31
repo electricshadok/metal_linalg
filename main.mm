@@ -1,6 +1,5 @@
 #include <Cocoa/Cocoa.h>
 #include "MetalRendererWrapper.h"
-// ADD that https://chatgpt.com/c/41e2213d-3bc6-402a-97d8-8c25ba16c9b3
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 @property (strong, nonatomic) NSWindow *window;
