@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFAC74E62B7AF2AF0034E671 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFAC74E52B7AF2AF0034E671 /* main.cpp */; };
+		BF2B6B632C4D52FA001D6464 /* MetalRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B612C4D52FA001D6464 /* MetalRenderer.cpp */; };
+		BF2B6B662C4DF877001D6464 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B652C4DF877001D6464 /* Shaders.metal */; };
+		BF2B6B692C4DFC49001D6464 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B672C4DFC49001D6464 /* Transform.cpp */; };
+		BF2B6B6C2C4E012E001D6464 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B6A2C4E012E001D6464 /* Camera.cpp */; };
+		BF2B6B712C5091C7001D6464 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B702C5091C7001D6464 /* test.cpp */; };
+		BF2B6B732C50925A001D6464 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2B6B722C50925A001D6464 /* Cocoa.framework */; };
+		BF2B6B752C50926E001D6464 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2B6B742C50926E001D6464 /* MetalKit.framework */; };
+		BF2B6B792C5092E6001D6464 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B782C5092E6001D6464 /* main.mm */; };
+		BF2B6B7B2C55A173001D6464 /* MetalRendererWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B7A2C55A173001D6464 /* MetalRendererWrapper.mm */; };
 		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
 		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
@@ -41,8 +49,20 @@
 
 /* Begin PBXFileReference section */
 		BF00857D2B9A79FB004AA80E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BF2B6B612C4D52FA001D6464 /* MetalRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MetalRenderer.cpp; path = view/MetalRenderer.cpp; sourceTree = "<group>"; };
+		BF2B6B622C4D52FA001D6464 /* MetalRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MetalRenderer.hpp; path = view/MetalRenderer.hpp; sourceTree = "<group>"; };
+		BF2B6B652C4DF877001D6464 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		BF2B6B672C4DFC49001D6464 /* Transform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Transform.cpp; path = view/Transform.cpp; sourceTree = "<group>"; };
+		BF2B6B682C4DFC49001D6464 /* Transform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Transform.hpp; path = view/Transform.hpp; sourceTree = "<group>"; };
+		BF2B6B6A2C4E012E001D6464 /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = view/Camera.cpp; sourceTree = "<group>"; };
+		BF2B6B6B2C4E012E001D6464 /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = view/Camera.hpp; sourceTree = "<group>"; };
+		BF2B6B702C5091C7001D6464 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		BF2B6B722C50925A001D6464 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BF2B6B742C50926E001D6464 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		BF2B6B782C5092E6001D6464 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		BF2B6B7A2C55A173001D6464 /* MetalRendererWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalRendererWrapper.mm; sourceTree = "<group>"; };
+		BF2B6B7E2C55A2B3001D6464 /* MetalRendererWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalRendererWrapper.h; sourceTree = "<group>"; };
 		BFAC74E22B7AF2AF0034E671 /* metal_linalg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_linalg; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFAC74E52B7AF2AF0034E671 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -81,8 +101,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2B6B732C50925A001D6464 /* Cocoa.framework in Frameworks */,
 				BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */,
 				BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */,
+				BF2B6B752C50926E001D6464 /* MetalKit.framework in Frameworks */,
 				BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,14 +112,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF2B6B602C4D52D2001D6464 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6B642C4DD52D001D6464 /* shader */,
+				BF2B6B612C4D52FA001D6464 /* MetalRenderer.cpp */,
+				BF2B6B622C4D52FA001D6464 /* MetalRenderer.hpp */,
+				BF2B6B672C4DFC49001D6464 /* Transform.cpp */,
+				BF2B6B682C4DFC49001D6464 /* Transform.hpp */,
+				BF2B6B6A2C4E012E001D6464 /* Camera.cpp */,
+				BF2B6B6B2C4E012E001D6464 /* Camera.hpp */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		BF2B6B642C4DD52D001D6464 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6B652C4DF877001D6464 /* Shaders.metal */,
+			);
+			path = shader;
+			sourceTree = "<group>";
+		};
 		BFAC74D92B7AF2AF0034E671 = {
 			isa = PBXGroup;
 			children = (
+				BF2B6B7E2C55A2B3001D6464 /* MetalRendererWrapper.h */,
+				BF2B6B7A2C55A173001D6464 /* MetalRendererWrapper.mm */,
+				BF2B6B782C5092E6001D6464 /* main.mm */,
+				BF2B6B702C5091C7001D6464 /* test.cpp */,
 				BFE2FDC92C404F3300388DA9 /* .gitignore */,
 				BFE2FDB32C4049EB00388DA9 /* README.md */,
 				BFE2FD792C3C71A500388DA9 /* src */,
 				BF00857D2B9A79FB004AA80E /* LICENSE */,
-				BFAC74E52B7AF2AF0034E671 /* main.cpp */,
 				BFAC74ED2B7B06DF0034E671 /* third_party */,
 				BFAC74E32B7AF2AF0034E671 /* Products */,
 				BFDDC73A2B7BCA5100F44B87 /* Frameworks */,
@@ -115,6 +162,8 @@
 		BFDDC73A2B7BCA5100F44B87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF2B6B742C50926E001D6464 /* MetalKit.framework */,
+				BF2B6B722C50925A001D6464 /* Cocoa.framework */,
 				BFDDC73F2B7BCA6000F44B87 /* Metal.framework */,
 				BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */,
 				BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */,
@@ -125,6 +174,7 @@
 		BFE2FD792C3C71A500388DA9 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				BF2B6B602C4D52D2001D6464 /* view */,
 				BFE2FD7D2C3C773700388DA9 /* core */,
 				BFE2FD7B2C3C771600388DA9 /* blas */,
 			);
@@ -259,10 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2B6B692C4DFC49001D6464 /* Transform.cpp in Sources */,
 				BFE2FD872C3C776D00388DA9 /* Tensor.cpp in Sources */,
 				BFE2FD892C3C776D00388DA9 /* Log.cpp in Sources */,
 				BFE2FDBE2C404B9F00388DA9 /* scal.cpp in Sources */,
+				BF2B6B792C5092E6001D6464 /* main.mm in Sources */,
 				BFE2FD942C3C778D00388DA9 /* blas_level2.metal in Sources */,
+				BF2B6B662C4DF877001D6464 /* Shaders.metal in Sources */,
+				BF2B6B7B2C55A173001D6464 /* MetalRendererWrapper.mm in Sources */,
 				BFE2FD882C3C776D00388DA9 /* Compute.cpp in Sources */,
 				BFE2FDC22C404B9F00388DA9 /* dot.cpp in Sources */,
 				BFE2FD932C3C778D00388DA9 /* blas_level1.metal in Sources */,
@@ -270,9 +324,11 @@
 				BFE2FDC82C404BD800388DA9 /* gemm.cpp in Sources */,
 				BFE2FDC52C404BCD00388DA9 /* gemv.cpp in Sources */,
 				BFE2FDC02C404B9F00388DA9 /* swap.cpp in Sources */,
+				BF2B6B712C5091C7001D6464 /* test.cpp in Sources */,
+				BF2B6B6C2C4E012E001D6464 /* Camera.cpp in Sources */,
 				BFE2FD952C3C778D00388DA9 /* blas_level3.metal in Sources */,
+				BF2B6B632C4D52FA001D6464 /* MetalRenderer.cpp in Sources */,
 				BFE2FDBF2C404B9F00388DA9 /* copy.cpp in Sources */,
-				BFAC74E62B7AF2AF0034E671 /* main.cpp in Sources */,
 				BFE2FDC12C404B9F00388DA9 /* axpy.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

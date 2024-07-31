@@ -3,8 +3,9 @@
 #include "Log.hpp"
 #include "axpy.hpp"
 #include "scal.hpp"
-#include "dot.hpp"
+#include "blas/level1/dot.hpp"
 #include "copy.hpp"
+#include "view/MetalRenderer.hpp"
 
 class Problem
 {
@@ -24,7 +25,7 @@ Problem::Problem(const size_t size) : x(size), y(size)
     }
 }
 
-int main(int argc, const char * argv[]) 
+/*int main(int argc, const char * argv[])
 {
     // Initialize data on CPU
     Problem problem(10000000);
@@ -55,7 +56,10 @@ int main(int argc, const char * argv[])
     {
         Log::info() << problem.x.data()[i] << "," << problem.y.data()[i] << "=" << res.data()[i];
     }
+    
+    // Test Metal renderer
+    MetalRenderer render;
 
     return 0;
-}
+}*/
 
