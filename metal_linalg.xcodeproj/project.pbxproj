@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF2B6B632C4D52FA001D6464 /* MetalRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B612C4D52FA001D6464 /* MetalRenderer.cpp */; };
-		BF2B6B662C4DF877001D6464 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B652C4DF877001D6464 /* Shaders.metal */; };
-		BF2B6B692C4DFC49001D6464 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B672C4DFC49001D6464 /* Transform.cpp */; };
-		BF2B6B6C2C4E012E001D6464 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B6A2C4E012E001D6464 /* Camera.cpp */; };
 		BF2B6B712C5091C7001D6464 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B702C5091C7001D6464 /* test.cpp */; };
 		BF2B6B732C50925A001D6464 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2B6B722C50925A001D6464 /* Cocoa.framework */; };
 		BF2B6B752C50926E001D6464 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2B6B742C50926E001D6464 /* MetalKit.framework */; };
 		BF2B6B792C5092E6001D6464 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B782C5092E6001D6464 /* main.mm */; };
-		BF2B6B7B2C55A173001D6464 /* MetalRendererWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B7A2C55A173001D6464 /* MetalRendererWrapper.mm */; };
+		BF2B6B8A2C5AF695001D6464 /* MetalRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B822C5AF695001D6464 /* MetalRenderer.cpp */; };
+		BF2B6B8B2C5AF695001D6464 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B832C5AF695001D6464 /* Transform.cpp */; };
+		BF2B6B8C2C5AF695001D6464 /* MetalRendererWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B842C5AF695001D6464 /* MetalRendererWrapper.mm */; };
+		BF2B6B8D2C5AF695001D6464 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B852C5AF695001D6464 /* Camera.cpp */; };
+		BF2B6B982C5AF6CE001D6464 /* Compute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B912C5AF6CE001D6464 /* Compute.cpp */; };
+		BF2B6B992C5AF6CE001D6464 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B922C5AF6CE001D6464 /* Log.cpp */; };
+		BF2B6B9A2C5AF6CE001D6464 /* FunctionOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B942C5AF6CE001D6464 /* FunctionOp.cpp */; };
+		BF2B6B9B2C5AF6CE001D6464 /* Tensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B952C5AF6CE001D6464 /* Tensor.cpp */; };
+		BF2B6BA42C5AF71D001D6464 /* blas_level1.metal in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BA12C5AF71D001D6464 /* blas_level1.metal */; };
+		BF2B6BA52C5AF71D001D6464 /* blas_level3.metal in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BA22C5AF71D001D6464 /* blas_level3.metal */; };
+		BF2B6BA62C5AF71D001D6464 /* blas_level2.metal in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BA32C5AF71D001D6464 /* blas_level2.metal */; };
+		BF2B6BA92C5AF735001D6464 /* gemm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BA72C5AF735001D6464 /* gemm.cpp */; };
+		BF2B6BAC2C5AF749001D6464 /* gemv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BAA2C5AF749001D6464 /* gemv.cpp */; };
+		BF2B6BB72C5AF756001D6464 /* axpy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BAF2C5AF756001D6464 /* axpy.cpp */; };
+		BF2B6BB82C5AF756001D6464 /* scal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BB12C5AF756001D6464 /* scal.cpp */; };
+		BF2B6BB92C5AF756001D6464 /* dot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BB22C5AF756001D6464 /* dot.cpp */; };
+		BF2B6BBA2C5AF756001D6464 /* copy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BB42C5AF756001D6464 /* copy.cpp */; };
+		BF2B6BBB2C5AF756001D6464 /* swap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BB62C5AF756001D6464 /* swap.cpp */; };
+		BF2B6BBD2C5AF8BE001D6464 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BBC2C5AF8BE001D6464 /* shaders.metal */; };
 		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
 		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
-		BFE2FD862C3C776D00388DA9 /* FunctionOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD812C3C776D00388DA9 /* FunctionOp.cpp */; };
-		BFE2FD872C3C776D00388DA9 /* Tensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD822C3C776D00388DA9 /* Tensor.cpp */; };
-		BFE2FD882C3C776D00388DA9 /* Compute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD832C3C776D00388DA9 /* Compute.cpp */; };
-		BFE2FD892C3C776D00388DA9 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD842C3C776D00388DA9 /* Log.cpp */; };
-		BFE2FD932C3C778D00388DA9 /* blas_level1.metal in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD902C3C778C00388DA9 /* blas_level1.metal */; };
-		BFE2FD942C3C778D00388DA9 /* blas_level2.metal in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD912C3C778C00388DA9 /* blas_level2.metal */; };
-		BFE2FD952C3C778D00388DA9 /* blas_level3.metal in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FD922C3C778D00388DA9 /* blas_level3.metal */; };
-		BFE2FDBE2C404B9F00388DA9 /* scal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDB42C404B9F00388DA9 /* scal.cpp */; };
-		BFE2FDBF2C404B9F00388DA9 /* copy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDB62C404B9F00388DA9 /* copy.cpp */; };
-		BFE2FDC02C404B9F00388DA9 /* swap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDB72C404B9F00388DA9 /* swap.cpp */; };
-		BFE2FDC12C404B9F00388DA9 /* axpy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDB92C404B9F00388DA9 /* axpy.cpp */; };
-		BFE2FDC22C404B9F00388DA9 /* dot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDBB2C404B9F00388DA9 /* dot.cpp */; };
-		BFE2FDC52C404BCD00388DA9 /* gemv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDC42C404BCD00388DA9 /* gemv.cpp */; };
-		BFE2FDC82C404BD800388DA9 /* gemm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE2FDC72C404BD800388DA9 /* gemm.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,50 +49,50 @@
 
 /* Begin PBXFileReference section */
 		BF00857D2B9A79FB004AA80E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		BF2B6B612C4D52FA001D6464 /* MetalRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MetalRenderer.cpp; path = view/MetalRenderer.cpp; sourceTree = "<group>"; };
-		BF2B6B622C4D52FA001D6464 /* MetalRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MetalRenderer.hpp; path = view/MetalRenderer.hpp; sourceTree = "<group>"; };
-		BF2B6B652C4DF877001D6464 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		BF2B6B672C4DFC49001D6464 /* Transform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Transform.cpp; path = view/Transform.cpp; sourceTree = "<group>"; };
-		BF2B6B682C4DFC49001D6464 /* Transform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Transform.hpp; path = view/Transform.hpp; sourceTree = "<group>"; };
-		BF2B6B6A2C4E012E001D6464 /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = view/Camera.cpp; sourceTree = "<group>"; };
-		BF2B6B6B2C4E012E001D6464 /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = view/Camera.hpp; sourceTree = "<group>"; };
 		BF2B6B702C5091C7001D6464 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		BF2B6B722C50925A001D6464 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BF2B6B742C50926E001D6464 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		BF2B6B782C5092E6001D6464 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		BF2B6B7A2C55A173001D6464 /* MetalRendererWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalRendererWrapper.mm; sourceTree = "<group>"; };
-		BF2B6B7E2C55A2B3001D6464 /* MetalRendererWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalRendererWrapper.h; sourceTree = "<group>"; };
+		BF2B6B822C5AF695001D6464 /* MetalRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MetalRenderer.cpp; path = src/app/view/MetalRenderer.cpp; sourceTree = "<group>"; };
+		BF2B6B832C5AF695001D6464 /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Transform.cpp; path = src/app/view/Transform.cpp; sourceTree = "<group>"; };
+		BF2B6B842C5AF695001D6464 /* MetalRendererWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MetalRendererWrapper.mm; path = src/app/view/MetalRendererWrapper.mm; sourceTree = "<group>"; };
+		BF2B6B852C5AF695001D6464 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = src/app/view/Camera.cpp; sourceTree = "<group>"; };
+		BF2B6B862C5AF695001D6464 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = src/app/view/Camera.hpp; sourceTree = "<group>"; };
+		BF2B6B872C5AF695001D6464 /* MetalRendererWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetalRendererWrapper.h; path = src/app/view/MetalRendererWrapper.h; sourceTree = "<group>"; };
+		BF2B6B882C5AF695001D6464 /* Transform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Transform.hpp; path = src/app/view/Transform.hpp; sourceTree = "<group>"; };
+		BF2B6B892C5AF695001D6464 /* MetalRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MetalRenderer.hpp; path = src/app/view/MetalRenderer.hpp; sourceTree = "<group>"; };
+		BF2B6B902C5AF6CE001D6464 /* Tensor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Tensor.hpp; path = src/linalg/core/Tensor.hpp; sourceTree = "<group>"; };
+		BF2B6B912C5AF6CE001D6464 /* Compute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Compute.cpp; path = src/linalg/core/Compute.cpp; sourceTree = "<group>"; };
+		BF2B6B922C5AF6CE001D6464 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = src/linalg/core/Log.cpp; sourceTree = "<group>"; };
+		BF2B6B932C5AF6CE001D6464 /* Log.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Log.hpp; path = src/linalg/core/Log.hpp; sourceTree = "<group>"; };
+		BF2B6B942C5AF6CE001D6464 /* FunctionOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FunctionOp.cpp; path = src/linalg/core/FunctionOp.cpp; sourceTree = "<group>"; };
+		BF2B6B952C5AF6CE001D6464 /* Tensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tensor.cpp; path = src/linalg/core/Tensor.cpp; sourceTree = "<group>"; };
+		BF2B6B962C5AF6CE001D6464 /* Compute.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Compute.hpp; path = src/linalg/core/Compute.hpp; sourceTree = "<group>"; };
+		BF2B6B972C5AF6CE001D6464 /* FunctionOp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FunctionOp.hpp; path = src/linalg/core/FunctionOp.hpp; sourceTree = "<group>"; };
+		BF2B6BA12C5AF71D001D6464 /* blas_level1.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level1.metal; path = src/linalg/blas/metal/blas_level1.metal; sourceTree = "<group>"; };
+		BF2B6BA22C5AF71D001D6464 /* blas_level3.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level3.metal; path = src/linalg/blas/metal/blas_level3.metal; sourceTree = "<group>"; };
+		BF2B6BA32C5AF71D001D6464 /* blas_level2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level2.metal; path = src/linalg/blas/metal/blas_level2.metal; sourceTree = "<group>"; };
+		BF2B6BA72C5AF735001D6464 /* gemm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gemm.cpp; path = src/linalg/blas/level3/gemm.cpp; sourceTree = "<group>"; };
+		BF2B6BA82C5AF735001D6464 /* gemm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gemm.hpp; path = src/linalg/blas/level3/gemm.hpp; sourceTree = "<group>"; };
+		BF2B6BAA2C5AF749001D6464 /* gemv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gemv.cpp; path = src/linalg/blas/level2/gemv.cpp; sourceTree = "<group>"; };
+		BF2B6BAB2C5AF749001D6464 /* gemv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gemv.hpp; path = src/linalg/blas/level2/gemv.hpp; sourceTree = "<group>"; };
+		BF2B6BAD2C5AF756001D6464 /* scal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = scal.hpp; path = src/linalg/blas/level1/scal.hpp; sourceTree = "<group>"; };
+		BF2B6BAE2C5AF756001D6464 /* copy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = copy.hpp; path = src/linalg/blas/level1/copy.hpp; sourceTree = "<group>"; };
+		BF2B6BAF2C5AF756001D6464 /* axpy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = axpy.cpp; path = src/linalg/blas/level1/axpy.cpp; sourceTree = "<group>"; };
+		BF2B6BB02C5AF756001D6464 /* dot.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = dot.hpp; path = src/linalg/blas/level1/dot.hpp; sourceTree = "<group>"; };
+		BF2B6BB12C5AF756001D6464 /* scal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = scal.cpp; path = src/linalg/blas/level1/scal.cpp; sourceTree = "<group>"; };
+		BF2B6BB22C5AF756001D6464 /* dot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dot.cpp; path = src/linalg/blas/level1/dot.cpp; sourceTree = "<group>"; };
+		BF2B6BB32C5AF756001D6464 /* swap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = swap.hpp; path = src/linalg/blas/level1/swap.hpp; sourceTree = "<group>"; };
+		BF2B6BB42C5AF756001D6464 /* copy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = copy.cpp; path = src/linalg/blas/level1/copy.cpp; sourceTree = "<group>"; };
+		BF2B6BB52C5AF756001D6464 /* axpy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = axpy.hpp; path = src/linalg/blas/level1/axpy.hpp; sourceTree = "<group>"; };
+		BF2B6BB62C5AF756001D6464 /* swap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swap.cpp; path = src/linalg/blas/level1/swap.cpp; sourceTree = "<group>"; };
+		BF2B6BBC2C5AF8BE001D6464 /* shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = shaders.metal; path = src/app/view/shaders.metal; sourceTree = "<group>"; };
 		BFAC74E22B7AF2AF0034E671 /* metal_linalg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_linalg; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BFDDC73F2B7BCA6000F44B87 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		BFE2FD7E2C3C776D00388DA9 /* Tensor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Tensor.hpp; path = src/core/Tensor.hpp; sourceTree = "<group>"; };
-		BFE2FD7F2C3C776D00388DA9 /* Compute.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Compute.hpp; path = src/core/Compute.hpp; sourceTree = "<group>"; };
-		BFE2FD802C3C776D00388DA9 /* Log.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Log.hpp; path = src/core/Log.hpp; sourceTree = "<group>"; };
-		BFE2FD812C3C776D00388DA9 /* FunctionOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FunctionOp.cpp; path = src/core/FunctionOp.cpp; sourceTree = "<group>"; };
-		BFE2FD822C3C776D00388DA9 /* Tensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tensor.cpp; path = src/core/Tensor.cpp; sourceTree = "<group>"; };
-		BFE2FD832C3C776D00388DA9 /* Compute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Compute.cpp; path = src/core/Compute.cpp; sourceTree = "<group>"; };
-		BFE2FD842C3C776D00388DA9 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = src/core/Log.cpp; sourceTree = "<group>"; };
-		BFE2FD852C3C776D00388DA9 /* FunctionOp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FunctionOp.hpp; path = src/core/FunctionOp.hpp; sourceTree = "<group>"; };
-		BFE2FD902C3C778C00388DA9 /* blas_level1.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level1.metal; path = src/metal/blas_level1.metal; sourceTree = SOURCE_ROOT; };
-		BFE2FD912C3C778C00388DA9 /* blas_level2.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level2.metal; path = src/metal/blas_level2.metal; sourceTree = SOURCE_ROOT; };
-		BFE2FD922C3C778D00388DA9 /* blas_level3.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = blas_level3.metal; path = src/metal/blas_level3.metal; sourceTree = SOURCE_ROOT; };
 		BFE2FDB32C4049EB00388DA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BFE2FDB42C404B9F00388DA9 /* scal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = scal.cpp; path = src/blas/level1/scal.cpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDB52C404B9F00388DA9 /* copy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = copy.hpp; path = src/blas/level1/copy.hpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDB62C404B9F00388DA9 /* copy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = copy.cpp; path = src/blas/level1/copy.cpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDB72C404B9F00388DA9 /* swap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swap.cpp; path = src/blas/level1/swap.cpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDB82C404B9F00388DA9 /* axpy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = axpy.hpp; path = src/blas/level1/axpy.hpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDB92C404B9F00388DA9 /* axpy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = axpy.cpp; path = src/blas/level1/axpy.cpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDBA2C404B9F00388DA9 /* scal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = scal.hpp; path = src/blas/level1/scal.hpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDBB2C404B9F00388DA9 /* dot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dot.cpp; path = src/blas/level1/dot.cpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDBC2C404B9F00388DA9 /* swap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = swap.hpp; path = src/blas/level1/swap.hpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDBD2C404B9F00388DA9 /* dot.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = dot.hpp; path = src/blas/level1/dot.hpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDC32C404BCD00388DA9 /* gemv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gemv.hpp; path = src/blas/level2/gemv.hpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDC42C404BCD00388DA9 /* gemv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gemv.cpp; path = src/blas/level2/gemv.cpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDC62C404BD800388DA9 /* gemm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gemm.hpp; path = src/blas/level3/gemm.hpp; sourceTree = SOURCE_ROOT; };
-		BFE2FDC72C404BD800388DA9 /* gemm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gemm.cpp; path = src/blas/level3/gemm.cpp; sourceTree = SOURCE_ROOT; };
 		BFE2FDC92C404F3300388DA9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,33 +112,113 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF2B6B602C4D52D2001D6464 /* view */ = {
+		BF2B6B7F2C5AF64D001D6464 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				BF2B6B642C4DD52D001D6464 /* shader */,
-				BF2B6B612C4D52FA001D6464 /* MetalRenderer.cpp */,
-				BF2B6B622C4D52FA001D6464 /* MetalRenderer.hpp */,
-				BF2B6B672C4DFC49001D6464 /* Transform.cpp */,
-				BF2B6B682C4DFC49001D6464 /* Transform.hpp */,
-				BF2B6B6A2C4E012E001D6464 /* Camera.cpp */,
-				BF2B6B6B2C4E012E001D6464 /* Camera.hpp */,
+				BF2B6B812C5AF67D001D6464 /* view */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
+		BF2B6B802C5AF655001D6464 /* linalg */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6B8F2C5AF6B8001D6464 /* core */,
+				BF2B6B8E2C5AF6AA001D6464 /* blas */,
+			);
+			name = linalg;
+			sourceTree = "<group>";
+		};
+		BF2B6B812C5AF67D001D6464 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6B852C5AF695001D6464 /* Camera.cpp */,
+				BF2B6B862C5AF695001D6464 /* Camera.hpp */,
+				BF2B6B822C5AF695001D6464 /* MetalRenderer.cpp */,
+				BF2B6B892C5AF695001D6464 /* MetalRenderer.hpp */,
+				BF2B6B872C5AF695001D6464 /* MetalRendererWrapper.h */,
+				BF2B6B842C5AF695001D6464 /* MetalRendererWrapper.mm */,
+				BF2B6B832C5AF695001D6464 /* Transform.cpp */,
+				BF2B6B882C5AF695001D6464 /* Transform.hpp */,
+				BF2B6BBC2C5AF8BE001D6464 /* shaders.metal */,
 			);
 			name = view;
 			sourceTree = "<group>";
 		};
-		BF2B6B642C4DD52D001D6464 /* shader */ = {
+		BF2B6B8E2C5AF6AA001D6464 /* blas */ = {
 			isa = PBXGroup;
 			children = (
-				BF2B6B652C4DF877001D6464 /* Shaders.metal */,
+				BF2B6BA02C5AF70D001D6464 /* metal */,
+				BF2B6B9E2C5AF6FA001D6464 /* level3 */,
+				BF2B6B9D2C5AF6EE001D6464 /* level2 */,
+				BF2B6B9C2C5AF6E8001D6464 /* level1 */,
 			);
-			path = shader;
+			name = blas;
+			sourceTree = "<group>";
+		};
+		BF2B6B8F2C5AF6B8001D6464 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6B912C5AF6CE001D6464 /* Compute.cpp */,
+				BF2B6B962C5AF6CE001D6464 /* Compute.hpp */,
+				BF2B6B942C5AF6CE001D6464 /* FunctionOp.cpp */,
+				BF2B6B972C5AF6CE001D6464 /* FunctionOp.hpp */,
+				BF2B6B922C5AF6CE001D6464 /* Log.cpp */,
+				BF2B6B932C5AF6CE001D6464 /* Log.hpp */,
+				BF2B6B952C5AF6CE001D6464 /* Tensor.cpp */,
+				BF2B6B902C5AF6CE001D6464 /* Tensor.hpp */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		BF2B6B9C2C5AF6E8001D6464 /* level1 */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6BAF2C5AF756001D6464 /* axpy.cpp */,
+				BF2B6BB52C5AF756001D6464 /* axpy.hpp */,
+				BF2B6BB42C5AF756001D6464 /* copy.cpp */,
+				BF2B6BAE2C5AF756001D6464 /* copy.hpp */,
+				BF2B6BB22C5AF756001D6464 /* dot.cpp */,
+				BF2B6BB02C5AF756001D6464 /* dot.hpp */,
+				BF2B6BB12C5AF756001D6464 /* scal.cpp */,
+				BF2B6BAD2C5AF756001D6464 /* scal.hpp */,
+				BF2B6BB62C5AF756001D6464 /* swap.cpp */,
+				BF2B6BB32C5AF756001D6464 /* swap.hpp */,
+			);
+			name = level1;
+			sourceTree = "<group>";
+		};
+		BF2B6B9D2C5AF6EE001D6464 /* level2 */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6BAA2C5AF749001D6464 /* gemv.cpp */,
+				BF2B6BAB2C5AF749001D6464 /* gemv.hpp */,
+			);
+			name = level2;
+			sourceTree = "<group>";
+		};
+		BF2B6B9E2C5AF6FA001D6464 /* level3 */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6BA72C5AF735001D6464 /* gemm.cpp */,
+				BF2B6BA82C5AF735001D6464 /* gemm.hpp */,
+			);
+			name = level3;
+			sourceTree = "<group>";
+		};
+		BF2B6BA02C5AF70D001D6464 /* metal */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6BA12C5AF71D001D6464 /* blas_level1.metal */,
+				BF2B6BA32C5AF71D001D6464 /* blas_level2.metal */,
+				BF2B6BA22C5AF71D001D6464 /* blas_level3.metal */,
+			);
+			name = metal;
 			sourceTree = "<group>";
 		};
 		BFAC74D92B7AF2AF0034E671 = {
 			isa = PBXGroup;
 			children = (
-				BF2B6B7E2C55A2B3001D6464 /* MetalRendererWrapper.h */,
-				BF2B6B7A2C55A173001D6464 /* MetalRendererWrapper.mm */,
 				BF2B6B782C5092E6001D6464 /* main.mm */,
 				BF2B6B702C5091C7001D6464 /* test.cpp */,
 				BFE2FDC92C404F3300388DA9 /* .gitignore */,
@@ -174,82 +254,10 @@
 		BFE2FD792C3C71A500388DA9 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				BF2B6B602C4D52D2001D6464 /* view */,
-				BFE2FD7D2C3C773700388DA9 /* core */,
-				BFE2FD7B2C3C771600388DA9 /* blas */,
+				BF2B6B802C5AF655001D6464 /* linalg */,
+				BF2B6B7F2C5AF64D001D6464 /* app */,
 			);
 			name = src;
-			sourceTree = "<group>";
-		};
-		BFE2FD7A2C3C71B100388DA9 /* metal */ = {
-			isa = PBXGroup;
-			children = (
-				BFE2FD902C3C778C00388DA9 /* blas_level1.metal */,
-				BFE2FD912C3C778C00388DA9 /* blas_level2.metal */,
-				BFE2FD922C3C778D00388DA9 /* blas_level3.metal */,
-			);
-			name = metal;
-			sourceTree = "<group>";
-		};
-		BFE2FD7B2C3C771600388DA9 /* blas */ = {
-			isa = PBXGroup;
-			children = (
-				BFE2FD7A2C3C71B100388DA9 /* metal */,
-				BFE2FD982C3C78EF00388DA9 /* level3 */,
-				BFE2FD972C3C78B900388DA9 /* level2 */,
-				BFE2FD962C3C789300388DA9 /* level1 */,
-			);
-			name = blas;
-			sourceTree = "<group>";
-		};
-		BFE2FD7D2C3C773700388DA9 /* core */ = {
-			isa = PBXGroup;
-			children = (
-				BFE2FD832C3C776D00388DA9 /* Compute.cpp */,
-				BFE2FD7F2C3C776D00388DA9 /* Compute.hpp */,
-				BFE2FD812C3C776D00388DA9 /* FunctionOp.cpp */,
-				BFE2FD852C3C776D00388DA9 /* FunctionOp.hpp */,
-				BFE2FD842C3C776D00388DA9 /* Log.cpp */,
-				BFE2FD802C3C776D00388DA9 /* Log.hpp */,
-				BFE2FD822C3C776D00388DA9 /* Tensor.cpp */,
-				BFE2FD7E2C3C776D00388DA9 /* Tensor.hpp */,
-			);
-			name = core;
-			sourceTree = "<group>";
-		};
-		BFE2FD962C3C789300388DA9 /* level1 */ = {
-			isa = PBXGroup;
-			children = (
-				BFE2FDB92C404B9F00388DA9 /* axpy.cpp */,
-				BFE2FDB82C404B9F00388DA9 /* axpy.hpp */,
-				BFE2FDB62C404B9F00388DA9 /* copy.cpp */,
-				BFE2FDB52C404B9F00388DA9 /* copy.hpp */,
-				BFE2FDBB2C404B9F00388DA9 /* dot.cpp */,
-				BFE2FDBD2C404B9F00388DA9 /* dot.hpp */,
-				BFE2FDB42C404B9F00388DA9 /* scal.cpp */,
-				BFE2FDBA2C404B9F00388DA9 /* scal.hpp */,
-				BFE2FDB72C404B9F00388DA9 /* swap.cpp */,
-				BFE2FDBC2C404B9F00388DA9 /* swap.hpp */,
-			);
-			name = level1;
-			sourceTree = "<group>";
-		};
-		BFE2FD972C3C78B900388DA9 /* level2 */ = {
-			isa = PBXGroup;
-			children = (
-				BFE2FDC42C404BCD00388DA9 /* gemv.cpp */,
-				BFE2FDC32C404BCD00388DA9 /* gemv.hpp */,
-			);
-			name = level2;
-			sourceTree = "<group>";
-		};
-		BFE2FD982C3C78EF00388DA9 /* level3 */ = {
-			isa = PBXGroup;
-			children = (
-				BFE2FDC72C404BD800388DA9 /* gemm.cpp */,
-				BFE2FDC62C404BD800388DA9 /* gemm.hpp */,
-			);
-			name = level3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,27 +317,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2B6B692C4DFC49001D6464 /* Transform.cpp in Sources */,
-				BFE2FD872C3C776D00388DA9 /* Tensor.cpp in Sources */,
-				BFE2FD892C3C776D00388DA9 /* Log.cpp in Sources */,
-				BFE2FDBE2C404B9F00388DA9 /* scal.cpp in Sources */,
+				BF2B6B8A2C5AF695001D6464 /* MetalRenderer.cpp in Sources */,
 				BF2B6B792C5092E6001D6464 /* main.mm in Sources */,
-				BFE2FD942C3C778D00388DA9 /* blas_level2.metal in Sources */,
-				BF2B6B662C4DF877001D6464 /* Shaders.metal in Sources */,
-				BF2B6B7B2C55A173001D6464 /* MetalRendererWrapper.mm in Sources */,
-				BFE2FD882C3C776D00388DA9 /* Compute.cpp in Sources */,
-				BFE2FDC22C404B9F00388DA9 /* dot.cpp in Sources */,
-				BFE2FD932C3C778D00388DA9 /* blas_level1.metal in Sources */,
-				BFE2FD862C3C776D00388DA9 /* FunctionOp.cpp in Sources */,
-				BFE2FDC82C404BD800388DA9 /* gemm.cpp in Sources */,
-				BFE2FDC52C404BCD00388DA9 /* gemv.cpp in Sources */,
-				BFE2FDC02C404B9F00388DA9 /* swap.cpp in Sources */,
+				BF2B6BBD2C5AF8BE001D6464 /* shaders.metal in Sources */,
+				BF2B6B9B2C5AF6CE001D6464 /* Tensor.cpp in Sources */,
+				BF2B6B992C5AF6CE001D6464 /* Log.cpp in Sources */,
+				BF2B6B8B2C5AF695001D6464 /* Transform.cpp in Sources */,
+				BF2B6B982C5AF6CE001D6464 /* Compute.cpp in Sources */,
+				BF2B6BB82C5AF756001D6464 /* scal.cpp in Sources */,
+				BF2B6BA52C5AF71D001D6464 /* blas_level3.metal in Sources */,
+				BF2B6BBB2C5AF756001D6464 /* swap.cpp in Sources */,
+				BF2B6BA92C5AF735001D6464 /* gemm.cpp in Sources */,
+				BF2B6BAC2C5AF749001D6464 /* gemv.cpp in Sources */,
+				BF2B6BA62C5AF71D001D6464 /* blas_level2.metal in Sources */,
 				BF2B6B712C5091C7001D6464 /* test.cpp in Sources */,
-				BF2B6B6C2C4E012E001D6464 /* Camera.cpp in Sources */,
-				BFE2FD952C3C778D00388DA9 /* blas_level3.metal in Sources */,
-				BF2B6B632C4D52FA001D6464 /* MetalRenderer.cpp in Sources */,
-				BFE2FDBF2C404B9F00388DA9 /* copy.cpp in Sources */,
-				BFE2FDC12C404B9F00388DA9 /* axpy.cpp in Sources */,
+				BF2B6BB72C5AF756001D6464 /* axpy.cpp in Sources */,
+				BF2B6BBA2C5AF756001D6464 /* copy.cpp in Sources */,
+				BF2B6BA42C5AF71D001D6464 /* blas_level1.metal in Sources */,
+				BF2B6B8D2C5AF695001D6464 /* Camera.cpp in Sources */,
+				BF2B6BB92C5AF756001D6464 /* dot.cpp in Sources */,
+				BF2B6B9A2C5AF6CE001D6464 /* FunctionOp.cpp in Sources */,
+				BF2B6B8C2C5AF695001D6464 /* MetalRendererWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

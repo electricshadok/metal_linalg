@@ -3,9 +3,9 @@
 #include "Log.hpp"
 #include "axpy.hpp"
 #include "scal.hpp"
-#include "blas/level1/dot.hpp"
+#include "linalg/blas/level1/dot.hpp"
 #include "copy.hpp"
-#include "view/MetalRenderer.hpp"
+#include "app/view/MetalRenderer.hpp"
 
 class Problem
 {
