@@ -1,5 +1,5 @@
-#ifndef Mesh_hpp
-#define Mesh_hpp
+#ifndef ObjectData_hpp
+#define ObjectData_hpp
 
 #include <Eigen/Dense>
 #include <Eigen/StdVector>
@@ -39,4 +39,14 @@ struct TriangleConnectivity
     TriangleConnectivity(size_t triangleCount) : triangles(triangleCount) {}
 };
 
-#endif /* Mesh_hpp */
+class ObjectData
+{
+public:
+    ObjectData(size_t nodeCount, size_t triangleCount);
+
+    Nodes nodes;
+    TriangleConnectivity connectivity;
+};
+
+
+#endif /* ObjectData_hpp */
