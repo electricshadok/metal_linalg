@@ -2,7 +2,7 @@
 #define MetalRenderer_hpp
 
 #include <QuartzCore/CAMetalLayer.h>
-#import <QuartzCore/CAMetalDrawable.hpp>
+#include <QuartzCore/CAMetalDrawable.hpp>
 #include <Metal/Metal.hpp>
 #include <simd/simd.h>
 
