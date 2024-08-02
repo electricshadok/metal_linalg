@@ -3,17 +3,17 @@
 
 matrix_float4x4 matrix_perspective(float fovyRadians, float aspect, float nearZ, float farZ) 
 {
-    float yScale = 1 / tanf(fovyRadians * 0.5);
-    float xScale = yScale / aspect;
-    float zRange = farZ - nearZ;
-    float zScale = -(farZ + nearZ) / zRange;
-    float wzScale = -2 * farZ * nearZ / zRange;
-    matrix_float4x4 m = {{
-        { xScale, 0, 0, 0 },
-        { 0, yScale, 0, 0 },
-        { 0, 0, zScale, -1 },
-        { 0, 0, wzScale, 0 }
-    }};
+    float ys = 1 / tanf(fovyRadians * 0.5);
+    float xs = ys / aspect;
+    float zs = farZ / (nearZ - farZ);
+
+    matrix_float4x4 m = (matrix_float4x4){
+        (vector_float4){ xs,  0,  0,  0 },
+        (vector_float4){  0, ys,  0,  0 },
+        (vector_float4){  0,  0, zs, -1 },
+        (vector_float4){  0,  0, zs * nearZ,  0 }
+    };
+
     return m;
 }
 
@@ -50,11 +50,13 @@ matrix_float4x4 matrix_look_at(vector_float3 eye, vector_float3 center, vector_f
     vector_float3 s = simd::normalize(simd::cross(f, up));
     vector_float3 u = simd::cross(s, f);
     
-    matrix_float4x4 m = {{
-        { s.x, u.x, -f.x, 0 },
-        { s.y, u.y, -f.y, 0 },
-        { s.z, u.z, -f.z, 0 },
-        { -simd::dot(s, eye), -simd::dot(u, eye), simd::dot(f, eye), 1 }
-    }};
+    matrix_float4x4 m = (matrix_float4x4){
+        (vector_float4){ s.x, u.x, -f.x, 0 },
+        (vector_float4){ s.y, u.y, -f.y, 0 },
+        (vector_float4){ s.z, u.z, -f.z, 0 },
+        (vector_float4){ -simd::dot(s, eye), -simd::dot(u, eye), simd::dot(f, eye), 1 }
+    };
     return m;
 }
+
+

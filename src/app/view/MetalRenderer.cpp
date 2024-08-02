@@ -1,5 +1,6 @@
 #include "MetalRenderer.hpp"
 #include "Log.hpp"
+#include "Transform.hpp"
 
 typedef struct {
     vector_float4 position;
@@ -80,15 +81,15 @@ void MetalRenderer::setupVertices()
 {
     static const Vertex vertices[] = {
         // Front
-        {{-1,  1,  1, 1}, {1, 0, 0, 1}},
-        {{ 1,  1,  1, 1}, {0, 1, 0, 1}},
-        {{-1, -1,  1, 1}, {0, 0, 1, 1}},
-        {{ 1, -1,  1, 1}, {1, 1, 0, 1}},
+        {{-1,  1,  1, 1}, {0.5, 0.5, 0.5, 1.0}},
+        {{ 1,  1,  1, 1}, {0.5, 0.5, 0.5, 1.0}},
+        {{-1, -1,  1, 1}, {0.5, 0.5, 0.5, 1.0}},
+        {{ 1, -1,  1, 1}, {0.5, 0.5, 0.5, 1.0}},
         // Back
-        {{-1,  1, -1, 1}, {1, 0, 1, 1}},
-        {{ 1,  1, -1, 1}, {0, 1, 1, 1}},
-        {{-1, -1, -1, 1}, {1, 1, 1, 1}},
-        {{ 1, -1, -1, 1}, {0, 0, 0, 1}},
+        {{-1,  1, -1, 1}, {0.5, 0.5, 0.5, 1.0}},
+        {{ 1,  1, -1, 1}, {0.5, 0.5, 0.5, 1.0}},
+        {{-1, -1, -1, 1}, {0.5, 0.5, 0.5, 1.0}},
+        {{ 1, -1, -1, 1}, {0.5, 0.5, 0.5, 1.0}},
     };
     
     static const uint16_t indices[] = {
@@ -112,7 +113,23 @@ void MetalRenderer::setupVertices()
 
 void MetalRenderer::setupCamera()
 {
-    // TODO
+    // Setup the perspective projection matrix
+    float aspect = 800.0f / 600.0f;
+    float fovy = M_PI / 4.0f; // 45 degrees field of view
+    float nearZ = 0.1f;
+    float farZ = 100.0f;
+    matrix_float4x4 projectionMatrix = matrix_perspective(fovy, aspect, nearZ, farZ);
+
+    // Setup the view matrix (simple translation for now)
+    vector_float3 eye = {0.0f, 0.0f, -5.0f};
+    vector_float3 center = {0.0f, 0.0f, 0.0f};
+    vector_float3 up = {0.0f, 1.0f, 0.0f};
+    matrix_float4x4 viewMatrix = matrix_look_at(eye, center, up);
+    
+    Uniforms uniforms;
+    uniforms.modelViewProjectionMatrix = simd_mul(projectionMatrix, viewMatrix);
+
+    memcpy(uniformBuffer->contents(), &uniforms, sizeof(uniforms));
 }
 
 void MetalRenderer::draw(CA::MetalDrawable* drawable)
@@ -126,6 +143,7 @@ void MetalRenderer::draw(CA::MetalDrawable* drawable)
     MTL::CommandBuffer* commandBuffer = commandQueue->commandBuffer();
     MTL::RenderCommandEncoder* renderEncoder = commandBuffer->renderCommandEncoder(passDescriptor);
 
+    renderEncoder->setTriangleFillMode(MTL::TriangleFillModeLines);
     renderEncoder->setRenderPipelineState(pipelineState);
     renderEncoder->setVertexBuffer(vertexBuffer, 0, 0);
     renderEncoder->setVertexBuffer(uniformBuffer, 0, 1);
