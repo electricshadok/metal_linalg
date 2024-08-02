@@ -34,6 +34,7 @@
 		BF2B6BCA2C5D51DA001D6464 /* LatticeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BC82C5D51DA001D6464 /* LatticeMesh.cpp */; };
 		BF2B6BCD2C5D5248001D6464 /* RodMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BCB2C5D5248001D6464 /* RodMesh.cpp */; };
 		BF2B6BD12C5D74CA001D6464 /* ObjectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BCF2C5D74CA001D6464 /* ObjectData.cpp */; };
+		BF2B6BD42C5D791A001D6464 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BD22C5D791A001D6464 /* Scene.cpp */; };
 		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
 		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
@@ -99,6 +100,8 @@
 		BF2B6BCC2C5D5248001D6464 /* RodMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = RodMesh.hpp; path = src/physics/RodMesh.hpp; sourceTree = "<group>"; };
 		BF2B6BCF2C5D74CA001D6464 /* ObjectData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectData.cpp; path = src/physics/ObjectData.cpp; sourceTree = "<group>"; };
 		BF2B6BD02C5D74CA001D6464 /* ObjectData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ObjectData.hpp; path = src/physics/ObjectData.hpp; sourceTree = "<group>"; };
+		BF2B6BD22C5D791A001D6464 /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = src/physics/Scene.cpp; sourceTree = "<group>"; };
+		BF2B6BD32C5D791A001D6464 /* Scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Scene.hpp; path = src/physics/Scene.hpp; sourceTree = "<group>"; };
 		BFAC74E22B7AF2AF0034E671 /* metal_linalg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_linalg; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -240,6 +243,8 @@
 				BF2B6BCC2C5D5248001D6464 /* RodMesh.hpp */,
 				BF2B6BCF2C5D74CA001D6464 /* ObjectData.cpp */,
 				BF2B6BD02C5D74CA001D6464 /* ObjectData.hpp */,
+				BF2B6BD22C5D791A001D6464 /* Scene.cpp */,
+				BF2B6BD32C5D791A001D6464 /* Scene.hpp */,
 			);
 			name = physics;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				BF2B6BBB2C5AF756001D6464 /* swap.cpp in Sources */,
 				BF2B6BA92C5AF735001D6464 /* gemm.cpp in Sources */,
 				BF2B6BAC2C5AF749001D6464 /* gemv.cpp in Sources */,
+				BF2B6BD42C5D791A001D6464 /* Scene.cpp in Sources */,
 				BF2B6BCD2C5D5248001D6464 /* RodMesh.cpp in Sources */,
 				BF2B6BA62C5AF71D001D6464 /* blas_level2.metal in Sources */,
 				BF2B6B712C5091C7001D6464 /* test.cpp in Sources */,
