@@ -1,9 +1,14 @@
 #include "App.hpp"
+#include "physics/objects/CubeMesh.hpp"
 
-App::App() 
+App::App()
 {
     scene = new Scene();
     renderer = new MetalRenderer();
+    
+    auto cube = std::make_shared<CubeMesh>();
+    scene->addObject(cube);
+    renderer->setMesh(*cube);
 }
 
 App::~App() 

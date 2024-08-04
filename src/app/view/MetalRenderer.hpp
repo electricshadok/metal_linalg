@@ -5,6 +5,7 @@
 #include <QuartzCore/CAMetalDrawable.hpp>
 #include <Metal/Metal.hpp>
 #include <simd/simd.h>
+#include "physics/objects/ObjectData.hpp"
 
 class MetalRenderer
 {
@@ -13,10 +14,10 @@ public:
     virtual ~MetalRenderer();
     
     void draw(CA::MetalDrawable* drawable);
+    void setMesh(const ObjectData& obj);
     
 private:
     void setupMetal();
-    void setupVertices();
     void setupCamera();
 
     // Reference to the current GPU device

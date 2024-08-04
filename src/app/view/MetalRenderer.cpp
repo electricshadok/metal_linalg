@@ -11,12 +11,13 @@ typedef struct {
     matrix_float4x4 modelViewProjectionMatrix;
 } Uniforms;
 
-MetalRenderer::MetalRenderer()
+MetalRenderer::MetalRenderer():
+    vertexBuffer(nullptr),
+    indexBuffer(nullptr)
 {
     device = MTL::CreateSystemDefaultDevice();
     
     setupMetal();
-    setupVertices();
     setupCamera();
 }
 
@@ -25,9 +26,15 @@ MetalRenderer::~MetalRenderer()
     device->release();
     commandQueue->release();
     pipelineState->release();
-    vertexBuffer->release();
-    indexBuffer->release();
     uniformBuffer->release();
+    
+    if (vertexBuffer) {
+        vertexBuffer->release();
+    }
+    
+    if (indexBuffer) {
+        indexBuffer->release();
+    }
 }
 
 void MetalRenderer::setupMetal()
@@ -76,39 +83,27 @@ void MetalRenderer::setupMetal()
     uniformBuffer = device->newBuffer(sizeof(Uniforms), MTL::ResourceStorageModeShared);
 }
 
-
-void MetalRenderer::setupVertices()
+void MetalRenderer::setMesh(const ObjectData& obj)
 {
-    static const Vertex vertices[] = {
-        // Front
-        {{-1,  1,  1, 1}, {0.5, 0.5, 0.5, 1.0}},
-        {{ 1,  1,  1, 1}, {0.5, 0.5, 0.5, 1.0}},
-        {{-1, -1,  1, 1}, {0.5, 0.5, 0.5, 1.0}},
-        {{ 1, -1,  1, 1}, {0.5, 0.5, 0.5, 1.0}},
-        // Back
-        {{-1,  1, -1, 1}, {0.5, 0.5, 0.5, 1.0}},
-        {{ 1,  1, -1, 1}, {0.5, 0.5, 0.5, 1.0}},
-        {{-1, -1, -1, 1}, {0.5, 0.5, 0.5, 1.0}},
-        {{ 1, -1, -1, 1}, {0.5, 0.5, 0.5, 1.0}},
-    };
+    // Convert vertices
+    std::vector<Vertex> vertices(obj.nodes.vtx.size());
+    for (size_t i = 0; i < obj.nodes.vtx.size(); ++i) {
+        vertices[i].position = {obj.nodes.vtx[i][0], obj.nodes.vtx[i][1], obj.nodes.vtx[i][2], 1.0f};
+        // Assign a default color, or modify as needed
+        vertices[i].color = {0.5f, 0.5f, 0.5f, 1.0f};
+    }
     
-    static const uint16_t indices[] = {
-        // Front
-        0, 1, 2, 2, 1, 3,
-        // Back
-        4, 5, 6, 6, 5, 7,
-        // Left
-        0, 2, 4, 4, 2, 6,
-        // Right
-        1, 3, 5, 5, 3, 7,
-        // Top
-        0, 1, 4, 4, 1, 5,
-        // Bottom
-        2, 3, 6, 6, 3, 7,
-    };
+    // Convert indices
+    std::vector<uint16_t> indices(obj.connectivity.triangles.size() * 3);
+    for (size_t i = 0; i < obj.connectivity.triangles.size(); ++i) {
+        indices[i * 3 + 0] = obj.connectivity.triangles[i][0];
+        indices[i * 3 + 1] = obj.connectivity.triangles[i][1];
+        indices[i * 3 + 2] = obj.connectivity.triangles[i][2];
+    }
     
-    vertexBuffer = device->newBuffer(vertices, sizeof(vertices), MTL::ResourceStorageModeShared);
-    indexBuffer = device->newBuffer(indices, sizeof(indices), MTL::ResourceStorageModeShared);
+    // Create buffers
+    vertexBuffer = device->newBuffer(vertices.data(), vertices.size() * sizeof(Vertex), MTL::ResourceStorageModeShared);
+    indexBuffer = device->newBuffer(indices.data(), indices.size() * sizeof(uint16_t), MTL::ResourceStorageModeShared);
 }
 
 void MetalRenderer::setupCamera()
@@ -145,9 +140,13 @@ void MetalRenderer::draw(CA::MetalDrawable* drawable)
 
     renderEncoder->setTriangleFillMode(MTL::TriangleFillModeLines);
     renderEncoder->setRenderPipelineState(pipelineState);
-    renderEncoder->setVertexBuffer(vertexBuffer, 0, 0);
     renderEncoder->setVertexBuffer(uniformBuffer, 0, 1);
-    renderEncoder->drawIndexedPrimitives(MTL::PrimitiveType::PrimitiveTypeTriangle, 36, MTL::IndexType::IndexTypeUInt16, indexBuffer, 0);
+    
+    if (vertexBuffer and indexBuffer)
+    {
+        renderEncoder->setVertexBuffer(vertexBuffer, 0, 0);
+        renderEncoder->drawIndexedPrimitives(MTL::PrimitiveType::PrimitiveTypeTriangle, 36, MTL::IndexType::IndexTypeUInt16, indexBuffer, 0);
+    }
 
     renderEncoder->endEncoding();
     commandBuffer->presentDrawable(drawable);
