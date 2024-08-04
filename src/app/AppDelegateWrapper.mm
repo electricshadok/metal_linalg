@@ -1,23 +1,23 @@
-#import "MetalRendererWrapper.h"
+#import "AppDelegateWrapper.h"
 #import <QuartzCore/CAMetalDrawable.hpp>
 
-@implementation MetalRendererWrapper
+@implementation AppDelegateWrapper
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _renderer = new MetalRenderer();
+        _app = new App();
     }
     return self;
 }
 
 - (void)dealloc {
-    delete _renderer;
+    delete _app;
 }
 
 - (void)drawWithDrawable:(id<CAMetalDrawable>)drawable {
     CA::MetalDrawable* cppDrawable = (__bridge CA::MetalDrawable*)drawable;
-    _renderer->draw(cppDrawable);
+    _app->draw(cppDrawable);
 }
 
 @end

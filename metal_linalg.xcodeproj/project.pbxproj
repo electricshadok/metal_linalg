@@ -13,7 +13,6 @@
 		BF2B6B792C5092E6001D6464 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B782C5092E6001D6464 /* main.mm */; };
 		BF2B6B8A2C5AF695001D6464 /* MetalRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B822C5AF695001D6464 /* MetalRenderer.cpp */; };
 		BF2B6B8B2C5AF695001D6464 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B832C5AF695001D6464 /* Transform.cpp */; };
-		BF2B6B8C2C5AF695001D6464 /* MetalRendererWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B842C5AF695001D6464 /* MetalRendererWrapper.mm */; };
 		BF2B6B8D2C5AF695001D6464 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B852C5AF695001D6464 /* Camera.cpp */; };
 		BF2B6B982C5AF6CE001D6464 /* Compute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B912C5AF6CE001D6464 /* Compute.cpp */; };
 		BF2B6B992C5AF6CE001D6464 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6B922C5AF6CE001D6464 /* Log.cpp */; };
@@ -30,11 +29,13 @@
 		BF2B6BBA2C5AF756001D6464 /* copy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BB42C5AF756001D6464 /* copy.cpp */; };
 		BF2B6BBB2C5AF756001D6464 /* swap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BB62C5AF756001D6464 /* swap.cpp */; };
 		BF2B6BBD2C5AF8BE001D6464 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BBC2C5AF8BE001D6464 /* shaders.metal */; };
-		BF2B6BC72C5D509C001D6464 /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BC52C5D509C001D6464 /* CubeMesh.cpp */; };
-		BF2B6BCA2C5D51DA001D6464 /* LatticeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BC82C5D51DA001D6464 /* LatticeMesh.cpp */; };
-		BF2B6BCD2C5D5248001D6464 /* RodMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BCB2C5D5248001D6464 /* RodMesh.cpp */; };
-		BF2B6BD12C5D74CA001D6464 /* ObjectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BCF2C5D74CA001D6464 /* ObjectData.cpp */; };
 		BF2B6BD42C5D791A001D6464 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BD22C5D791A001D6464 /* Scene.cpp */; };
+		BF2B6BD72C5D8AFD001D6464 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BD52C5D8AFD001D6464 /* App.cpp */; };
+		BF2B6BE02C5FCC76001D6464 /* AppDelegateWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BDF2C5FCC76001D6464 /* AppDelegateWrapper.mm */; };
+		BF2B6BE92C5FFB2E001D6464 /* LatticeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE12C5FFB2E001D6464 /* LatticeMesh.cpp */; };
+		BF2B6BEA2C5FFB2E001D6464 /* RodMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE42C5FFB2E001D6464 /* RodMesh.cpp */; };
+		BF2B6BEB2C5FFB2E001D6464 /* ObjectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE62C5FFB2E001D6464 /* ObjectData.cpp */; };
+		BF2B6BEC2C5FFB2E001D6464 /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE72C5FFB2E001D6464 /* CubeMesh.cpp */; };
 		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
 		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
@@ -60,10 +61,8 @@
 		BF2B6B782C5092E6001D6464 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		BF2B6B822C5AF695001D6464 /* MetalRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MetalRenderer.cpp; path = src/app/view/MetalRenderer.cpp; sourceTree = "<group>"; };
 		BF2B6B832C5AF695001D6464 /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Transform.cpp; path = src/app/view/Transform.cpp; sourceTree = "<group>"; };
-		BF2B6B842C5AF695001D6464 /* MetalRendererWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MetalRendererWrapper.mm; path = src/app/view/MetalRendererWrapper.mm; sourceTree = "<group>"; };
 		BF2B6B852C5AF695001D6464 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = src/app/view/Camera.cpp; sourceTree = "<group>"; };
 		BF2B6B862C5AF695001D6464 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = src/app/view/Camera.hpp; sourceTree = "<group>"; };
-		BF2B6B872C5AF695001D6464 /* MetalRendererWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetalRendererWrapper.h; path = src/app/view/MetalRendererWrapper.h; sourceTree = "<group>"; };
 		BF2B6B882C5AF695001D6464 /* Transform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Transform.hpp; path = src/app/view/Transform.hpp; sourceTree = "<group>"; };
 		BF2B6B892C5AF695001D6464 /* MetalRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MetalRenderer.hpp; path = src/app/view/MetalRenderer.hpp; sourceTree = "<group>"; };
 		BF2B6B902C5AF6CE001D6464 /* Tensor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Tensor.hpp; path = src/linalg/core/Tensor.hpp; sourceTree = "<group>"; };
@@ -92,16 +91,20 @@
 		BF2B6BB52C5AF756001D6464 /* axpy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = axpy.hpp; path = src/linalg/blas/level1/axpy.hpp; sourceTree = "<group>"; };
 		BF2B6BB62C5AF756001D6464 /* swap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = swap.cpp; path = src/linalg/blas/level1/swap.cpp; sourceTree = "<group>"; };
 		BF2B6BBC2C5AF8BE001D6464 /* shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = shaders.metal; path = src/app/view/shaders.metal; sourceTree = "<group>"; };
-		BF2B6BC52C5D509C001D6464 /* CubeMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CubeMesh.cpp; path = src/physics/CubeMesh.cpp; sourceTree = "<group>"; };
-		BF2B6BC62C5D509C001D6464 /* CubeMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CubeMesh.hpp; path = src/physics/CubeMesh.hpp; sourceTree = "<group>"; };
-		BF2B6BC82C5D51DA001D6464 /* LatticeMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LatticeMesh.cpp; path = src/physics/LatticeMesh.cpp; sourceTree = "<group>"; };
-		BF2B6BC92C5D51DA001D6464 /* LatticeMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = LatticeMesh.hpp; path = src/physics/LatticeMesh.hpp; sourceTree = "<group>"; };
-		BF2B6BCB2C5D5248001D6464 /* RodMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = RodMesh.cpp; path = src/physics/RodMesh.cpp; sourceTree = "<group>"; };
-		BF2B6BCC2C5D5248001D6464 /* RodMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = RodMesh.hpp; path = src/physics/RodMesh.hpp; sourceTree = "<group>"; };
-		BF2B6BCF2C5D74CA001D6464 /* ObjectData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectData.cpp; path = src/physics/ObjectData.cpp; sourceTree = "<group>"; };
-		BF2B6BD02C5D74CA001D6464 /* ObjectData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ObjectData.hpp; path = src/physics/ObjectData.hpp; sourceTree = "<group>"; };
 		BF2B6BD22C5D791A001D6464 /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = src/physics/Scene.cpp; sourceTree = "<group>"; };
 		BF2B6BD32C5D791A001D6464 /* Scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Scene.hpp; path = src/physics/Scene.hpp; sourceTree = "<group>"; };
+		BF2B6BD52C5D8AFD001D6464 /* App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = App.cpp; path = src/app/App.cpp; sourceTree = "<group>"; };
+		BF2B6BD62C5D8AFD001D6464 /* App.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = App.hpp; path = src/app/App.hpp; sourceTree = "<group>"; };
+		BF2B6BDE2C5FC3FF001D6464 /* AppDelegateWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegateWrapper.h; path = src/app/AppDelegateWrapper.h; sourceTree = "<group>"; };
+		BF2B6BDF2C5FCC76001D6464 /* AppDelegateWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegateWrapper.mm; path = src/app/AppDelegateWrapper.mm; sourceTree = "<group>"; };
+		BF2B6BE12C5FFB2E001D6464 /* LatticeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LatticeMesh.cpp; path = src/physics/objects/LatticeMesh.cpp; sourceTree = "<group>"; };
+		BF2B6BE22C5FFB2E001D6464 /* CubeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CubeMesh.hpp; path = src/physics/objects/CubeMesh.hpp; sourceTree = "<group>"; };
+		BF2B6BE32C5FFB2E001D6464 /* LatticeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = LatticeMesh.hpp; path = src/physics/objects/LatticeMesh.hpp; sourceTree = "<group>"; };
+		BF2B6BE42C5FFB2E001D6464 /* RodMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RodMesh.cpp; path = src/physics/objects/RodMesh.cpp; sourceTree = "<group>"; };
+		BF2B6BE52C5FFB2E001D6464 /* ObjectData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ObjectData.hpp; path = src/physics/objects/ObjectData.hpp; sourceTree = "<group>"; };
+		BF2B6BE62C5FFB2E001D6464 /* ObjectData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectData.cpp; path = src/physics/objects/ObjectData.cpp; sourceTree = "<group>"; };
+		BF2B6BE72C5FFB2E001D6464 /* CubeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CubeMesh.cpp; path = src/physics/objects/CubeMesh.cpp; sourceTree = "<group>"; };
+		BF2B6BE82C5FFB2E001D6464 /* RodMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RodMesh.hpp; path = src/physics/objects/RodMesh.hpp; sourceTree = "<group>"; };
 		BFAC74E22B7AF2AF0034E671 /* metal_linalg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_linalg; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				BF2B6B812C5AF67D001D6464 /* view */,
+				BF2B6BD52C5D8AFD001D6464 /* App.cpp */,
+				BF2B6BD62C5D8AFD001D6464 /* App.hpp */,
+				BF2B6BDF2C5FCC76001D6464 /* AppDelegateWrapper.mm */,
+				BF2B6BDE2C5FC3FF001D6464 /* AppDelegateWrapper.h */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -151,8 +158,6 @@
 				BF2B6B862C5AF695001D6464 /* Camera.hpp */,
 				BF2B6B822C5AF695001D6464 /* MetalRenderer.cpp */,
 				BF2B6B892C5AF695001D6464 /* MetalRenderer.hpp */,
-				BF2B6B872C5AF695001D6464 /* MetalRendererWrapper.h */,
-				BF2B6B842C5AF695001D6464 /* MetalRendererWrapper.mm */,
 				BF2B6B832C5AF695001D6464 /* Transform.cpp */,
 				BF2B6B882C5AF695001D6464 /* Transform.hpp */,
 				BF2B6BBC2C5AF8BE001D6464 /* shaders.metal */,
@@ -235,14 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				BF2B6BCE2C5D5282001D6464 /* objects */,
-				BF2B6BC52C5D509C001D6464 /* CubeMesh.cpp */,
-				BF2B6BC62C5D509C001D6464 /* CubeMesh.hpp */,
-				BF2B6BC82C5D51DA001D6464 /* LatticeMesh.cpp */,
-				BF2B6BC92C5D51DA001D6464 /* LatticeMesh.hpp */,
-				BF2B6BCB2C5D5248001D6464 /* RodMesh.cpp */,
-				BF2B6BCC2C5D5248001D6464 /* RodMesh.hpp */,
-				BF2B6BCF2C5D74CA001D6464 /* ObjectData.cpp */,
-				BF2B6BD02C5D74CA001D6464 /* ObjectData.hpp */,
 				BF2B6BD22C5D791A001D6464 /* Scene.cpp */,
 				BF2B6BD32C5D791A001D6464 /* Scene.hpp */,
 			);
@@ -252,6 +249,14 @@
 		BF2B6BCE2C5D5282001D6464 /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				BF2B6BE72C5FFB2E001D6464 /* CubeMesh.cpp */,
+				BF2B6BE22C5FFB2E001D6464 /* CubeMesh.hpp */,
+				BF2B6BE12C5FFB2E001D6464 /* LatticeMesh.cpp */,
+				BF2B6BE32C5FFB2E001D6464 /* LatticeMesh.hpp */,
+				BF2B6BE62C5FFB2E001D6464 /* ObjectData.cpp */,
+				BF2B6BE52C5FFB2E001D6464 /* ObjectData.hpp */,
+				BF2B6BE42C5FFB2E001D6464 /* RodMesh.cpp */,
+				BF2B6BE82C5FFB2E001D6464 /* RodMesh.hpp */,
 			);
 			name = objects;
 			sourceTree = "<group>";
@@ -358,32 +363,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2B6BD12C5D74CA001D6464 /* ObjectData.cpp in Sources */,
+				BF2B6BEB2C5FFB2E001D6464 /* ObjectData.cpp in Sources */,
 				BF2B6B8A2C5AF695001D6464 /* MetalRenderer.cpp in Sources */,
 				BF2B6B792C5092E6001D6464 /* main.mm in Sources */,
+				BF2B6BD72C5D8AFD001D6464 /* App.cpp in Sources */,
+				BF2B6BE92C5FFB2E001D6464 /* LatticeMesh.cpp in Sources */,
 				BF2B6BBD2C5AF8BE001D6464 /* shaders.metal in Sources */,
-				BF2B6BCA2C5D51DA001D6464 /* LatticeMesh.cpp in Sources */,
 				BF2B6B9B2C5AF6CE001D6464 /* Tensor.cpp in Sources */,
 				BF2B6B992C5AF6CE001D6464 /* Log.cpp in Sources */,
 				BF2B6B8B2C5AF695001D6464 /* Transform.cpp in Sources */,
 				BF2B6B982C5AF6CE001D6464 /* Compute.cpp in Sources */,
+				BF2B6BE02C5FCC76001D6464 /* AppDelegateWrapper.mm in Sources */,
 				BF2B6BB82C5AF756001D6464 /* scal.cpp in Sources */,
 				BF2B6BA52C5AF71D001D6464 /* blas_level3.metal in Sources */,
 				BF2B6BBB2C5AF756001D6464 /* swap.cpp in Sources */,
 				BF2B6BA92C5AF735001D6464 /* gemm.cpp in Sources */,
+				BF2B6BEA2C5FFB2E001D6464 /* RodMesh.cpp in Sources */,
 				BF2B6BAC2C5AF749001D6464 /* gemv.cpp in Sources */,
 				BF2B6BD42C5D791A001D6464 /* Scene.cpp in Sources */,
-				BF2B6BCD2C5D5248001D6464 /* RodMesh.cpp in Sources */,
 				BF2B6BA62C5AF71D001D6464 /* blas_level2.metal in Sources */,
 				BF2B6B712C5091C7001D6464 /* test.cpp in Sources */,
-				BF2B6BC72C5D509C001D6464 /* CubeMesh.cpp in Sources */,
 				BF2B6BB72C5AF756001D6464 /* axpy.cpp in Sources */,
 				BF2B6BBA2C5AF756001D6464 /* copy.cpp in Sources */,
 				BF2B6BA42C5AF71D001D6464 /* blas_level1.metal in Sources */,
 				BF2B6B8D2C5AF695001D6464 /* Camera.cpp in Sources */,
 				BF2B6BB92C5AF756001D6464 /* dot.cpp in Sources */,
 				BF2B6B9A2C5AF6CE001D6464 /* FunctionOp.cpp in Sources */,
-				BF2B6B8C2C5AF695001D6464 /* MetalRendererWrapper.mm in Sources */,
+				BF2B6BEC2C5FFB2E001D6464 /* CubeMesh.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

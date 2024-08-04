@@ -1,10 +1,10 @@
 #include <Cocoa/Cocoa.h>
-#include "MetalRendererWrapper.h"
+#include "AppDelegateWrapper.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 @property (strong, nonatomic) NSWindow *window;
 @property (strong, nonatomic) CAMetalLayer *metalLayer;
-@property (strong, nonatomic) MetalRendererWrapper *rendererWrapper;
+@property (strong, nonatomic) AppDelegateWrapper *appWrapper;
 @end
 
 @implementation AppDelegate
@@ -29,7 +29,7 @@
     [contentView setLayer:self.metalLayer];
     [contentView setWantsLayer:YES];
     
-    self.rendererWrapper = [[MetalRendererWrapper alloc] init];
+    self.appWrapper = [[AppDelegateWrapper alloc] init];
     [self draw];
 }
 
@@ -37,7 +37,7 @@
     @autoreleasepool {
         id<CAMetalDrawable> drawable = [self.metalLayer nextDrawable];
         if (drawable) {
-            [self.rendererWrapper drawWithDrawable:drawable];
+            [self.appWrapper drawWithDrawable:drawable];
         }
     }
     [self performSelector:@selector(draw) withObject:nil afterDelay:1.0/60.0];
