@@ -8,7 +8,11 @@ This repository is a personal exploration project where I implement various Basi
 - **BLAS Level 2 Functions:** `gemv`(wip) (General Matrix-Vector multiplication).
 - **BLAS Level 3 Functions:** `gemm`(wip) (General Matrix-Matrix multiplication).
 
-## TODO
+## TODO (Physics)
+- [ ] Assemble system without constraint
+- [ ] Assemble system with constraint 
+
+## TODO (LinearAlg)
 - [ ] 2D supports for Tensor
 - [ ] Implement `dot`
 - [ ] Implement `gemv`
