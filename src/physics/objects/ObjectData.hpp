@@ -11,10 +11,12 @@ struct Nodes
     using Vertex = Eigen::Vector3f;
     using Velocity = Eigen::Vector3f;
     using Acceleration = Eigen::Vector3f;
+    using Force = Eigen::Vector3f;
     using Mass = float;
     using VertexList = std::vector<Vertex, Eigen::aligned_allocator<Vertex>>;
     using VelocityList = std::vector<Velocity, Eigen::aligned_allocator<Velocity>>;
     using AccelerationList = std::vector<Acceleration, Eigen::aligned_allocator<Acceleration>>;
+    using ForceList = std::vector<Force, Eigen::aligned_allocator<Force>>;
     using MassList = std::vector<Mass>;
 
     Nodes(size_t size);
@@ -29,6 +31,7 @@ struct Nodes
     VertexList vtx;
     VelocityList vel;
     AccelerationList acc;
+    ForceList f;
     MassList m;
 };
 
