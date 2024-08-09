@@ -25,6 +25,10 @@ struct Nodes
 
     // Constructor to initialize the mesh
     Nodes(size_t size) : vtx(size), vel(size), acc(size), m(size ){}
+    
+    size_t numNodes() const {
+        return vtx.size();
+    }
 };
 
 struct TriangleConnectivity
@@ -44,6 +48,10 @@ class ObjectData
 public:
     ObjectData(size_t nodeCount, size_t triangleCount);
 
+    size_t numNodes() const {
+        return nodes.numNodes();
+    }
+    
     Nodes nodes;
     TriangleConnectivity connectivity;
 };

@@ -15,6 +15,8 @@ public:
 
     // Public member to hold all objects
     std::vector<std::shared_ptr<ObjectData>> objects;
+    
+    size_t numNodes() const;
 };
 
 #endif /* Scene_hpp */

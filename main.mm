@@ -37,7 +37,7 @@
     @autoreleasepool {
         id<CAMetalDrawable> drawable = [self.metalLayer nextDrawable];
         if (drawable) {
-            [self.appWrapper drawWithDrawable:drawable];
+            [self.appWrapper draw:drawable];
         }
     }
     [self performSelector:@selector(draw) withObject:nil afterDelay:1.0/60.0];

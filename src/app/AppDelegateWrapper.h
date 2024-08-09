@@ -7,7 +7,8 @@
 @interface AppDelegateWrapper : NSObject
 @property (nonatomic) App *app;
 - (instancetype)init;
-- (void)drawWithDrawable:(id<CAMetalDrawable>)drawable;
+- (void)draw:(id<CAMetalDrawable>)drawable;
+- (void)step;
 @end
 
 

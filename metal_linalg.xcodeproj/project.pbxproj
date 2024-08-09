@@ -36,9 +36,12 @@
 		BF2B6BEA2C5FFB2E001D6464 /* RodMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE42C5FFB2E001D6464 /* RodMesh.cpp */; };
 		BF2B6BEB2C5FFB2E001D6464 /* ObjectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE62C5FFB2E001D6464 /* ObjectData.cpp */; };
 		BF2B6BEC2C5FFB2E001D6464 /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE72C5FFB2E001D6464 /* CubeMesh.cpp */; };
+		BF2B6BF02C60074A001D6464 /* Assembly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BEE2C60074A001D6464 /* Assembly.cpp */; };
 		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
 		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
+		BFE316482C605DBE007242E1 /* LinearSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE316462C605DBE007242E1 /* LinearSolver.cpp */; };
+		BFE3164C2C60649A007242E1 /* Solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE3164A2C60649A007242E1 /* Solver.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +108,8 @@
 		BF2B6BE62C5FFB2E001D6464 /* ObjectData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectData.cpp; path = src/physics/objects/ObjectData.cpp; sourceTree = "<group>"; };
 		BF2B6BE72C5FFB2E001D6464 /* CubeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CubeMesh.cpp; path = src/physics/objects/CubeMesh.cpp; sourceTree = "<group>"; };
 		BF2B6BE82C5FFB2E001D6464 /* RodMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RodMesh.hpp; path = src/physics/objects/RodMesh.hpp; sourceTree = "<group>"; };
+		BF2B6BEE2C60074A001D6464 /* Assembly.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Assembly.cpp; path = src/physics/system/Assembly.cpp; sourceTree = "<group>"; };
+		BF2B6BEF2C60074A001D6464 /* Assembly.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Assembly.hpp; path = src/physics/system/Assembly.hpp; sourceTree = "<group>"; };
 		BFAC74E22B7AF2AF0034E671 /* metal_linalg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_linalg; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +117,10 @@
 		BFDDC73F2B7BCA6000F44B87 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		BFE2FDB32C4049EB00388DA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BFE2FDC92C404F3300388DA9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BFE316462C605DBE007242E1 /* LinearSolver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LinearSolver.cpp; path = src/physics/system/LinearSolver.cpp; sourceTree = "<group>"; };
+		BFE316472C605DBE007242E1 /* LinearSolver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = LinearSolver.hpp; path = src/physics/system/LinearSolver.hpp; sourceTree = "<group>"; };
+		BFE3164A2C60649A007242E1 /* Solver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Solver.cpp; path = src/physics/solver/Solver.cpp; sourceTree = "<group>"; };
+		BFE3164B2C60649A007242E1 /* Solver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Solver.hpp; path = src/physics/solver/Solver.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +248,8 @@
 		BF2B6BC02C5C657C001D6464 /* physics */ = {
 			isa = PBXGroup;
 			children = (
+				BFE316492C60647C007242E1 /* solver */,
+				BF2B6BED2C600706001D6464 /* system */,
 				BF2B6BCE2C5D5282001D6464 /* objects */,
 				BF2B6BD22C5D791A001D6464 /* Scene.cpp */,
 				BF2B6BD32C5D791A001D6464 /* Scene.hpp */,
@@ -259,6 +270,17 @@
 				BF2B6BE82C5FFB2E001D6464 /* RodMesh.hpp */,
 			);
 			name = objects;
+			sourceTree = "<group>";
+		};
+		BF2B6BED2C600706001D6464 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B6BEE2C60074A001D6464 /* Assembly.cpp */,
+				BF2B6BEF2C60074A001D6464 /* Assembly.hpp */,
+				BFE316462C605DBE007242E1 /* LinearSolver.cpp */,
+				BFE316472C605DBE007242E1 /* LinearSolver.hpp */,
+			);
+			name = system;
 			sourceTree = "<group>";
 		};
 		BFAC74D92B7AF2AF0034E671 = {
@@ -304,6 +326,15 @@
 				BF2B6B7F2C5AF64D001D6464 /* app */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		BFE316492C60647C007242E1 /* solver */ = {
+			isa = PBXGroup;
+			children = (
+				BFE3164A2C60649A007242E1 /* Solver.cpp */,
+				BFE3164B2C60649A007242E1 /* Solver.hpp */,
+			);
+			name = solver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2B6BEB2C5FFB2E001D6464 /* ObjectData.cpp in Sources */,
+				BF2B6BF02C60074A001D6464 /* Assembly.cpp in Sources */,
 				BF2B6B8A2C5AF695001D6464 /* MetalRenderer.cpp in Sources */,
 				BF2B6B792C5092E6001D6464 /* main.mm in Sources */,
 				BF2B6BD72C5D8AFD001D6464 /* App.cpp in Sources */,
@@ -376,6 +408,7 @@
 				BF2B6BE02C5FCC76001D6464 /* AppDelegateWrapper.mm in Sources */,
 				BF2B6BB82C5AF756001D6464 /* scal.cpp in Sources */,
 				BF2B6BA52C5AF71D001D6464 /* blas_level3.metal in Sources */,
+				BFE316482C605DBE007242E1 /* LinearSolver.cpp in Sources */,
 				BF2B6BBB2C5AF756001D6464 /* swap.cpp in Sources */,
 				BF2B6BA92C5AF735001D6464 /* gemm.cpp in Sources */,
 				BF2B6BEA2C5FFB2E001D6464 /* RodMesh.cpp in Sources */,
@@ -385,6 +418,7 @@
 				BF2B6B712C5091C7001D6464 /* test.cpp in Sources */,
 				BF2B6BB72C5AF756001D6464 /* axpy.cpp in Sources */,
 				BF2B6BBA2C5AF756001D6464 /* copy.cpp in Sources */,
+				BFE3164C2C60649A007242E1 /* Solver.cpp in Sources */,
 				BF2B6BA42C5AF71D001D6464 /* blas_level1.metal in Sources */,
 				BF2B6B8D2C5AF695001D6464 /* Camera.cpp in Sources */,
 				BF2B6BB92C5AF756001D6464 /* dot.cpp in Sources */,

@@ -2,6 +2,7 @@
 #define App_hpp
 
 #include "physics/Scene.hpp"
+#include "physics/solver/Solver.hpp"
 #include "app/view/MetalRenderer.hpp"
 
 class App
@@ -11,14 +12,13 @@ public:
     ~App();
     
     void draw(CA::MetalDrawable* drawable);
+    
+    void step();
 
 private:
     Scene* scene;
+    Solver* solver;
     MetalRenderer* renderer;
 };
-
-// TODO
-// https://chatgpt.com/c/832409e5-0f10-48b5-9230-c25fe72bb164
-
 
 #endif /* App_hpp */
