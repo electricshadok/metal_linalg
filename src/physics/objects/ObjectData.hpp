@@ -17,18 +17,19 @@ struct Nodes
     using AccelerationList = std::vector<Acceleration, Eigen::aligned_allocator<Acceleration>>;
     using MassList = std::vector<Mass>;
 
+    Nodes(size_t size);
+    
+    size_t numNodes() const {
+        return vtx.size();
+    }
+    
+    void append(const Nodes& other);
+    
     // Node attributes
     VertexList vtx;
     VelocityList vel;
     AccelerationList acc;
     MassList m;
-
-    // Constructor to initialize the mesh
-    Nodes(size_t size) : vtx(size), vel(size), acc(size), m(size ){}
-    
-    size_t numNodes() const {
-        return vtx.size();
-    }
 };
 
 struct TriangleConnectivity
@@ -37,21 +38,25 @@ struct TriangleConnectivity
     using Triangle = Eigen::Vector3i;
     using TriangleList = std::vector<Triangle, Eigen::aligned_allocator<Triangle>>;
 
+    TriangleConnectivity(size_t triangleCount);
+    
+    void append(const TriangleConnectivity& other, size_t vertexOffset);
+    
+    // Triangle attributes
     TriangleList triangles;
-
-    // Constructor to initialize the connectivites
-    TriangleConnectivity(size_t triangleCount) : triangles(triangleCount) {}
 };
 
-class ObjectData
+struct ObjectData
 {
-public:
     ObjectData(size_t nodeCount, size_t triangleCount);
 
     size_t numNodes() const {
         return nodes.numNodes();
     }
+
+    void append(const ObjectData& other);
     
+    // Object attributes
     Nodes nodes;
     TriangleConnectivity connectivity;
 };

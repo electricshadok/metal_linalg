@@ -1,17 +1,22 @@
 #include "Solver.hpp"
+#include <Eigen/Dense>
 
-
-void Solver::initialize(const Scene& scene)
+Solver::Solver() : gravity(0.0, -9.81, 0.0)
 {
-    system = std::make_shared<Assembly>(scene.numNodes());
 }
 
-void Solver::step(const float dt, const Scene& scene)
+void Solver::initialize(const ObjectData& obj)
 {
-   
-    /* https://colab.research.google.com/github/vincentbonnetcg/Numerical-Bric-a-Brac/blob/master/animation/implicit_time_integrator.ipynb#scrollTo=9628d9ad-fc35-4f35-84cf-d7772bae30d0
-    */
-    /*
+    system = std::make_shared<Assembly>(obj.numNodes());
+}
+
+
+/* https://colab.research.google.com/github/vincentbonnetcg/Numerical-Bric-a-Brac/blob/master/animation/implicit_time_integrator.ipynb#scrollTo=9628d9ad-fc35-4f35-84cf-d7772bae30d0
+*/
+
+void Solver::step(const float h, const ObjectData& obj)
+{
+    /* Assemble the system
      Implicit Step
      Solve :
          (M - h * df/dv - h^2 * df/dx) * deltaV = h * (f0 + h * df/dx * v0)
@@ -22,12 +27,21 @@ void Solver::step(const float dt, const Scene& scene)
          v = v + deltaV
          x = x + deltaX
     */
+    // Apply gravity on nodes
+    // TODO
+    
     // Mass Matrix
-    for (const auto& obj : scene.objects)
+    for (size_t i=0; i<obj.numNodes(); ++i)
     {
-        for (size_t i=0; i<obj->numNodes(); ++i)
-        {
-            // TODO
-        }
+        Nodes::Mass m = obj.nodes.m[i];
+        Eigen::Matrix3d massMatrix;
+        massMatrix << m, 0.0, 0.0,
+                      0.0, m, 0.0,
+                      0.0, 0.0, m;
+        system->addToMatrix(massMatrix, i, i);
     }
+    
+    // Update node velocities and positions
+    // TODO
+
 }

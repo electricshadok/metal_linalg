@@ -1,18 +1,21 @@
 #ifndef Solver_hpp
 #define Solver_hpp
 
-#include "physics/Scene.hpp"
+#include "physics/objects/ObjectData.hpp"
 #include "physics/system/Assembly.hpp"
 
 class Solver
 {
 public:
     
-    void initialize(const Scene& scene);
+    Solver();
     
-    void step(const float dt, const Scene& scene);
+    void initialize(const ObjectData& obj);
+    
+    void step(const float h, const ObjectData& obj);
     
 private:
+    Eigen::Vector3d gravity;
     std::shared_ptr<Assembly> system;
 };
 
