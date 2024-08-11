@@ -56,9 +56,9 @@ void Solver::step(const float h, ObjectData& obj)
     }
     
     // Solve system
-    // TODO
+    // TODO : call a linear solver
     
     // Update node velocities and positions
-    // TODO
+    // TODO : update
 
 }

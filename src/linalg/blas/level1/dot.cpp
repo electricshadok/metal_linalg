@@ -20,12 +20,12 @@ dot& dot::operator()(const GPUTensor& x, const GPUTensor& y)
 
 void dot::setupEncoder(MTL::ComputeCommandEncoder& encoder)
 {
-    // TODO
+    // TODO : implement dot::setupEncoder
 }
 
 void dot::getNumThreadGroups(const MTL::Size& threadgroupSize, MTL::Size& numThreadgroups) const
 {
-    // TODO
+    // TODO : implement dot::getNumThreadGroups
 }
 
 } // namespace blas

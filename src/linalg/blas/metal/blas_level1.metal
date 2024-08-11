@@ -9,7 +9,7 @@ kernel void dot(const device float* x [[buffer(0)]],
                 const uint threadgroupID [[ threadgroup_position_in_grid]],
                 const uint tid [[ thread_index_in_threadgroup ]])
 {
-    // TODO
+    // TODO : implement metal dotproduct
     threadgroup_barrier(mem_flags::mem_threadgroup);
 }
 

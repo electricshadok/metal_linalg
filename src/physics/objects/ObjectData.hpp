@@ -7,6 +7,8 @@
 
 struct Nodes
 {
+    // TODO: move typdef in common.h
+    // TODO: rename Vertex to Position
     // Type alias for easier usage
     using Vertex = Eigen::Vector3f;
     using Velocity = Eigen::Vector3f;
@@ -37,6 +39,7 @@ struct Nodes
 
 struct TriangleConnectivity
 {
+    // TODO: move typdef in common.h
     // Type alias for easier usage
     using Triangle = Eigen::Vector3i;
     using TriangleList = std::vector<Triangle, Eigen::aligned_allocator<Triangle>>;

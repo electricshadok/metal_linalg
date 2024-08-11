@@ -2,6 +2,7 @@
 
 CubeMesh::CubeMesh() : ObjectData(8,12)
 {
+    // TODO: delete CubeMesh to be replaced with LatticeMesh(1,1,1)
     initializeNodes();
     initializeTriangles();
 }

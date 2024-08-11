@@ -1,6 +1,6 @@
 #ifndef LatticeMesh_hpp
 #define LatticeMesh_hpp
 
-// TODO
+// TODO : implement LatticeMesh
 
 #endif /* LatticeMesh_hpp */

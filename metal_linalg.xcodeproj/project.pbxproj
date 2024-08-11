@@ -41,6 +41,7 @@
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
 		BFE316482C605DBE007242E1 /* LinearSolvers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE316462C605DBE007242E1 /* LinearSolvers.cpp */; };
 		BFE3164C2C60649A007242E1 /* Solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE3164A2C60649A007242E1 /* Solver.cpp */; };
+		BFE316522C6920A5007242E1 /* SurfaceMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE316502C6920A5007242E1 /* SurfaceMesh.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,6 +119,8 @@
 		BFE316472C605DBE007242E1 /* LinearSolvers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = LinearSolvers.hpp; path = src/physics/system/LinearSolvers.hpp; sourceTree = "<group>"; };
 		BFE3164A2C60649A007242E1 /* Solver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Solver.cpp; path = src/physics/solver/Solver.cpp; sourceTree = "<group>"; };
 		BFE3164B2C60649A007242E1 /* Solver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Solver.hpp; path = src/physics/solver/Solver.hpp; sourceTree = "<group>"; };
+		BFE316502C6920A5007242E1 /* SurfaceMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SurfaceMesh.cpp; path = src/physics/objects/SurfaceMesh.cpp; sourceTree = "<group>"; };
+		BFE316512C6920A5007242E1 /* SurfaceMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = SurfaceMesh.hpp; path = src/physics/objects/SurfaceMesh.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +266,8 @@
 				BF2B6BE52C5FFB2E001D6464 /* ObjectData.hpp */,
 				BF2B6BE42C5FFB2E001D6464 /* RodMesh.cpp */,
 				BF2B6BE82C5FFB2E001D6464 /* RodMesh.hpp */,
+				BFE316502C6920A5007242E1 /* SurfaceMesh.cpp */,
+				BFE316512C6920A5007242E1 /* SurfaceMesh.hpp */,
 			);
 			name = objects;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				BF2B6B9B2C5AF6CE001D6464 /* Tensor.cpp in Sources */,
 				BF2B6B992C5AF6CE001D6464 /* Log.cpp in Sources */,
 				BF2B6B8B2C5AF695001D6464 /* Transform.cpp in Sources */,
+				BFE316522C6920A5007242E1 /* SurfaceMesh.cpp in Sources */,
 				BF2B6B982C5AF6CE001D6464 /* Compute.cpp in Sources */,
 				BF2B6BE02C5FCC76001D6464 /* AppDelegateWrapper.mm in Sources */,
 				BF2B6BB82C5AF756001D6464 /* scal.cpp in Sources */,

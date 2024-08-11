@@ -43,6 +43,9 @@ public:
     Eigen::VectorXf solve(Assembly& assembly) override;
 };
 
+
+// ADD : different preconditioner (enum)
+// ADD a way to return the result as vector<vector3>
 class CGSolver : public LinearSolverBase
 {
 public:

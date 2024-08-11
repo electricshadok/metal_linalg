@@ -1,4 +1,4 @@
 #include "gemv.hpp"
 
-// TODO
+// TODO : implement gemv
 
