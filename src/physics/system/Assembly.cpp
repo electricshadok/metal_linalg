@@ -8,7 +8,7 @@ Assembly::Assembly(size_t numNodes) :
     _b.setZero();
 }
 
-void Assembly::addToMatrix(const Eigen::Matrix3d& subMatrix, size_t row, size_t col)
+void Assembly::addToMatrix(const Eigen::Matrix3f& subMatrix, size_t row, size_t col)
 {
     for (size_t i = 0; i < 3; ++i) {
         for (size_t j = 0; j < 3; ++j) {
@@ -19,11 +19,17 @@ void Assembly::addToMatrix(const Eigen::Matrix3d& subMatrix, size_t row, size_t 
     }
 }
 
-void Assembly::addToVector(const Eigen::Vector3d& subVector, size_t row)
+void Assembly::addToVector(const Eigen::Vector3f& subVector, size_t row)
 {
     for (size_t i = 0; i < 3; ++i) {
         if (row + i < size) {
             _b(row + i) += subVector(i);
         }
     }
+}
+
+void Assembly::setZero()
+{
+    _A.setZero();
+    _b.setZero();
 }

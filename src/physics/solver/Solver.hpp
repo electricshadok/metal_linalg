@@ -12,10 +12,10 @@ public:
     
     void initialize(const ObjectData& obj);
     
-    void step(const float h, const ObjectData& obj);
+    void step(const float h, ObjectData& obj);
     
 private:
-    Eigen::Vector3d gravity;
+    Eigen::Vector3f gravity;
     std::shared_ptr<Assembly> system;
 };
 

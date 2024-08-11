@@ -39,7 +39,7 @@
 		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
 		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
-		BFE316482C605DBE007242E1 /* LinearSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE316462C605DBE007242E1 /* LinearSolver.cpp */; };
+		BFE316482C605DBE007242E1 /* LinearSolvers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE316462C605DBE007242E1 /* LinearSolvers.cpp */; };
 		BFE3164C2C60649A007242E1 /* Solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE3164A2C60649A007242E1 /* Solver.cpp */; };
 /* End PBXBuildFile section */
 
@@ -114,8 +114,8 @@
 		BFDDC73F2B7BCA6000F44B87 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		BFE2FDB32C4049EB00388DA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BFE2FDC92C404F3300388DA9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		BFE316462C605DBE007242E1 /* LinearSolver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LinearSolver.cpp; path = src/physics/system/LinearSolver.cpp; sourceTree = "<group>"; };
-		BFE316472C605DBE007242E1 /* LinearSolver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = LinearSolver.hpp; path = src/physics/system/LinearSolver.hpp; sourceTree = "<group>"; };
+		BFE316462C605DBE007242E1 /* LinearSolvers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LinearSolvers.cpp; path = src/physics/system/LinearSolvers.cpp; sourceTree = "<group>"; };
+		BFE316472C605DBE007242E1 /* LinearSolvers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = LinearSolvers.hpp; path = src/physics/system/LinearSolvers.hpp; sourceTree = "<group>"; };
 		BFE3164A2C60649A007242E1 /* Solver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Solver.cpp; path = src/physics/solver/Solver.cpp; sourceTree = "<group>"; };
 		BFE3164B2C60649A007242E1 /* Solver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Solver.hpp; path = src/physics/solver/Solver.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,8 +272,8 @@
 			children = (
 				BF2B6BEE2C60074A001D6464 /* Assembly.cpp */,
 				BF2B6BEF2C60074A001D6464 /* Assembly.hpp */,
-				BFE316462C605DBE007242E1 /* LinearSolver.cpp */,
-				BFE316472C605DBE007242E1 /* LinearSolver.hpp */,
+				BFE316462C605DBE007242E1 /* LinearSolvers.cpp */,
+				BFE316472C605DBE007242E1 /* LinearSolvers.hpp */,
 			);
 			name = system;
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				BF2B6BE02C5FCC76001D6464 /* AppDelegateWrapper.mm in Sources */,
 				BF2B6BB82C5AF756001D6464 /* scal.cpp in Sources */,
 				BF2B6BA52C5AF71D001D6464 /* blas_level3.metal in Sources */,
-				BFE316482C605DBE007242E1 /* LinearSolver.cpp in Sources */,
+				BFE316482C605DBE007242E1 /* LinearSolvers.cpp in Sources */,
 				BF2B6BBB2C5AF756001D6464 /* swap.cpp in Sources */,
 				BF2B6BA92C5AF735001D6464 /* gemm.cpp in Sources */,
 				BF2B6BEA2C5FFB2E001D6464 /* RodMesh.cpp in Sources */,
