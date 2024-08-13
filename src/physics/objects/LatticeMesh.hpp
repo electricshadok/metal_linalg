@@ -1,6 +1,6 @@
 #ifndef LatticeMesh_hpp
 #define LatticeMesh_hpp
 
-// TODO : implement LatticeMesh
+// TODO : implement LatticeMesh - rename to TetMesh
 
 #endif /* LatticeMesh_hpp */

@@ -86,9 +86,9 @@ void MetalRenderer::setupMetal()
 void MetalRenderer::setMesh(const ObjectData& obj)
 {
     // Convert vertices
-    std::vector<Vertex> vertices(obj.nodes.vtx.size());
-    for (size_t i = 0; i < obj.nodes.vtx.size(); ++i) {
-        vertices[i].position = {obj.nodes.vtx[i][0], obj.nodes.vtx[i][1], obj.nodes.vtx[i][2], 1.0f};
+    std::vector<Vertex> vertices(obj.nodes.p.size());
+    for (size_t i = 0; i < obj.nodes.p.size(); ++i) {
+        vertices[i].position = {obj.nodes.p[i][0], obj.nodes.p[i][1], obj.nodes.p[i][2], 1.0f};
         // Assign a default color, or modify as needed
         vertices[i].color = {0.5f, 0.5f, 0.5f, 1.0f};
     }

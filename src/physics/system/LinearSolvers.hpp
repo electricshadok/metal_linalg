@@ -43,18 +43,22 @@ public:
     Eigen::VectorXf solve(Assembly& assembly) override;
 };
 
+enum class PreconditionerType {
+    None,
+    Diagonal,
+    IncompleteLU,
+    SSOR // Not implemented yet
+};
 
-// ADD : different preconditioner (enum)
-// ADD a way to return the result as vector<vector3>
 class CGSolver : public LinearSolverBase
 {
 public:
-    CGSolver(bool usePreconditioner = false);
+    CGSolver(PreconditionerType preconditioner = PreconditionerType::None);
 
     Eigen::VectorXf solve(Assembly& assembly) override;
 
 private:
-    bool usePreconditioner;
+    PreconditionerType preconditioner;
 };
 
 

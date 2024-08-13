@@ -1,11 +1,11 @@
 #include "ObjectData.hpp"
 
 
-Nodes::Nodes(size_t size) : vtx(size), vel(size), acc(size), f(size), m(size)
+Nodes::Nodes(size_t size) : p(size), vel(size), acc(size), f(size), m(size)
 {}
 
 void Nodes::append(const Nodes& other) {
-    vtx.insert(vtx.end(), other.vtx.begin(), other.vtx.end());
+    p.insert(p.end(), other.p.begin(), other.p.end());
     vel.insert(vel.end(), other.vel.begin(), other.vel.end());
     acc.insert(acc.end(), other.acc.begin(), other.acc.end());
     f.insert(f.end(), other.f.begin(), other.f.end());

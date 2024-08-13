@@ -15,6 +15,9 @@ public:
     void step(const float h, ObjectData& obj);
     
 private:
+    
+    std::vector<Eigen::Vector3f> toVector3f(const Eigen::VectorXf& solution);
+    
     Eigen::Vector3f gravity;
     std::shared_ptr<Assembly> system;
 };

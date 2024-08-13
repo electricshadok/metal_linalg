@@ -42,6 +42,7 @@
 		BFE316482C605DBE007242E1 /* LinearSolvers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE316462C605DBE007242E1 /* LinearSolvers.cpp */; };
 		BFE3164C2C60649A007242E1 /* Solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE3164A2C60649A007242E1 /* Solver.cpp */; };
 		BFE316522C6920A5007242E1 /* SurfaceMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE316502C6920A5007242E1 /* SurfaceMesh.cpp */; };
+		BFE316562C69711E007242E1 /* ConstraintData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE316542C69711E007242E1 /* ConstraintData.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +122,10 @@
 		BFE3164B2C60649A007242E1 /* Solver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Solver.hpp; path = src/physics/solver/Solver.hpp; sourceTree = "<group>"; };
 		BFE316502C6920A5007242E1 /* SurfaceMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SurfaceMesh.cpp; path = src/physics/objects/SurfaceMesh.cpp; sourceTree = "<group>"; };
 		BFE316512C6920A5007242E1 /* SurfaceMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = SurfaceMesh.hpp; path = src/physics/objects/SurfaceMesh.hpp; sourceTree = "<group>"; };
+		BFE316542C69711E007242E1 /* ConstraintData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ConstraintData.cpp; path = src/physics/constraints/ConstraintData.cpp; sourceTree = "<group>"; };
+		BFE316552C69711E007242E1 /* ConstraintData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ConstraintData.hpp; path = src/physics/constraints/ConstraintData.hpp; sourceTree = "<group>"; };
+		BFE316572C69A8A1007242E1 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = src/physics/common.h; sourceTree = "<group>"; };
+		BFE3165A2C69A9C8007242E1 /* Simulation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Simulation.md; path = notes/Simulation.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,9 +253,11 @@
 		BF2B6BC02C5C657C001D6464 /* physics */ = {
 			isa = PBXGroup;
 			children = (
+				BFE316532C6970F6007242E1 /* constraints */,
 				BFE316492C60647C007242E1 /* solver */,
 				BF2B6BED2C600706001D6464 /* system */,
 				BF2B6BCE2C5D5282001D6464 /* objects */,
+				BFE316572C69A8A1007242E1 /* common.h */,
 			);
 			name = physics;
 			sourceTree = "<group>";
@@ -290,8 +297,9 @@
 				BF2B6B702C5091C7001D6464 /* test.cpp */,
 				BFE2FDC92C404F3300388DA9 /* .gitignore */,
 				BFE2FDB32C4049EB00388DA9 /* README.md */,
-				BFE2FD792C3C71A500388DA9 /* src */,
 				BF00857D2B9A79FB004AA80E /* LICENSE */,
+				BFE2FD792C3C71A500388DA9 /* src */,
+				BFE316592C69A982007242E1 /* notes */,
 				BFAC74ED2B7B06DF0034E671 /* third_party */,
 				BFAC74E32B7AF2AF0034E671 /* Products */,
 				BFDDC73A2B7BCA5100F44B87 /* Frameworks */,
@@ -335,6 +343,23 @@
 				BFE3164B2C60649A007242E1 /* Solver.hpp */,
 			);
 			name = solver;
+			sourceTree = "<group>";
+		};
+		BFE316532C6970F6007242E1 /* constraints */ = {
+			isa = PBXGroup;
+			children = (
+				BFE316542C69711E007242E1 /* ConstraintData.cpp */,
+				BFE316552C69711E007242E1 /* ConstraintData.hpp */,
+			);
+			name = constraints;
+			sourceTree = "<group>";
+		};
+		BFE316592C69A982007242E1 /* notes */ = {
+			isa = PBXGroup;
+			children = (
+				BFE3165A2C69A9C8007242E1 /* Simulation.md */,
+			);
+			name = notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2B6BEB2C5FFB2E001D6464 /* ObjectData.cpp in Sources */,
+				BFE316562C69711E007242E1 /* ConstraintData.cpp in Sources */,
 				BF2B6BF02C60074A001D6464 /* Assembly.cpp in Sources */,
 				BF2B6B8A2C5AF695001D6464 /* MetalRenderer.cpp in Sources */,
 				BF2B6B792C5092E6001D6464 /* main.mm in Sources */,

@@ -1,4 +1,5 @@
 #include "CubeMesh.hpp"
+#include "common.h"
 
 CubeMesh::CubeMesh() : ObjectData(8,12)
 {
@@ -9,7 +10,7 @@ CubeMesh::CubeMesh() : ObjectData(8,12)
 
 void CubeMesh::initializeNodes()
 {
-    static const Nodes::Vertex verticesData[] = {
+    static const Position verticesData[] = {
         // Front
         {-1,  1,  1},
         { 1,  1,  1},
@@ -23,7 +24,7 @@ void CubeMesh::initializeNodes()
     };
 
     for (size_t i = 0; i < 8; ++i) {
-        nodes.vtx[i] = verticesData[i];
+        nodes.p[i] = verticesData[i];
         nodes.vel[i].setZero();
         nodes.acc[i].setZero();
         nodes.f[i].setZero();
@@ -49,6 +50,6 @@ void CubeMesh::initializeTriangles()
     };
 
     for (size_t i = 0; i < 12; ++i) {
-        connectivity.triangles[i] = TriangleConnectivity::Triangle(indices[i * 3], indices[i * 3 + 1], indices[i * 3 + 2]);
+        connectivity.triangles[i] = Triangle(indices[i * 3], indices[i * 3 + 1], indices[i * 3 + 2]);
     }
 }
