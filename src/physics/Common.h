@@ -1,5 +1,5 @@
-#ifndef common_h
-#define common_h
+#ifndef Common_h
+#define Common_h
 
 // Nodes
 using Position = Eigen::Vector3f;
@@ -22,4 +22,4 @@ using TriangleList = std::vector<Triangle, Eigen::aligned_allocator<Triangle>>;
 using Tet = Eigen::Vector4i;
 using TetList = std::vector<Tet, Eigen::aligned_allocator<Tet>>;
 
-#endif /* common_h */
+#endif /* Common_h */

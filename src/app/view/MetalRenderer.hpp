@@ -15,6 +15,7 @@ public:
     
     void draw(CA::MetalDrawable* drawable);
     void setMesh(const ObjectData& obj);
+    void updateMesh(const ObjectData& obj);
     
 private:
     void setupMetal();

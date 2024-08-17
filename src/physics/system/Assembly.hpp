@@ -19,6 +19,8 @@ public:
     const Eigen::VectorXf& b() const {return _b;}
 
     void setZero();
+    
+    // TODO: export system into a txt file for debugging
 
 private:
     size_t size; // size = numNodes*3

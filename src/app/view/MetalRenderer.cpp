@@ -89,7 +89,6 @@ void MetalRenderer::setMesh(const ObjectData& obj)
     std::vector<Vertex> vertices(obj.nodes.p.size());
     for (size_t i = 0; i < obj.nodes.p.size(); ++i) {
         vertices[i].position = {obj.nodes.p[i][0], obj.nodes.p[i][1], obj.nodes.p[i][2], 1.0f};
-        // Assign a default color, or modify as needed
         vertices[i].color = {0.5f, 0.5f, 0.5f, 1.0f};
     }
     
@@ -100,10 +99,28 @@ void MetalRenderer::setMesh(const ObjectData& obj)
         indices[i * 3 + 1] = obj.connectivity.triangles[i][1];
         indices[i * 3 + 2] = obj.connectivity.triangles[i][2];
     }
+
+    // Create buffers
+    if (vertexBuffer) vertexBuffer->release();
+    if (indexBuffer) indexBuffer->release();
     
     // Create buffers
     vertexBuffer = device->newBuffer(vertices.data(), vertices.size() * sizeof(Vertex), MTL::ResourceStorageModeShared);
     indexBuffer = device->newBuffer(indices.data(), indices.size() * sizeof(uint16_t), MTL::ResourceStorageModeShared);
+}
+
+void MetalRenderer::updateMesh(const ObjectData& obj)
+{
+    if (!vertexBuffer) return;
+
+    // Convert vertices
+    std::vector<Vertex> vertices(obj.nodes.p.size());
+    for (size_t i = 0; i < obj.nodes.p.size(); ++i) {
+        vertices[i].position = {obj.nodes.p[i][0], obj.nodes.p[i][1], obj.nodes.p[i][2], 1.0f};
+        vertices[i].color = {0.5f, 0.5f, 0.5f, 1.0f};
+    }
+    
+    memcpy(vertexBuffer->contents(), vertices.data(), vertices.size() * sizeof(Vertex));
 }
 
 void MetalRenderer::setupCamera()
@@ -145,7 +162,7 @@ void MetalRenderer::draw(CA::MetalDrawable* drawable)
     if (vertexBuffer and indexBuffer)
     {
         renderEncoder->setVertexBuffer(vertexBuffer, 0, 0);
-        renderEncoder->drawIndexedPrimitives(MTL::PrimitiveType::PrimitiveTypeTriangle, 36, MTL::IndexType::IndexTypeUInt16, indexBuffer, 0);
+        renderEncoder->drawIndexedPrimitives(MTL::PrimitiveType::PrimitiveTypeTriangle, indexBuffer->length() / sizeof(uint16_t), MTL::IndexType::IndexTypeUInt16, indexBuffer, 0);
     }
 
     renderEncoder->endEncoding();

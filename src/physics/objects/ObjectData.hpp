@@ -24,6 +24,8 @@ struct Nodes
     MassList m;
 };
 
+// TODO : implement EdgeConnectivity
+
 struct TriangleConnectivity
 {
     TriangleConnectivity(size_t triangleCount);
@@ -33,6 +35,8 @@ struct TriangleConnectivity
     // Triangle attributes
     TriangleList triangles;
 };
+
+// TODO : implement TetConnectivity
 
 struct ObjectData
 {

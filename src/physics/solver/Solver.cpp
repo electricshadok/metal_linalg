@@ -28,8 +28,8 @@ void Solver::step(const float h, ObjectData& obj)
          x = x + deltaX
     */
     
-    // Set system to zero
-    system->setZero();
+    // Initialize system
+    system = std::make_shared<Assembly>(obj.numNodes());
     
     // Gather forces
     for (size_t i=0; i<obj.numNodes(); ++i)
@@ -56,13 +56,23 @@ void Solver::step(const float h, ObjectData& obj)
         system->addToVector(obj.nodes.f[i] * h, i);
     }
     
-    // Solve system
+    // Solve system to get velocity deltas
     CGSolver solver(PreconditionerType::None);
-    std::vector<Eigen::Vector3f> solution(toVector3f(solver.solve(*system)));
-
-    // Update node velocities and positions
-    // TODO : update
-
+    std::vector<Eigen::Vector3f> dv(toVector3f(solver.solve(*system)));
+    
+    // Compute position deltas
+    std::vector<Eigen::Vector3f> dx(dv.size());
+    for (size_t i=0; i < dx.size();++i)
+    {
+        dx[i] = (obj.nodes.vel[i] + dv[i]) * h;
+    }
+    
+    // Update states
+    for (size_t i=0; i < dx.size();++i)
+    {
+        obj.nodes.vel[i] += dv[i];
+        obj.nodes.p[i] += dx[i];
+    }
 }
 
 std::vector<Eigen::Vector3f> Solver::toVector3f(const Eigen::VectorXf& solution)

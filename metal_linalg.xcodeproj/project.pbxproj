@@ -111,6 +111,8 @@
 		BF2B6BEF2C60074A001D6464 /* Assembly.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Assembly.hpp; path = src/physics/system/Assembly.hpp; sourceTree = "<group>"; };
 		BFAC74E22B7AF2AF0034E671 /* metal_linalg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_linalg; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
+		BFBBAD582C704A7C0059233C /* EigenExtensions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = EigenExtensions.cpp; path = src/physics/EigenExtensions.cpp; sourceTree = "<group>"; };
+		BFBBAD592C704A7C0059233C /* EigenExtensions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = EigenExtensions.hpp; path = src/physics/EigenExtensions.hpp; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BFDDC73F2B7BCA6000F44B87 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -124,7 +126,7 @@
 		BFE316512C6920A5007242E1 /* SurfaceMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = SurfaceMesh.hpp; path = src/physics/objects/SurfaceMesh.hpp; sourceTree = "<group>"; };
 		BFE316542C69711E007242E1 /* ConstraintData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ConstraintData.cpp; path = src/physics/constraints/ConstraintData.cpp; sourceTree = "<group>"; };
 		BFE316552C69711E007242E1 /* ConstraintData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ConstraintData.hpp; path = src/physics/constraints/ConstraintData.hpp; sourceTree = "<group>"; };
-		BFE316572C69A8A1007242E1 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = src/physics/common.h; sourceTree = "<group>"; };
+		BFE316572C69A8A1007242E1 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Common.h; path = src/physics/Common.h; sourceTree = "<group>"; };
 		BFE3165A2C69A9C8007242E1 /* Simulation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Simulation.md; path = notes/Simulation.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,7 +259,9 @@
 				BFE316492C60647C007242E1 /* solver */,
 				BF2B6BED2C600706001D6464 /* system */,
 				BF2B6BCE2C5D5282001D6464 /* objects */,
-				BFE316572C69A8A1007242E1 /* common.h */,
+				BFE316572C69A8A1007242E1 /* Common.h */,
+				BFBBAD582C704A7C0059233C /* EigenExtensions.cpp */,
+				BFBBAD592C704A7C0059233C /* EigenExtensions.hpp */,
 			);
 			name = physics;
 			sourceTree = "<group>";

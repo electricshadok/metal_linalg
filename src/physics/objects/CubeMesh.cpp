@@ -1,5 +1,5 @@
 #include "CubeMesh.hpp"
-#include "common.h"
+#include "Common.h"
 
 CubeMesh::CubeMesh() : ObjectData(8,12)
 {

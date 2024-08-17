@@ -18,4 +18,5 @@ void App::draw(CA::MetalDrawable* drawable)
 void App::step()
 {
     solver->step(1.0/60.0, *data);
+    renderer->updateMesh(*data);
 }
