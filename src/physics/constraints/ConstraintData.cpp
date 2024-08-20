@@ -10,3 +10,8 @@ ConstraintData<N>::ConstraintData(size_t c)
 {
     // Additional initialization (if needed)
 }
+
+
+// Explicit template instantiation for specific types
+template struct ConstraintData<1>;
+template struct ConstraintData<2>;

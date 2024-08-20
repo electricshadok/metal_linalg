@@ -36,7 +36,7 @@
 		BF2B6BEB2C5FFB2E001D6464 /* ObjectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE62C5FFB2E001D6464 /* ObjectData.cpp */; };
 		BF2B6BEC2C5FFB2E001D6464 /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE72C5FFB2E001D6464 /* CubeMesh.cpp */; };
 		BF2B6BF02C60074A001D6464 /* Assembly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BEE2C60074A001D6464 /* Assembly.cpp */; };
-		BFBBAD5C2C72E0F40059233C /* Springs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD5A2C72E0F40059233C /* Springs.cpp */; };
+		BFBBAD5C2C72E0F40059233C /* DistanceConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */; };
 		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
 		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
@@ -112,8 +112,8 @@
 		BF2B6BEF2C60074A001D6464 /* Assembly.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Assembly.hpp; path = src/physics/system/Assembly.hpp; sourceTree = "<group>"; };
 		BFAC74E22B7AF2AF0034E671 /* metal_linalg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = metal_linalg; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
-		BFBBAD5A2C72E0F40059233C /* Springs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Springs.cpp; path = src/physics/constraints/Springs.cpp; sourceTree = "<group>"; };
-		BFBBAD5B2C72E0F40059233C /* Springs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Springs.hpp; path = src/physics/constraints/Springs.hpp; sourceTree = "<group>"; };
+		BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DistanceConstraint.cpp; path = src/physics/constraints/DistanceConstraint.cpp; sourceTree = "<group>"; };
+		BFBBAD5B2C72E0F40059233C /* DistanceConstraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = DistanceConstraint.hpp; path = src/physics/constraints/DistanceConstraint.hpp; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BFDDC73F2B7BCA6000F44B87 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -353,8 +353,8 @@
 			children = (
 				BFE316542C69711E007242E1 /* ConstraintData.cpp */,
 				BFE316552C69711E007242E1 /* ConstraintData.hpp */,
-				BFBBAD5A2C72E0F40059233C /* Springs.cpp */,
-				BFBBAD5B2C72E0F40059233C /* Springs.hpp */,
+				BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */,
+				BFBBAD5B2C72E0F40059233C /* DistanceConstraint.hpp */,
 			);
 			name = constraints;
 			sourceTree = "<group>";
@@ -426,7 +426,7 @@
 			files = (
 				BF2B6BEB2C5FFB2E001D6464 /* ObjectData.cpp in Sources */,
 				BFE316562C69711E007242E1 /* ConstraintData.cpp in Sources */,
-				BFBBAD5C2C72E0F40059233C /* Springs.cpp in Sources */,
+				BFBBAD5C2C72E0F40059233C /* DistanceConstraint.cpp in Sources */,
 				BF2B6BF02C60074A001D6464 /* Assembly.cpp in Sources */,
 				BF2B6B8A2C5AF695001D6464 /* MetalRenderer.cpp in Sources */,
 				BF2B6B792C5092E6001D6464 /* main.mm in Sources */,
