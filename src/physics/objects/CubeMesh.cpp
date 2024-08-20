@@ -1,7 +1,7 @@
 #include "CubeMesh.hpp"
 #include "Common.h"
 
-CubeMesh::CubeMesh() : ObjectData(8,12)
+CubeMesh::CubeMesh() : ObjectData(8,0,12,0)
 {
     // TODO: delete CubeMesh to be replaced with LatticeMesh(1,1,1)
     initializeNodes();
@@ -50,6 +50,6 @@ void CubeMesh::initializeTriangles()
     };
 
     for (size_t i = 0; i < 12; ++i) {
-        connectivity.triangles[i] = Triangle(indices[i * 3], indices[i * 3 + 1], indices[i * 3 + 2]);
+        tri.idx[i] = Triangle(indices[i * 3], indices[i * 3 + 1], indices[i * 3 + 2]);
     }
 }

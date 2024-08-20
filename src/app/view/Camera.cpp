@@ -19,6 +19,7 @@ simd::float4x4 Camera::getViewMatrix() const
 
 void Camera::processKeyboardInput(char direction, float deltaTime)
 {
+    // TODO: connect function to key events
     float velocity = movementSpeed * deltaTime;
     if (direction == 'W')
         position += front * velocity;
@@ -32,6 +33,7 @@ void Camera::processKeyboardInput(char direction, float deltaTime)
 
 void Camera::processMouseMovement(float xoffset, float yoffset, bool constrainPitch)
 {
+    // TODO: connect function to key events
     xoffset *= mouseSensitivity;
     yoffset *= mouseSensitivity;
 

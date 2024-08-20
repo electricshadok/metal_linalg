@@ -93,11 +93,11 @@ void MetalRenderer::setMesh(const ObjectData& obj)
     }
     
     // Convert indices
-    std::vector<uint16_t> indices(obj.connectivity.triangles.size() * 3);
-    for (size_t i = 0; i < obj.connectivity.triangles.size(); ++i) {
-        indices[i * 3 + 0] = obj.connectivity.triangles[i][0];
-        indices[i * 3 + 1] = obj.connectivity.triangles[i][1];
-        indices[i * 3 + 2] = obj.connectivity.triangles[i][2];
+    std::vector<uint16_t> indices(obj.tri.idx.size() * 3);
+    for (size_t i = 0; i < obj.tri.idx.size(); ++i) {
+        indices[i * 3 + 0] = obj.tri.idx[i][0];
+        indices[i * 3 + 1] = obj.tri.idx[i][1];
+        indices[i * 3 + 2] = obj.tri.idx[i][2];
     }
 
     // Create buffers

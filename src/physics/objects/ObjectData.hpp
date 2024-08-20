@@ -4,19 +4,16 @@
 #include <Eigen/Dense>
 #include <Eigen/StdVector>
 #include <vector>
-#include "common.h"
+#include "Common.h"
 
 struct Nodes
 {
     Nodes(size_t size);
     
-    size_t numNodes() const {
-        return p.size();
-    }
+    size_t numNodes() const;
     
     void append(const Nodes& other);
     
-    // Node attributes
     PositionList p;
     VelocityList vel;
     AccelerationList acc;
@@ -24,7 +21,14 @@ struct Nodes
     MassList m;
 };
 
-// TODO : implement EdgeConnectivity
+struct EdgeConnectivity
+{
+    EdgeConnectivity(size_t edgeCount);
+    
+    void append(const EdgeConnectivity& other, size_t vertexOffset);
+    
+    EdgeList idx;
+};
 
 struct TriangleConnectivity
 {
@@ -32,25 +36,30 @@ struct TriangleConnectivity
     
     void append(const TriangleConnectivity& other, size_t vertexOffset);
     
-    // Triangle attributes
-    TriangleList triangles;
+    TriangleList idx;
 };
 
-// TODO : implement TetConnectivity
+struct TetConnectivity
+{
+    TetConnectivity(size_t tetCount);
+    
+    void append(const TetConnectivity& other, size_t vertexOffset);
+    
+    TetList idx;
+};
 
 struct ObjectData
 {
-    ObjectData(size_t nodeCount, size_t triangleCount);
+    ObjectData(size_t nodeCount, size_t tetCount, size_t triCount, size_t edgeCount);
 
-    size_t numNodes() const {
-        return nodes.numNodes();
-    }
+    size_t numNodes() const;
 
     void append(const ObjectData& other);
     
-    // Object attributes
     Nodes nodes;
-    TriangleConnectivity connectivity;
+    TetConnectivity tet;
+    TriangleConnectivity tri;
+    EdgeConnectivity edge;
 };
 
 
