@@ -1,5 +1,5 @@
 #include "ObjectData.hpp"
-
+#include <unordered_set>
 
 Nodes::Nodes(size_t size) : p(size), vel(size), acc(size), f(size), m(size)
 {}
@@ -69,6 +69,26 @@ void ObjectData::append(const ObjectData& other)
     tet.append(other.tet, vertexOffset);
     tri.append(other.tri, vertexOffset);
     edge.append(other.edge, vertexOffset);
+}
+
+void ObjectData::initializeTrianglesFromTets()
+{
+    // TODO: implement ObjectData::setTrianglesFromTets
+}
+
+void ObjectData::initializeEdgesFromTets()
+{
+    // TODO: implement ObjectData::setEdgesFromTets
+}
+
+void ObjectData::initializeEdgesFromTriangles()
+{
+    // TODO: implement ObjectData::setEdgesFromTriangles
+    std::unordered_set<Edge, CustomHash, CustomEqual> edgeMap;
+    Edge edge1(1,2);
+    Edge edge2(1,2);
+    edgeMap.insert(edge1);
+    edgeMap.insert(edge2);
 }
 
 size_t ObjectData::numNodes() const

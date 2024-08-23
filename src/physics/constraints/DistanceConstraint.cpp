@@ -31,3 +31,14 @@ DistanceConstraint::DistanceConstraint(size_t numConstraints)
         rest[i] = 1.0f;
     }
 }
+
+void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness)
+{
+    // TODO - add DistanceConstraint::setupConstraint
+}
+
+void DistanceConstraint::computeForces(const ObjectData& objData)
+{
+    // TODO - add DistanceConstraint::computeForces
+}
+

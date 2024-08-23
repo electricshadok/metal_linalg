@@ -1,11 +1,12 @@
 #include "CubeMesh.hpp"
-#include "Common.h"
+#include "physics/Common.hpp"
 
 CubeMesh::CubeMesh() : ObjectData(8,0,12,0)
 {
     // TODO: delete CubeMesh to be replaced with LatticeMesh(1,1,1)
     initializeNodes();
     initializeTriangles();
+    initializeEdgesFromTriangles();
 }
 
 void CubeMesh::initializeNodes()

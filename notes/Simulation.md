@@ -7,4 +7,8 @@ https://pub.ista.ac.at/group_wojtan/projects/adjoint_particles/adjointclothprepr
 
 - https://www.tkim.graphics/DYNAMIC_DEFORMABLES/DynamicDeformables.pdf
 
+- Add the equation of implicit 
+- Add derivation for C(
+- 
 
+$A$

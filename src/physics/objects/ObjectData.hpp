@@ -1,10 +1,8 @@
 #ifndef ObjectData_hpp
 #define ObjectData_hpp
 
-#include <Eigen/Dense>
-#include <Eigen/StdVector>
 #include <vector>
-#include "Common.h"
+#include "physics/Common.hpp"
 
 struct Nodes
 {
@@ -56,6 +54,10 @@ struct ObjectData
 
     void append(const ObjectData& other);
     
+    void initializeTrianglesFromTets();
+    void initializeEdgesFromTets();
+    void initializeEdgesFromTriangles();
+
     Nodes nodes;
     TetConnectivity tet;
     TriangleConnectivity tri;

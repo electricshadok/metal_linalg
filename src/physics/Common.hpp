@@ -1,5 +1,8 @@
-#ifndef Common_h
-#define Common_h
+#ifndef Common_hpp
+#define Common_hpp
+
+#include <Eigen/Dense>
+#include <vector>
 
 // Nodes
 using Position = Eigen::Vector3f;
@@ -22,4 +25,19 @@ using TriangleList = std::vector<Triangle, Eigen::aligned_allocator<Triangle>>;
 using Tet = Eigen::Vector4i;
 using TetList = std::vector<Tet, Eigen::aligned_allocator<Tet>>;
 
-#endif /* Common_h */
+// Custom Hash and Equal functions
+struct CustomHash
+{
+    std::size_t operator()(const Edge& edge) const;
+    std::size_t operator()(const Triangle& tri) const;
+    std::size_t operator()(const Tet& tet) const;
+};
+
+struct CustomEqual
+{
+    bool operator()(const Edge& lhs, const Edge& rhs) const;
+    bool operator()(const Triangle& lhs, const Triangle& rhs) const;
+    bool operator()(const Tet& lhs, const Tet& rhs) const;
+};
+
+#endif /* Common_hpp */

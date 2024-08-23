@@ -37,6 +37,11 @@
 		BF2B6BEC2C5FFB2E001D6464 /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE72C5FFB2E001D6464 /* CubeMesh.cpp */; };
 		BF2B6BF02C60074A001D6464 /* Assembly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BEE2C60074A001D6464 /* Assembly.cpp */; };
 		BFBBAD5C2C72E0F40059233C /* DistanceConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */; };
+		BFBBAD5F2C7596080059233C /* AreaContraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD5D2C7596080059233C /* AreaContraint.cpp */; };
+		BFBBAD622C7596400059233C /* VolumeConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD602C7596400059233C /* VolumeConstraint.cpp */; };
+		BFBBAD652C75966A0059233C /* BendingConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD632C75966A0059233C /* BendingConstraint.cpp */; };
+		BFBBAD692C762FF40059233C /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD672C762FF40059233C /* Geometry.cpp */; };
+		BFBBAD6E2C7944F10059233C /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD6C2C7944F10059233C /* Common.cpp */; };
 		BFDDC73C2B7BCA5200F44B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */; };
 		BFDDC73E2B7BCA5900F44B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */; };
 		BFDDC7402B7BCA6000F44B87 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDDC73F2B7BCA6000F44B87 /* Metal.framework */; };
@@ -114,6 +119,16 @@
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
 		BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DistanceConstraint.cpp; path = src/physics/constraints/DistanceConstraint.cpp; sourceTree = "<group>"; };
 		BFBBAD5B2C72E0F40059233C /* DistanceConstraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = DistanceConstraint.hpp; path = src/physics/constraints/DistanceConstraint.hpp; sourceTree = "<group>"; };
+		BFBBAD5D2C7596080059233C /* AreaContraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AreaContraint.cpp; path = src/physics/constraints/AreaContraint.cpp; sourceTree = "<group>"; };
+		BFBBAD5E2C7596080059233C /* AreaContraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = AreaContraint.hpp; path = src/physics/constraints/AreaContraint.hpp; sourceTree = "<group>"; };
+		BFBBAD602C7596400059233C /* VolumeConstraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VolumeConstraint.cpp; path = src/physics/constraints/VolumeConstraint.cpp; sourceTree = "<group>"; };
+		BFBBAD612C7596400059233C /* VolumeConstraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = VolumeConstraint.hpp; path = src/physics/constraints/VolumeConstraint.hpp; sourceTree = "<group>"; };
+		BFBBAD632C75966A0059233C /* BendingConstraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BendingConstraint.cpp; path = src/physics/constraints/BendingConstraint.cpp; sourceTree = "<group>"; };
+		BFBBAD642C75966A0059233C /* BendingConstraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = BendingConstraint.hpp; path = src/physics/constraints/BendingConstraint.hpp; sourceTree = "<group>"; };
+		BFBBAD672C762FF40059233C /* Geometry.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Geometry.cpp; path = src/physics/geometry/Geometry.cpp; sourceTree = "<group>"; };
+		BFBBAD682C762FF40059233C /* Geometry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Geometry.hpp; path = src/physics/geometry/Geometry.hpp; sourceTree = "<group>"; };
+		BFBBAD6C2C7944F10059233C /* Common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Common.cpp; path = src/physics/Common.cpp; sourceTree = "<group>"; };
+		BFBBAD6D2C7944F10059233C /* Common.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Common.hpp; path = src/physics/Common.hpp; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BFDDC73F2B7BCA6000F44B87 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -127,7 +142,6 @@
 		BFE316512C6920A5007242E1 /* SurfaceMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = SurfaceMesh.hpp; path = src/physics/objects/SurfaceMesh.hpp; sourceTree = "<group>"; };
 		BFE316542C69711E007242E1 /* ConstraintData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ConstraintData.cpp; path = src/physics/constraints/ConstraintData.cpp; sourceTree = "<group>"; };
 		BFE316552C69711E007242E1 /* ConstraintData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ConstraintData.hpp; path = src/physics/constraints/ConstraintData.hpp; sourceTree = "<group>"; };
-		BFE316572C69A8A1007242E1 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Common.h; path = src/physics/Common.h; sourceTree = "<group>"; };
 		BFE3165A2C69A9C8007242E1 /* Simulation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Simulation.md; path = notes/Simulation.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,11 +270,13 @@
 		BF2B6BC02C5C657C001D6464 /* physics */ = {
 			isa = PBXGroup;
 			children = (
+				BFBBAD662C762FC80059233C /* geometry */,
 				BFE316532C6970F6007242E1 /* constraints */,
 				BFE316492C60647C007242E1 /* solver */,
 				BF2B6BED2C600706001D6464 /* system */,
 				BF2B6BCE2C5D5282001D6464 /* objects */,
-				BFE316572C69A8A1007242E1 /* Common.h */,
+				BFBBAD6C2C7944F10059233C /* Common.cpp */,
+				BFBBAD6D2C7944F10059233C /* Common.hpp */,
 			);
 			name = physics;
 			sourceTree = "<group>";
@@ -317,6 +333,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BFBBAD662C762FC80059233C /* geometry */ = {
+			isa = PBXGroup;
+			children = (
+				BFBBAD672C762FF40059233C /* Geometry.cpp */,
+				BFBBAD682C762FF40059233C /* Geometry.hpp */,
+			);
+			name = geometry;
+			sourceTree = "<group>";
+		};
 		BFDDC73A2B7BCA5100F44B87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +380,12 @@
 				BFE316552C69711E007242E1 /* ConstraintData.hpp */,
 				BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */,
 				BFBBAD5B2C72E0F40059233C /* DistanceConstraint.hpp */,
+				BFBBAD5D2C7596080059233C /* AreaContraint.cpp */,
+				BFBBAD5E2C7596080059233C /* AreaContraint.hpp */,
+				BFBBAD602C7596400059233C /* VolumeConstraint.cpp */,
+				BFBBAD612C7596400059233C /* VolumeConstraint.hpp */,
+				BFBBAD632C75966A0059233C /* BendingConstraint.cpp */,
+				BFBBAD642C75966A0059233C /* BendingConstraint.hpp */,
 			);
 			name = constraints;
 			sourceTree = "<group>";
@@ -426,6 +457,7 @@
 			files = (
 				BF2B6BEB2C5FFB2E001D6464 /* ObjectData.cpp in Sources */,
 				BFE316562C69711E007242E1 /* ConstraintData.cpp in Sources */,
+				BFBBAD6E2C7944F10059233C /* Common.cpp in Sources */,
 				BFBBAD5C2C72E0F40059233C /* DistanceConstraint.cpp in Sources */,
 				BF2B6BF02C60074A001D6464 /* Assembly.cpp in Sources */,
 				BF2B6B8A2C5AF695001D6464 /* MetalRenderer.cpp in Sources */,
@@ -444,13 +476,17 @@
 				BFE316482C605DBE007242E1 /* LinearSolvers.cpp in Sources */,
 				BF2B6BBB2C5AF756001D6464 /* swap.cpp in Sources */,
 				BF2B6BA92C5AF735001D6464 /* gemm.cpp in Sources */,
+				BFBBAD652C75966A0059233C /* BendingConstraint.cpp in Sources */,
 				BF2B6BEA2C5FFB2E001D6464 /* RodMesh.cpp in Sources */,
 				BF2B6BAC2C5AF749001D6464 /* gemv.cpp in Sources */,
+				BFBBAD5F2C7596080059233C /* AreaContraint.cpp in Sources */,
 				BF2B6BA62C5AF71D001D6464 /* blas_level2.metal in Sources */,
+				BFBBAD692C762FF40059233C /* Geometry.cpp in Sources */,
 				BF2B6B712C5091C7001D6464 /* test.cpp in Sources */,
 				BF2B6BB72C5AF756001D6464 /* axpy.cpp in Sources */,
 				BF2B6BBA2C5AF756001D6464 /* copy.cpp in Sources */,
 				BFE3164C2C60649A007242E1 /* Solver.cpp in Sources */,
+				BFBBAD622C7596400059233C /* VolumeConstraint.cpp in Sources */,
 				BF2B6BA42C5AF71D001D6464 /* blas_level1.metal in Sources */,
 				BF2B6B8D2C5AF695001D6464 /* Camera.cpp in Sources */,
 				BF2B6BB92C5AF756001D6464 /* dot.cpp in Sources */,
