@@ -6,7 +6,7 @@ CubeMesh::CubeMesh() : ObjectData(8,0,12,0)
     // TODO: delete CubeMesh to be replaced with LatticeMesh(1,1,1)
     initializeNodes();
     initializeTriangles();
-    initializeEdgesFromTriangles();
+    initializeEdgesFromTriangles(); // TODO: use Tet to initialize thee edges
 }
 
 void CubeMesh::initializeNodes()
@@ -36,21 +36,17 @@ void CubeMesh::initializeNodes()
 void CubeMesh::initializeTriangles()
 {
     static const uint16_t indices[] = {
-        // Front
-        0, 1, 2, 2, 1, 3,
-        // Back
-        4, 5, 6, 6, 5, 7,
-        // Left
-        0, 2, 4, 4, 2, 6,
-        // Right
-        1, 3, 5, 5, 3, 7,
-        // Top
-        0, 1, 4, 4, 1, 5,
-        // Bottom
-        2, 3, 6, 6, 3, 7,
+        0, 1, 2, 2, 1, 3, // Front
+        4, 5, 6, 6, 5, 7, // Back
+        0, 2, 4, 4, 2, 6, // Left
+        1, 3, 5, 5, 3, 7, // Right
+        0, 1, 4, 4, 1, 5, // Top
+        2, 3, 6, 6, 3, 7, // Bottom
     };
 
     for (size_t i = 0; i < 12; ++i) {
         tri.idx[i] = Triangle(indices[i * 3], indices[i * 3 + 1], indices[i * 3 + 2]);
     }
+
+    // TODO: initialize Tet
 }

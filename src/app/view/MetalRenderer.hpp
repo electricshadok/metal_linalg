@@ -17,6 +17,8 @@ public:
     void setMesh(const ObjectData& obj);
     void updateMesh(const ObjectData& obj);
     
+    // TODO: render the constraint too
+    
 private:
     void setupMetal();
     void setupCamera();

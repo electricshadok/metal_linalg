@@ -1,11 +1,13 @@
 #ifndef Geometry_hpp
 #define Geometry_hpp
 
-// TODO : calculate deformation gradient
+// TODO: calculate determinant
 
-// TODO : calculate volume
+// TODO: calculate deformation gradient
 
-// TODO : calcualte area
+// TODO: calculate volume
+
+// TODO: calcualte area
 
 // TODO: calcualte distance
 

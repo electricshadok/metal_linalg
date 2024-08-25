@@ -73,22 +73,62 @@ void ObjectData::append(const ObjectData& other)
 
 void ObjectData::initializeTrianglesFromTets()
 {
-    // TODO: implement ObjectData::setTrianglesFromTets
+    std::unordered_set<Triangle, CustomHash, CustomEqual> triangleSet;
+
+    for (const auto& tet : tet.idx)
+    {
+        Triangle t1(tet[0], tet[1], tet[2]);
+        Triangle t2(tet[0], tet[1], tet[3]);
+        Triangle t3(tet[0], tet[2], tet[3]);
+        Triangle t4(tet[1], tet[2], tet[3]);
+
+        triangleSet.insert(t1);
+        triangleSet.insert(t2);
+        triangleSet.insert(t3);
+        triangleSet.insert(t4);
+    }
+
+    tri.idx.clear();
+    tri.idx.reserve(triangleSet.size());
+    tri.idx.insert(tri.idx.end(), triangleSet.begin(), triangleSet.end());
 }
 
 void ObjectData::initializeEdgesFromTets()
 {
-    // TODO: implement ObjectData::setEdgesFromTets
+    std::unordered_set<Edge, CustomHash, CustomEqual> edgeSet;
+
+    for (const auto& tet : tet.idx)
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            for (int j = i + 1; j < 4; ++j)
+            {
+                Edge edge(tet[i], tet[j]);
+                edgeSet.insert(edge);
+            }
+        }
+    }
+
+    edge.idx.clear();
+    edge.idx.reserve(edgeSet.size());
+    edge.idx.insert(edge.idx.end(), edgeSet.begin(), edgeSet.end());
 }
 
 void ObjectData::initializeEdgesFromTriangles()
 {
-    // TODO: implement ObjectData::setEdgesFromTriangles
-    std::unordered_set<Edge, CustomHash, CustomEqual> edgeMap;
-    Edge edge1(1,2);
-    Edge edge2(1,2);
-    edgeMap.insert(edge1);
-    edgeMap.insert(edge2);
+    std::unordered_set<Edge, CustomHash, CustomEqual> edgeSet;
+    for (const auto& tri : tri.idx)
+    {
+        for (int i = 0; i < 3; ++i)
+        {
+            Edge edge(tri[i], tri[(i + 1) % 3]);
+            edgeSet.insert(edge);
+        }
+    }
+
+    edge.idx.clear();
+    edge.idx.reserve(edgeSet.size());
+    edge.idx.insert(edge.idx.end(), edgeSet.begin(), edgeSet.end());
 }
 
 size_t ObjectData::numNodes() const
