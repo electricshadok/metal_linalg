@@ -11,4 +11,4 @@ https://pub.ista.ac.at/group_wojtan/projects/adjoint_particles/adjointclothprepr
 - Add derivation for C(
 - 
 
-$A$
+

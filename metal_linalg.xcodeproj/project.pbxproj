@@ -129,6 +129,8 @@
 		BFBBAD682C762FF40059233C /* Geometry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Geometry.hpp; path = src/physics/geometry/Geometry.hpp; sourceTree = "<group>"; };
 		BFBBAD6C2C7944F10059233C /* Common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Common.cpp; path = src/physics/Common.cpp; sourceTree = "<group>"; };
 		BFBBAD6D2C7944F10059233C /* Common.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Common.hpp; path = src/physics/Common.hpp; sourceTree = "<group>"; };
+		BFBBAD702C813B900059233C /* geometry.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = geometry.md; path = notes/geometry.md; sourceTree = "<group>"; };
+		BFBBAD712C813C030059233C /* metal_blas.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = metal_blas.md; path = notes/metal_blas.md; sourceTree = "<group>"; };
 		BFDDC73B2B7BCA5200F44B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFDDC73D2B7BCA5900F44B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BFDDC73F2B7BCA6000F44B87 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -142,7 +144,7 @@
 		BFE316512C6920A5007242E1 /* SurfaceMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = SurfaceMesh.hpp; path = src/physics/objects/SurfaceMesh.hpp; sourceTree = "<group>"; };
 		BFE316542C69711E007242E1 /* ConstraintData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ConstraintData.cpp; path = src/physics/constraints/ConstraintData.cpp; sourceTree = "<group>"; };
 		BFE316552C69711E007242E1 /* ConstraintData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ConstraintData.hpp; path = src/physics/constraints/ConstraintData.hpp; sourceTree = "<group>"; };
-		BFE3165A2C69A9C8007242E1 /* Simulation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Simulation.md; path = notes/Simulation.md; sourceTree = "<group>"; };
+		BFE3165A2C69A9C8007242E1 /* physics_sim.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = physics_sim.md; path = notes/physics_sim.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,7 +395,9 @@
 		BFE316592C69A982007242E1 /* notes */ = {
 			isa = PBXGroup;
 			children = (
-				BFE3165A2C69A9C8007242E1 /* Simulation.md */,
+				BFBBAD712C813C030059233C /* metal_blas.md */,
+				BFE3165A2C69A9C8007242E1 /* physics_sim.md */,
+				BFBBAD702C813B900059233C /* geometry.md */,
 			);
 			name = notes;
 			sourceTree = "<group>";
