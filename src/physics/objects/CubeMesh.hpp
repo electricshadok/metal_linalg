@@ -11,6 +11,7 @@ public:
 private:
     void initializeNodes();
     void initializeTriangles();
+    void initializeTets();
 };
 
 #endif /* CubeMesh_hpp */
