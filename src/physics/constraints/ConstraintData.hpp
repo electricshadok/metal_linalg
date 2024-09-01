@@ -5,10 +5,22 @@
 #include <vector>
 #include <Eigen/Dense>
 
+// Base class for all ConstraintData
+struct ConstraintDataBase
+{
+    virtual ~ConstraintDataBase() = default;
+
+    // Setup constraints based on objectData connectivity
+    virtual void setupConstraint(const ObjectData& objData, float stiffness) = 0;
+
+    // Compute forces and Jacobians
+    virtual void computeForces(const ObjectData& objData) = 0;
+};
+
 // Structure to hold data related to constraints in a simulation.
 // @tparam N Number of nodes.
 template<size_t N>
-struct ConstraintData
+struct ConstraintData : public ConstraintDataBase
 {
     ConstraintData(size_t numConstraints);
     

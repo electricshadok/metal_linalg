@@ -1,8 +1,8 @@
 #ifndef App_hpp
 #define App_hpp
 
-#include "physics/objects/ObjectData.hpp"
 #include "physics/solver/Solver.hpp"
+#include "physics/solver/SolverData.hpp"
 #include "app/view/MetalRenderer.hpp"
 #include <memory>
 
@@ -16,7 +16,7 @@ public:
     void step();
 
 private:
-    std::shared_ptr<ObjectData> data;
+    std::shared_ptr<SolverData> data;
     std::shared_ptr<Solver> solver;
     std::shared_ptr<MetalRenderer> renderer;
 };

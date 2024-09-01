@@ -1,8 +1,6 @@
 #ifndef DistanceConstraint_hpp
 #define DistanceConstraint_hpp
 
-// https://chatgpt.com/c/832409e5-0f10-48b5-9230-c25fe72bb164
-
 #include "ConstraintData.hpp"
 
 class AnchorDistanceConstraint : public ConstraintData<1>

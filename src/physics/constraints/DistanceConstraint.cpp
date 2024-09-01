@@ -35,6 +35,9 @@ DistanceConstraint::DistanceConstraint(size_t numConstraints)
 void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness)
 {
     // TODO - add DistanceConstraint::setupConstraint
+    size_t numEdges = objData.edge.idx.size();
+
+    numEdges = numEdges;
 }
 
 void DistanceConstraint::computeForces(const ObjectData& objData)

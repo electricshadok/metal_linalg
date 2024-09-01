@@ -12,3 +12,4 @@
 // TODO: calcualte distance
 
 #endif /* Geometry_hpp */
+

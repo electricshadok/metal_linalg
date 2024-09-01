@@ -6,15 +6,15 @@ Solver::Solver() : gravity(0.0, -9.81, 0.0)
 {
 }
 
-void Solver::initialize(const ObjectData& obj)
+void Solver::initialize(const SolverData& data)
 {
-    system = std::make_shared<Assembly>(obj.numNodes());
+    system = std::make_shared<Assembly>(data.obj->numNodes());
 }
 
 /* https://colab.research.google.com/github/vincentbonnetcg/Numerical-Bric-a-Brac/blob/master/animation/implicit_time_integrator.ipynb#scrollTo=9628d9ad-fc35-4f35-84cf-d7772bae30d0
 */
 
-void Solver::step(const float h, ObjectData& obj)
+void Solver::step(const float h, SolverData& data)
 {
     /* Assemble the system
      Implicit Step
@@ -27,6 +27,7 @@ void Solver::step(const float h, ObjectData& obj)
          v = v + deltaV
          x = x + deltaX
     */
+    ObjectData& obj = *data.obj;
     
     // Initialize system
     system = std::make_shared<Assembly>(obj.numNodes());

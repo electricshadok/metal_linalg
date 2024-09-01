@@ -1,8 +1,9 @@
 #ifndef Solver_hpp
 #define Solver_hpp
 
-#include "physics/objects/ObjectData.hpp"
+#include "physics/solver/SolverData.hpp"
 #include "physics/system/Assembly.hpp"
+
 
 class Solver
 {
@@ -10,9 +11,9 @@ public:
     
     Solver();
     
-    void initialize(const ObjectData& obj);
+    void initialize(const SolverData& data);
     
-    void step(const float h, ObjectData& obj);
+    void step(const float h, SolverData& data);
     
 private:
     
