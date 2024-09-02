@@ -1,5 +1,7 @@
 #include "AreaConstraint.hpp"
 
+#include "geometry/Geometry.hpp"
+
 AreaConstraint::AreaConstraint(size_t numConstraints)
     : ConstraintData<3>(numConstraints),
       rest(numConstraints)
@@ -26,15 +28,18 @@ void AreaConstraint::setupConstraint(const ObjectData& objData, float stiffness)
     for (size_t i = 0; i < numTriangles; ++i)
     {
         const Triangle& tri = objData.tri.idx[i];
-        
+
         // Set node indices
         // TODO: add helper function in ConstraintData<3>
         ids[i * 3] = tri[0];
         ids[i * 3 + 1] = tri[1];
         ids[i * 3 + 2] = tri[2];
-        
-        // TODO - Calculate the triangle area (add in geometry lib)
-        float area = 1.0f;
+
+        const Eigen::Vector3f& x0 = objData.nodes.p[tri[0]];
+        const Eigen::Vector3f& x1 = objData.nodes.p[tri[1]];
+        const Eigen::Vector3f& x2 = objData.nodes.p[tri[2]];
+
+        const float area = Geometry::area(x0, x1, x2);
         rest[i] = area;
     }
 }
