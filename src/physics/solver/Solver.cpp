@@ -8,7 +8,8 @@ Solver::Solver() : gravity(0.0, -9.81, 0.0)
 
 void Solver::initialize(const SolverData& data)
 {
-    system = std::make_shared<Assembly>(data.obj->numNodes());
+    ObjectData& obj = *data.obj;
+    system = std::make_shared<Assembly>(obj.numNodes());
 }
 
 /* https://colab.research.google.com/github/vincentbonnetcg/Numerical-Bric-a-Brac/blob/master/animation/implicit_time_integrator.ipynb#scrollTo=9628d9ad-fc35-4f35-84cf-d7772bae30d0

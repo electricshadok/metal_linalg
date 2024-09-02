@@ -37,7 +37,7 @@
 		BF2B6BEC2C5FFB2E001D6464 /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BE72C5FFB2E001D6464 /* CubeMesh.cpp */; };
 		BF2B6BF02C60074A001D6464 /* Assembly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2B6BEE2C60074A001D6464 /* Assembly.cpp */; };
 		BFBBAD5C2C72E0F40059233C /* DistanceConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */; };
-		BFBBAD5F2C7596080059233C /* AreaContraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD5D2C7596080059233C /* AreaContraint.cpp */; };
+		BFBBAD5F2C7596080059233C /* AreaConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD5D2C7596080059233C /* AreaConstraint.cpp */; };
 		BFBBAD622C7596400059233C /* VolumeConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD602C7596400059233C /* VolumeConstraint.cpp */; };
 		BFBBAD652C75966A0059233C /* BendingConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD632C75966A0059233C /* BendingConstraint.cpp */; };
 		BFBBAD6E2C7944F10059233C /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFBBAD6C2C7944F10059233C /* Common.cpp */; };
@@ -120,8 +120,8 @@
 		BFAC74ED2B7B06DF0034E671 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
 		BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DistanceConstraint.cpp; path = src/physics/constraints/DistanceConstraint.cpp; sourceTree = "<group>"; };
 		BFBBAD5B2C72E0F40059233C /* DistanceConstraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = DistanceConstraint.hpp; path = src/physics/constraints/DistanceConstraint.hpp; sourceTree = "<group>"; };
-		BFBBAD5D2C7596080059233C /* AreaContraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AreaContraint.cpp; path = src/physics/constraints/AreaContraint.cpp; sourceTree = "<group>"; };
-		BFBBAD5E2C7596080059233C /* AreaContraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = AreaContraint.hpp; path = src/physics/constraints/AreaContraint.hpp; sourceTree = "<group>"; };
+		BFBBAD5D2C7596080059233C /* AreaConstraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AreaConstraint.cpp; path = src/physics/constraints/AreaConstraint.cpp; sourceTree = "<group>"; };
+		BFBBAD5E2C7596080059233C /* AreaConstraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = AreaConstraint.hpp; path = src/physics/constraints/AreaConstraint.hpp; sourceTree = "<group>"; };
 		BFBBAD602C7596400059233C /* VolumeConstraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VolumeConstraint.cpp; path = src/physics/constraints/VolumeConstraint.cpp; sourceTree = "<group>"; };
 		BFBBAD612C7596400059233C /* VolumeConstraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = VolumeConstraint.hpp; path = src/physics/constraints/VolumeConstraint.hpp; sourceTree = "<group>"; };
 		BFBBAD632C75966A0059233C /* BendingConstraint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BendingConstraint.cpp; path = src/physics/constraints/BendingConstraint.cpp; sourceTree = "<group>"; };
@@ -387,8 +387,8 @@
 				BFE316552C69711E007242E1 /* ConstraintData.hpp */,
 				BFBBAD5A2C72E0F40059233C /* DistanceConstraint.cpp */,
 				BFBBAD5B2C72E0F40059233C /* DistanceConstraint.hpp */,
-				BFBBAD5D2C7596080059233C /* AreaContraint.cpp */,
-				BFBBAD5E2C7596080059233C /* AreaContraint.hpp */,
+				BFBBAD5D2C7596080059233C /* AreaConstraint.cpp */,
+				BFBBAD5E2C7596080059233C /* AreaConstraint.hpp */,
 				BFBBAD602C7596400059233C /* VolumeConstraint.cpp */,
 				BFBBAD612C7596400059233C /* VolumeConstraint.hpp */,
 				BFBBAD632C75966A0059233C /* BendingConstraint.cpp */,
@@ -489,7 +489,7 @@
 				BFBBAD652C75966A0059233C /* BendingConstraint.cpp in Sources */,
 				BF2B6BEA2C5FFB2E001D6464 /* RodMesh.cpp in Sources */,
 				BF2B6BAC2C5AF749001D6464 /* gemv.cpp in Sources */,
-				BFBBAD5F2C7596080059233C /* AreaContraint.cpp in Sources */,
+				BFBBAD5F2C7596080059233C /* AreaConstraint.cpp in Sources */,
 				BF2B6BA62C5AF71D001D6464 /* blas_level2.metal in Sources */,
 				BF2B6B712C5091C7001D6464 /* test.cpp in Sources */,
 				BF2B6BB72C5AF756001D6464 /* axpy.cpp in Sources */,

@@ -20,6 +20,11 @@ void Nodes::append(const Nodes& other) {
 EdgeConnectivity::EdgeConnectivity(size_t edgeCount) : idx(edgeCount)
 {}
 
+size_t EdgeConnectivity::numEdges() const
+{
+    return idx.size();
+}
+
 void EdgeConnectivity::append(const EdgeConnectivity& other, size_t vertexOffset)
 {
     for (const auto& edge : other.idx)
@@ -30,6 +35,11 @@ void EdgeConnectivity::append(const EdgeConnectivity& other, size_t vertexOffset
 
 TriangleConnectivity::TriangleConnectivity(size_t triangleCount) : idx(triangleCount)
 {}
+
+size_t TriangleConnectivity::numTriangles() const
+{
+    return idx.size();
+}
 
 void TriangleConnectivity::append(const TriangleConnectivity& other, size_t vertexOffset)
 {
@@ -43,6 +53,11 @@ void TriangleConnectivity::append(const TriangleConnectivity& other, size_t vert
 
 TetConnectivity::TetConnectivity(size_t tetCount) : idx(tetCount)
 {
+}
+
+size_t TetConnectivity::numTets() const
+{
+    return idx.size();
 }
 
 void TetConnectivity::append(const TetConnectivity& other, size_t vertexOffset)
@@ -134,4 +149,18 @@ void ObjectData::initializeEdgesFromTriangles()
 size_t ObjectData::numNodes() const
 {
     return nodes.numNodes();
+}
+
+size_t ObjectData::numTets() const
+{
+    return tet.numTets();
+}
+size_t ObjectData::numTriangles() const
+{
+    return tri.numTriangles();
+}
+
+size_t ObjectData::numEdges() const
+{
+    return edge.numEdges();
 }

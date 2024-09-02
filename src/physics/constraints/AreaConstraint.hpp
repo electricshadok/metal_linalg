@@ -1,12 +1,12 @@
-#ifndef BendingConstraint_hpp
-#define BendingConstraint_hpp
+#ifndef AreaContraint_hpp
+#define AreaContraint_hpp
 
 #include "ConstraintData.hpp"
 
-class BendingConstraint : public ConstraintData<4>
+class AreaConstraint : public ConstraintData<3>
 {
 public:
-    BendingConstraint(size_t numConstraints);
+    AreaConstraint(size_t numConstraints);
 
     // Setup constraints based on objectData connectivity
     void setupConstraint(const ObjectData& objData, float stiffness) override;
@@ -19,4 +19,4 @@ private:
     std::vector<float> rest;
 };
 
-#endif /* BendingConstraint_hpp */
+#endif /* AreaContraint_hpp */

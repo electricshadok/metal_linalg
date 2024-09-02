@@ -14,7 +14,7 @@ struct ConstraintDataBase
     virtual void setupConstraint(const ObjectData& objData, float stiffness) = 0;
 
     // Compute forces and Jacobians
-    virtual void computeForces(const ObjectData& objData) = 0;
+    virtual void updateDerivatives(const ObjectData& objData) = 0;
 };
 
 // Structure to hold data related to constraints in a simulation.
@@ -31,7 +31,10 @@ struct ConstraintData : public ConstraintDataBase
     virtual void setupConstraint(const ObjectData& objData, float stiffness) = 0;
 
     // Compute forces and Jacobians
-    virtual void computeForces(const ObjectData& objData) = 0;
+    virtual void updateDerivatives(const ObjectData& objData) = 0;
+    
+    // Return the number of constraints
+    size_t size() const;
     
     // Stiffness values for each constraint (size: C)
     std::vector<float> k;

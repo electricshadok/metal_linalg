@@ -12,7 +12,7 @@ public:
     void setupConstraint(const ObjectData& objData, float stiffness) override;
 
     // Compute forces and Jacobians
-    void computeForces(const ObjectData& objData) override;
+    void updateDerivatives(const ObjectData& objData) override;
 
 private:
     // Fixed anchor points (size: numConstraints)
@@ -31,7 +31,7 @@ public:
     void setupConstraint(const ObjectData& objData, float stiffness) override;
 
     // Compute forces and Jacobians
-    void computeForces(const ObjectData& objData) override;
+    void updateDerivatives(const ObjectData& objData) override;
 
 private:
     // Rest lengths for each constraint (size: numConstraints)
