@@ -1,20 +1,23 @@
 #include "ConstraintData.hpp"
 
-template<size_t N>
-ConstraintData<N>::ConstraintData(size_t c)
-    : k(c),
-      ids(c * N),
-      f(c * N),
-      dxdf(c * N * N),
-      dvdf(c * N * N)
+ConstraintDataBase::ConstraintDataBase(size_t num_c, size_t num_ids, size_t num_grad, size_t num_jac):
+    k(num_c),
+    ids(num_ids),
+    f(num_grad),
+    dxdf(num_jac),
+    dvdf(num_jac)
 {
-    // Additional initialization (if needed)
+}
+
+size_t ConstraintDataBase::size() const
+{
+    return k.size();
 }
 
 template<size_t N>
-size_t ConstraintData<N>::size() const
+ConstraintData<N>::ConstraintData(size_t c) : ConstraintDataBase(c, c * N, c * N, c * N * N)
 {
-    return k.size();
+    // Additional initialization (if needed)
 }
 
 // Explicit template instantiation for specific types
