@@ -9,7 +9,7 @@ ConstraintDataBase::ConstraintDataBase(size_t num_c, size_t num_ids, size_t num_
 {
 }
 
-size_t ConstraintDataBase::size() const
+size_t ConstraintDataBase::numConstraints() const
 {
     return k.size();
 }
@@ -18,6 +18,12 @@ template<size_t N>
 ConstraintData<N>::ConstraintData(size_t c) : ConstraintDataBase(c, c * N, c * N, c * N * N)
 {
     // Additional initialization (if needed)
+}
+
+template<size_t N>
+size_t ConstraintData<N>::size() const
+{
+    return N;
 }
 
 // Explicit template instantiation for specific types

@@ -17,6 +17,10 @@ public:
     
 private:
     
+    void assembleGlobalMatrix(const float h, const SolverData& data);
+    
+    void assembleGlobalVector(const float h, const SolverData& data);
+    
     std::vector<Eigen::Vector3f> toVector3f(const Eigen::VectorXf& solution);
     
     Eigen::Vector3f gravity;

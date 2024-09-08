@@ -62,6 +62,11 @@ void DistanceConstraint::updateDerivatives(const ObjectData& objData)
 {
     // TODO - implement DistanceConstraint::updateDerivatives
 
+    // Fill the forces and jacobians
+    std::fill(f.begin(), f.end(), Eigen::Vector3f::Zero());
+    std::fill(dxdf.begin(), dxdf.end(), Eigen::Matrix3f::Zero());
+    std::fill(dvdf.begin(), dvdf.end(), Eigen::Matrix3f::Zero());
+    
     // Set the forces (f)
     
     // Set the jacobians (dfdx, dfdv)

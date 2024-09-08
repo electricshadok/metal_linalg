@@ -32,31 +32,23 @@ void Solver::step(const float h, SolverData& data)
     
     // Initialize system
     system = std::make_shared<Assembly>(obj.numNodes());
-    
-    // Gather forces
+
+    // Reset external forces/accelerations
     for (size_t i=0; i<obj.numNodes(); ++i)
     {
         obj.nodes.f[i].setZero();
         obj.nodes.f[i] = gravity * obj.nodes.m[i];
     }
 
-    // Assemble A matrix
-    for (size_t i=0; i<obj.numNodes(); ++i)
+    // Calculate constraints derivatives
+    for (auto& ctn : data.ctns)
     {
-        // Mass Matrix
-        Mass m = obj.nodes.m[i];
-        Eigen::Matrix3f massMatrix;
-        massMatrix << m, 0.0, 0.0,
-                      0.0, m, 0.0,
-                      0.0, 0.0, m;
-        system->addToMatrix(massMatrix, i, i);
+        ctn->updateDerivatives(obj);
     }
     
-    // Assemble b vector
-    for (size_t i=0; i<obj.numNodes(); ++i)
-    {
-        system->addToVector(obj.nodes.f[i] * h, i);
-    }
+    // Assemble system
+    assembleGlobalMatrix(h, data);
+    assembleGlobalVector(h, data);
     
     // Solve system to get velocity deltas
     CGSolver solver(PreconditionerType::None);
@@ -76,6 +68,58 @@ void Solver::step(const float h, SolverData& data)
         obj.nodes.p[i] += dx[i];
     }
 }
+
+void Solver::assembleGlobalMatrix(const float h, const SolverData& data)
+{
+    // Assemble the matrix A
+    // A = (M - h * df/dv - h^2 * df/dx)
+    
+    ObjectData& obj = *data.obj;
+
+    // Add mass matrix (M)
+    for (size_t i=0; i<obj.numNodes(); ++i)
+    {
+        // Mass Matrix
+        Mass m = obj.nodes.m[i];
+        Eigen::Matrix3f massMatrix;
+        massMatrix << m, 0.0, 0.0,
+                      0.0, m, 0.0,
+                      0.0, 0.0, m;
+        system->addToMatrix(massMatrix, i, i);
+    }
+    
+    // Add (- h * df/dv - h^2 * df/dx)
+    for (auto& ctn : data.ctns)
+    {
+        for (size_t i=0; i < ctn->numConstraints(); ++i)
+        {
+            // TODO - add equation above
+        }
+    }
+}
+
+void Solver::assembleGlobalVector(const float h, const SolverData& data)
+{
+    // Assemble the vector b
+    // b = h * (f0 + h * df/dx * v0)
+    
+    ObjectData& obj = *data.obj;
+    
+    // Add (h * f0)
+    for (size_t i=0; i<obj.numNodes(); ++i)
+    {
+        system->addToVector(obj.nodes.f[i] * h, i);
+    }
+    
+    // Add (h * h * df/dx * v0)
+    for (auto& ctn : data.ctns)
+    {
+        size_t ctn_size = ctn->size();
+        // TODO - add equation above
+    }
+}
+
+
 
 std::vector<Eigen::Vector3f> Solver::toVector3f(const Eigen::VectorXf& solution)
 {

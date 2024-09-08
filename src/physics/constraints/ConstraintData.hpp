@@ -9,6 +9,8 @@
 struct ConstraintDataBase
 {
     ConstraintDataBase(size_t num_c, size_t num_ids, size_t num_grad, size_t num_jac);
+    
+    virtual size_t size() const = 0;
 
     // Setup constraints based on objectData connectivity
     virtual void setupConstraint(const ObjectData& objData, float stiffness) = 0;
@@ -17,7 +19,7 @@ struct ConstraintDataBase
     virtual void updateDerivatives(const ObjectData& objData) = 0;
     
     // Return the number of constraints
-    size_t size() const;
+    size_t numConstraints() const;
     
     // Stiffness values for each constraint (size: num_c)
     std::vector<float> k;
@@ -48,6 +50,8 @@ template<size_t N>
 struct ConstraintData : public ConstraintDataBase
 {
     ConstraintData(size_t numConstraints);
+    
+    size_t size() const override;
     
     // Virtual destructor to ensure proper cleanup of derived classes
     virtual ~ConstraintData() = default;
