@@ -20,8 +20,8 @@ void AreaConstraint::setupConstraint(const ObjectData& objData, float stiffness)
 
     // Fill the forces and jacobians
     std::fill(f.begin(), f.end(), Eigen::Vector3f::Zero());
-    std::fill(dxdf.begin(), dxdf.end(), Eigen::Matrix3f::Zero());
-    std::fill(dvdf.begin(), dvdf.end(), Eigen::Matrix3f::Zero());
+    std::fill(dfdx.begin(), dfdx.end(), Eigen::Matrix3f::Zero());
+    std::fill(dfdv.begin(), dfdv.end(), Eigen::Matrix3f::Zero());
 
     // Set up the node indices
     size_t numTriangles = objData.tri.idx.size();

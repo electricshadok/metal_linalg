@@ -32,7 +32,7 @@ void Solver::step(const float h, SolverData& data)
     
     // Initialize system
     system = std::make_shared<Assembly>(obj.numNodes());
-
+    
     // Reset external forces/accelerations
     for (size_t i=0; i<obj.numNodes(); ++i)
     {
@@ -46,7 +46,7 @@ void Solver::step(const float h, SolverData& data)
         ctn->updateDerivatives(obj);
     }
     
-    // Assemble system
+    // Assemble linear system
     assembleGlobalMatrix(h, data);
     assembleGlobalVector(h, data);
     
@@ -60,7 +60,7 @@ void Solver::step(const float h, SolverData& data)
     {
         dx[i] = (obj.nodes.vel[i] + dv[i]) * h;
     }
-    
+
     // Update states
     for (size_t i=0; i < dx.size();++i)
     {
@@ -91,9 +91,26 @@ void Solver::assembleGlobalMatrix(const float h, const SolverData& data)
     // Add (- h * df/dv - h^2 * df/dx)
     for (auto& ctn : data.ctns)
     {
-        for (size_t i=0; i < ctn->numConstraints(); ++i)
+        const size_t n_ctns = ctn->numConstraints();
+        const size_t n = ctn->size();
+        const size_t m_offset = n*n;
+
+        for (size_t c=0; c < n_ctns; ++c)
         {
-            // TODO - add equation above
+            for (size_t i=0; i<n; ++i)
+            {
+                for (size_t j=0; j<n; ++j)
+                {
+                    const size_t m_idx = c * m_offset + (i + j * n);
+                    const Eigen::Matrix3f dfdv = ctn->dfdv[m_idx] * h * -1;
+                    const Eigen::Matrix3f dfdx = ctn->dfdx[m_idx] * h*h * -1;
+
+                    const size_t ii = ctn->ids[(c * n) + i];
+                    const size_t jj = ctn->ids[(c * n) + j];
+                    
+                    system->addToMatrix(dfdv+dfdx, jj, ii);
+                }
+            }
         }
     }
 }
@@ -102,24 +119,41 @@ void Solver::assembleGlobalVector(const float h, const SolverData& data)
 {
     // Assemble the vector b
     // b = h * (f0 + h * df/dx * v0)
-    
+
     ObjectData& obj = *data.obj;
-    
+
     // Add (h * f0)
     for (size_t i=0; i<obj.numNodes(); ++i)
     {
         system->addToVector(obj.nodes.f[i] * h, i);
     }
-    
+
     // Add (h * h * df/dx * v0)
     for (auto& ctn : data.ctns)
     {
-        size_t ctn_size = ctn->size();
-        // TODO - add equation above
+        const size_t n_ctns = ctn->numConstraints();
+        const size_t n = ctn->size();
+        const size_t m_offset = n*n;
+
+        for (size_t c=0; c < n_ctns; ++c)
+        {
+            for (size_t i=0; i<n; ++i)
+            {
+                const size_t node_id = ctn->ids[c*n + i];
+                for (size_t j=0; j<n; ++j)
+                {
+                    const size_t m_idx = c * m_offset + (i + j * n);
+                    const Eigen::Matrix3f dfdx = ctn->dfdx[m_idx] *h*h;
+                    const size_t node_vid = ctn->ids[c*n + j];
+
+                    const Eigen::Vector3f& v0 = obj.nodes.vel[node_vid];
+
+                    system->addToVector(dfdx*v0, node_id);
+                }
+            }
+        }
     }
 }
-
-
 
 std::vector<Eigen::Vector3f> Solver::toVector3f(const Eigen::VectorXf& solution)
 {

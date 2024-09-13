@@ -4,8 +4,8 @@ ConstraintDataBase::ConstraintDataBase(size_t num_c, size_t num_ids, size_t num_
     k(num_c),
     ids(num_ids),
     f(num_grad),
-    dxdf(num_jac),
-    dvdf(num_jac)
+    dfdx(num_jac),
+    dfdv(num_jac)
 {
 }
 

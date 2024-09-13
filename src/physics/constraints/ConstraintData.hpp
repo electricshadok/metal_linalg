@@ -32,11 +32,11 @@ struct ConstraintDataBase
 
     // Jacobian matrices with respect to positions (size: num_c * N * N)
     // TODO: constraints are most likely symmetric, we could optimize this code
-    std::vector<Eigen::Matrix3f> dxdf;
+    std::vector<Eigen::Matrix3f> dfdx;
 
     // Jacobian matrices with respect to velocities (size: num_c * N * N)
     // TODO: constraints are most likely symmetric, we could optimize this code
-    std::vector<Eigen::Matrix3f> dvdf;
+    std::vector<Eigen::Matrix3f> dfdv;
 };
 
 // Structure to hold data related to constraints in a simulation.
@@ -44,8 +44,8 @@ struct ConstraintDataBase
 // Stiffness values (k) for each constraint (size: C)
 // Node indices (ids) associated with each constraint (size: C * N)
 // Forces (f) applied to each node under each constraint (size: C * N)
-// Jacobian (dxdf) matrices with respect to positions (size: C * N * N)
-// Jacobian (dvdf) matrices with respect to velocities (size: C * N * N)
+// Jacobian (dfdx) matrices with respect to positions (size: C * N * N)
+// Jacobian (dfdv) matrices with respect to velocities (size: C * N * N)
 template<size_t N>
 struct ConstraintData : public ConstraintDataBase
 {

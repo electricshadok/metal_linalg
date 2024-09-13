@@ -19,8 +19,8 @@ void BendingConstraint::setupConstraint(const ObjectData& objData, float stiffne
 
     // Fill the forces and jacobians
     std::fill(f.begin(), f.end(), Eigen::Vector3f::Zero());
-    std::fill(dxdf.begin(), dxdf.end(), Eigen::Matrix3f::Zero());
-    std::fill(dvdf.begin(), dvdf.end(), Eigen::Matrix3f::Zero());
+    std::fill(dfdx.begin(), dfdx.end(), Eigen::Matrix3f::Zero());
+    std::fill(dfdv.begin(), dfdv.end(), Eigen::Matrix3f::Zero());
 
     // TODO: Set up the node indices
 }
