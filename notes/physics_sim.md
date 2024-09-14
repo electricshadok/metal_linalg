@@ -11,4 +11,5 @@ https://pub.ista.ac.at/group_wojtan/projects/adjoint_particles/adjointclothprepr
 - Add derivation for C(
 - 
 
+- https://blog.mmacklin.com/2012/05/04/implicitsprings/
 

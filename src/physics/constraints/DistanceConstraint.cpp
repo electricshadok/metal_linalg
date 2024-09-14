@@ -42,33 +42,46 @@ void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffn
 
     // Set up the node indices
     size_t numEdges = objData.edge.idx.size();
-    for (size_t i = 0; i < numEdges; ++i)
+    for (size_t c = 0; c < numEdges; ++c)
     {
-        const Edge& edge = objData.edge.idx[i];
+        const Edge& edge = objData.edge.idx[c];
         
         // Set node indices
         // TODO: add helper function in ConstraintData<2>
-        ids[i * 2] = edge[0];
-        ids[i * 2 + 1] = edge[1];
-        
+        const size_t i = c * 2;
+        const size_t j = i + 1;
+        ids[i] = edge[0];
+        ids[j] = edge[1];
+
         // Calculate the norm (rest length) for the edge
-        Eigen::Vector3f p1 = objData.nodes.p[edge[0]];
-        Eigen::Vector3f p2 = objData.nodes.p[edge[1]];
-        rest[i] = (p1 - p2).norm();
+        const Eigen::Vector3f& xi = objData.nodes.p[ids[i]];
+        const Eigen::Vector3f& xj = objData.nodes.p[ids[j]];
+        rest[c] = (xi - xj).norm();
     }
 }
 
 void DistanceConstraint::updateDerivatives(const ObjectData& objData)
 {
-    // TODO - implement DistanceConstraint::updateDerivatives
-
     // Fill the forces and jacobians
     std::fill(f.begin(), f.end(), Eigen::Vector3f::Zero());
     std::fill(dfdx.begin(), dfdx.end(), Eigen::Matrix3f::Zero());
     std::fill(dfdv.begin(), dfdv.end(), Eigen::Matrix3f::Zero());
     
     // Set the forces (f)
+    for (size_t c = 0; c < numConstraints(); ++c)
+    {
+        const size_t i = c * 2;
+        const size_t j = i + 1;
+        const Eigen::Vector3f& xi = objData.nodes.p[ids[i]];
+        const Eigen::Vector3f& xj = objData.nodes.p[ids[j]];
+        Eigen::Vector3f x_ij = xi - xj;
+        const float r = x_ij.norm();
+        x_ij /= r;
+        f[i] =  x_ij * -k[c] * (r - rest[c]);
+        f[j] = f[i] * -1;
+    }
     
     // Set the jacobians (dfdx, dfdv)
+    // TODO - implement DistanceConstraint::updateDerivatives
 }
 
