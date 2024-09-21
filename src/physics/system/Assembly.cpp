@@ -8,7 +8,7 @@ Assembly::Assembly(size_t numNodes) :
     _b.setZero();
 }
 
-void Assembly::addToMatrix(const Eigen::Matrix3f& subMatrix, size_t row, size_t col)
+void Assembly::addToMatrix(const M33f& subMatrix, size_t row, size_t col)
 {
     size_t ii = row * 3;
     size_t jj = col * 3;
@@ -20,7 +20,7 @@ void Assembly::addToMatrix(const Eigen::Matrix3f& subMatrix, size_t row, size_t 
     }
 }
 
-void Assembly::addToVector(const Eigen::Vector3f& subVector, size_t row)
+void Assembly::addToVector(const V3f& subVector, size_t row)
 {
     size_t ii = row * 3;
     

@@ -1,8 +1,10 @@
 # Metal Linear Algebra (WIP)
 
+A repo with random pet projects around numerical methods
+- blas linear algebra
+- physics simulation
 
-
-TODO
+**Features**
 
 - Add derivatives (gradient, hessian)
 - Add connectivity query (adjency triangle) src/geometry/Connectivity.hpp
@@ -11,9 +13,8 @@ TODO
 - Implement own conjugate gradient
 - Add intersection algorithm
 
+**Refactoring**
 
-A repo with random pet projects around numerical methods
-- blas linear algebra
-- physics simulation
+- replace Eigen::something with alias in phyisics:Common.hpp
 
 

@@ -18,11 +18,6 @@ void VolumeConstraint::setupConstraint(const ObjectData& objData, float stiffnes
     // Fill the stiffness vector
     std::fill(k.begin(), k.end(), stiffness);
 
-    // Fill the forces and jacobians
-    std::fill(f.begin(), f.end(), Eigen::Vector3f::Zero());
-    std::fill(dfdx.begin(), dfdx.end(), Eigen::Matrix3f::Zero());
-    std::fill(dfdv.begin(), dfdv.end(), Eigen::Matrix3f::Zero());
-
     // Set up the node indices
     size_t numTets = objData.tet.idx.size();
     for (size_t i = 0; i < numTets; ++i)
@@ -36,10 +31,10 @@ void VolumeConstraint::setupConstraint(const ObjectData& objData, float stiffnes
         ids[i * 4 + 2] = tet[2];
         ids[i * 4 + 3] = tet[3];
 
-        const Eigen::Vector3f& x0 = objData.nodes.p[tet[0]];
-        const Eigen::Vector3f& x1 = objData.nodes.p[tet[1]];
-        const Eigen::Vector3f& x2 = objData.nodes.p[tet[2]];
-        const Eigen::Vector3f& x3 = objData.nodes.p[tet[3]];
+        const V3f& x0 = objData.nodes.p[tet[0]];
+        const V3f& x1 = objData.nodes.p[tet[1]];
+        const V3f& x2 = objData.nodes.p[tet[2]];
+        const V3f& x3 = objData.nodes.p[tet[3]];
 
         const float volume = Geometry::volume(x0,x1,x2,x3);
         rest[i] = volume;
@@ -50,6 +45,11 @@ void VolumeConstraint::updateDerivatives(const ObjectData& objData)
 {
     // TODO - implement VolumeConstraint::updateDerivatives
 
+    // Reset the forces and jacobians
+    std::fill(f.begin(), f.end(), V3f::Zero());
+    std::fill(dfdx.begin(), dfdx.end(), M33f::Zero());
+    std::fill(dfdv.begin(), dfdv.end(), M33f::Zero());
+    
     // Set the forces (f)
     
     // Set the jacobians (dfdx, dfdv)

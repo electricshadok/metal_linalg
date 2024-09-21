@@ -4,6 +4,10 @@
 #include <Eigen/Dense>
 #include <vector>
 
+// Linear algebra
+using V3f = Eigen::Vector3f;
+using M33f = Eigen::Matrix3f;
+
 // Nodes
 using Position = Eigen::Vector3f;
 using Velocity = Eigen::Vector3f;

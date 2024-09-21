@@ -3,7 +3,7 @@
 
 #include "physics/objects/ObjectData.hpp"
 #include <vector>
-#include <Eigen/Dense>
+#include "physics/Common.hpp"
 
 // Base class for all ConstraintData
 struct ConstraintDataBase
@@ -28,15 +28,15 @@ struct ConstraintDataBase
     std::vector<int> ids;
 
     // Forces applied to each node under each constraint (size: num_c * N)
-    std::vector<Eigen::Vector3f> f;
+    std::vector<V3f> f;
 
     // Jacobian matrices with respect to positions (size: num_c * N * N)
     // TODO: constraints are most likely symmetric, we could optimize this code
-    std::vector<Eigen::Matrix3f> dfdx;
+    std::vector<M33f> dfdx;
 
     // Jacobian matrices with respect to velocities (size: num_c * N * N)
     // TODO: constraints are most likely symmetric, we could optimize this code
-    std::vector<Eigen::Matrix3f> dfdv;
+    std::vector<M33f> dfdv;
 };
 
 // Structure to hold data related to constraints in a simulation.

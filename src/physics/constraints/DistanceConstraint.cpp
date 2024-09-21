@@ -35,11 +35,6 @@ void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffn
     // Fill the stiffness vector
     std::fill(k.begin(), k.end(), stiffness);
 
-    // Fill the forces and jacobians
-    std::fill(f.begin(), f.end(), Eigen::Vector3f::Zero());
-    std::fill(dfdx.begin(), dfdx.end(), Eigen::Matrix3f::Zero());
-    std::fill(dfdv.begin(), dfdv.end(), Eigen::Matrix3f::Zero());
-
     // Set up the node indices
     size_t numEdges = objData.edge.idx.size();
     for (size_t c = 0; c < numEdges; ++c)
@@ -54,8 +49,8 @@ void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffn
         ids[j] = edge[1];
 
         // Calculate the norm (rest length) for the edge
-        const Eigen::Vector3f& xi = objData.nodes.p[ids[i]];
-        const Eigen::Vector3f& xj = objData.nodes.p[ids[j]];
+        const V3f& xi = objData.nodes.p[ids[i]];
+        const V3f& xj = objData.nodes.p[ids[j]];
         rest[c] = (xi - xj).norm();
     }
 }
@@ -63,18 +58,18 @@ void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffn
 void DistanceConstraint::updateDerivatives(const ObjectData& objData)
 {
     // Fill the forces and jacobians
-    std::fill(f.begin(), f.end(), Eigen::Vector3f::Zero());
-    std::fill(dfdx.begin(), dfdx.end(), Eigen::Matrix3f::Zero());
-    std::fill(dfdv.begin(), dfdv.end(), Eigen::Matrix3f::Zero());
+    std::fill(f.begin(), f.end(), V3f::Zero());
+    std::fill(dfdx.begin(), dfdx.end(), M33f::Zero());
+    std::fill(dfdv.begin(), dfdv.end(), M33f::Zero());
     
     // Set the forces (f)
     for (size_t c = 0; c < numConstraints(); ++c)
     {
         const size_t i = c * 2;
         const size_t j = i + 1;
-        const Eigen::Vector3f& xi = objData.nodes.p[ids[i]];
-        const Eigen::Vector3f& xj = objData.nodes.p[ids[j]];
-        Eigen::Vector3f x_ij = xi - xj;
+        const V3f& xi = objData.nodes.p[ids[i]];
+        const V3f& xj = objData.nodes.p[ids[j]];
+        V3f x_ij = xi - xj;
         const float r = x_ij.norm();
         x_ij /= r;
         f[i] =  x_ij * -k[c] * (r - rest[c]);

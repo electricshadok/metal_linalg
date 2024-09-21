@@ -17,11 +17,6 @@ void BendingConstraint::setupConstraint(const ObjectData& objData, float stiffne
     // Fill the stiffness vector
     std::fill(k.begin(), k.end(), stiffness);
 
-    // Fill the forces and jacobians
-    std::fill(f.begin(), f.end(), Eigen::Vector3f::Zero());
-    std::fill(dfdx.begin(), dfdx.end(), Eigen::Matrix3f::Zero());
-    std::fill(dfdv.begin(), dfdv.end(), Eigen::Matrix3f::Zero());
-
     // TODO: Set up the node indices
 }
 
@@ -29,6 +24,11 @@ void BendingConstraint::updateDerivatives(const ObjectData& objData)
 {
     // TODO - implement VolumeConstraint::updateDerivatives
 
+    // Reset the forces and jacobians
+    std::fill(f.begin(), f.end(), V3f::Zero());
+    std::fill(dfdx.begin(), dfdx.end(), M33f::Zero());
+    std::fill(dfdv.begin(), dfdv.end(), M33f::Zero());
+    
     // Set the forces (f)
     
     // Set the jacobians (dfdx, dfdv)

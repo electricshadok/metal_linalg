@@ -1,19 +1,19 @@
 #ifndef Geometry_hpp
 #define Geometry_hpp
 
-#include <Eigen/Dense>
+#include "physics/Common.hpp"
 
 namespace Geometry
 {
 
-float area(const Eigen::Vector3f& x0,
-           const Eigen::Vector3f& x1,
-           const Eigen::Vector3f& x2);
+float area(const V3f& x0,
+           const V3f& x1,
+           const V3f& x2);
 
-float volume(const Eigen::Vector3f& x0,
-             const Eigen::Vector3f& x1,
-             const Eigen::Vector3f& x2,
-             const Eigen::Vector3f& x3);
+float volume(const V3f& x0,
+             const V3f& x1,
+             const V3f& x2,
+             const V3f& x3);
 
 // TODO: calculate deformation gradient
 
