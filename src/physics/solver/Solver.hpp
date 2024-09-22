@@ -3,14 +3,14 @@
 
 #include "physics/solver/SolverData.hpp"
 #include "physics/system/Assembly.hpp"
-
+#include "physics/Common.hpp"
 
 class Solver
 {
 public:
     
     Solver();
-    
+
     void initialize(const SolverData& data);
     
     void step(const float h, SolverData& data);
@@ -21,9 +21,9 @@ private:
     
     void assembleGlobalVector(const float h, const SolverData& data);
     
-    std::vector<Eigen::Vector3f> toVector3f(const Eigen::VectorXf& solution);
+    std::vector<V3f> toV3f(const Eigen::VectorXf& solution);
     
-    Eigen::Vector3f gravity;
+    V3f gravity;
     std::shared_ptr<Assembly> system;
 };
 

@@ -12,9 +12,6 @@ void Solver::initialize(const SolverData& data)
     system = std::make_shared<Assembly>(obj.numNodes());
 }
 
-/* https://colab.research.google.com/github/vincentbonnetcg/Numerical-Bric-a-Brac/blob/master/animation/implicit_time_integrator.ipynb#scrollTo=9628d9ad-fc35-4f35-84cf-d7772bae30d0
-*/
-
 void Solver::step(const float h, SolverData& data)
 {
     /* Assemble the system
@@ -52,10 +49,10 @@ void Solver::step(const float h, SolverData& data)
     
     // Solve system to get velocity deltas
     CGSolver solver(PreconditionerType::None);
-    std::vector<Eigen::Vector3f> dv(toVector3f(solver.solve(*system)));
+    std::vector<V3f> dv(toV3f(solver.solve(*system)));
     
     // Compute position deltas
-    std::vector<Eigen::Vector3f> dx(dv.size());
+    std::vector<V3f> dx(dv.size());
     for (size_t i=0; i < dx.size();++i)
     {
         dx[i] = (obj.nodes.vel[i] + dv[i]) * h;
@@ -81,7 +78,7 @@ void Solver::assembleGlobalMatrix(const float h, const SolverData& data)
     {
         // Mass Matrix
         Mass m = obj.nodes.m[i];
-        Eigen::Matrix3f massMatrix;
+        M33f massMatrix;
         massMatrix << m, 0.0, 0.0,
                       0.0, m, 0.0,
                       0.0, 0.0, m;
@@ -102,8 +99,8 @@ void Solver::assembleGlobalMatrix(const float h, const SolverData& data)
                 for (size_t j=0; j<n; ++j)
                 {
                     const size_t m_idx = c * m_offset + (i + j * n);
-                    const Eigen::Matrix3f dfdv = ctn->dfdv[m_idx] * h * -1;
-                    const Eigen::Matrix3f dfdx = ctn->dfdx[m_idx] * h*h * -1;
+                    const M33f dfdv = ctn->dfdv[m_idx] * h * -1;
+                    const M33f dfdx = ctn->dfdx[m_idx] * h*h * -1;
 
                     const size_t ii = ctn->ids[(c * n) + i];
                     const size_t jj = ctn->ids[(c * n) + j];
@@ -143,10 +140,10 @@ void Solver::assembleGlobalVector(const float h, const SolverData& data)
                 for (size_t j=0; j<n; ++j)
                 {
                     const size_t m_idx = c * m_offset + (i + j * n);
-                    const Eigen::Matrix3f dfdx = ctn->dfdx[m_idx] *h*h;
+                    const M33f dfdx = ctn->dfdx[m_idx] *h*h;
                     const size_t node_vid = ctn->ids[c*n + j];
 
-                    const Eigen::Vector3f& v0 = obj.nodes.vel[node_vid];
+                    const V3f& v0 = obj.nodes.vel[node_vid];
 
                     system->addToVector(dfdx*v0, node_id);
                 }
@@ -155,9 +152,9 @@ void Solver::assembleGlobalVector(const float h, const SolverData& data)
     }
 }
 
-std::vector<Eigen::Vector3f> Solver::toVector3f(const Eigen::VectorXf& solution)
+std::vector<V3f> Solver::toV3f(const Eigen::VectorXf& solution)
 {
-    std::vector<Eigen::Vector3f> result;
+    std::vector<V3f> result;
     for (int i = 0; i < solution.size(); i += 3) {
         result.emplace_back(solution[i], solution[i + 1], solution[i + 2]);
     }
