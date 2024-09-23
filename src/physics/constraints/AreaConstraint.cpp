@@ -8,7 +8,7 @@ AreaConstraint::AreaConstraint(size_t numConstraints)
 {
 }
 
-void AreaConstraint::setupConstraint(const ObjectData& objData, float stiffness)
+void AreaConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // Raise an error if the number of edges in objData doesn't match the number of constraints
     if (objData.tri.idx.size() != k.size()) {
@@ -17,6 +17,7 @@ void AreaConstraint::setupConstraint(const ObjectData& objData, float stiffness)
 
     // Fill the stiffness vector
     std::fill(k.begin(), k.end(), stiffness);
+    std::fill(kd.begin(), kd.end(), damping);
 
     // Set up the node indices
     size_t numTriangles = objData.tri.idx.size();

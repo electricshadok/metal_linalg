@@ -13,7 +13,7 @@ struct ConstraintDataBase
     virtual size_t size() const = 0;
 
     // Setup constraints based on objectData connectivity
-    virtual void setupConstraint(const ObjectData& objData, float stiffness) = 0;
+    virtual void setupConstraint(const ObjectData& objData, float stiffness, float damping) = 0;
 
     // Compute forces and Jacobians
     virtual void updateDerivatives(const ObjectData& objData) = 0;
@@ -23,6 +23,9 @@ struct ConstraintDataBase
     
     // Stiffness values for each constraint (size: num_c)
     std::vector<float> k;
+    
+    // Stiffness values for each constraint (size: num_c)
+    std::vector<float> kd;
 
     // Node indices associated with each constraint (size: num_c * N)
     std::vector<int> ids;

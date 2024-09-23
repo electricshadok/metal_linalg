@@ -8,7 +8,7 @@ VolumeConstraint::VolumeConstraint(size_t numConstraints)
 {
 }
 
-void VolumeConstraint::setupConstraint(const ObjectData& objData, float stiffness)
+void VolumeConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // Raise an error if the number of edges in objData doesn't match the number of constraints
     if (objData.tet.idx.size() != k.size()) {
@@ -17,6 +17,7 @@ void VolumeConstraint::setupConstraint(const ObjectData& objData, float stiffnes
 
     // Fill the stiffness vector
     std::fill(k.begin(), k.end(), stiffness);
+    std::fill(kd.begin(), kd.end(), damping);
 
     // Set up the node indices
     size_t numTets = objData.tet.idx.size();

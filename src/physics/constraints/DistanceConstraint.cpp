@@ -9,7 +9,7 @@ AnchorDistanceConstraint::AnchorDistanceConstraint(size_t numConstraints)
 {
 }
 
-void AnchorDistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness)
+void AnchorDistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // TODO - add AnchorDistanceConstraint::setupConstraint implementation
 }
@@ -25,15 +25,16 @@ DistanceConstraint::DistanceConstraint(size_t numConstraints)
 {
 }
 
-void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness)
+void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // Raise an error if the number of edges in objData doesn't match the number of constraints
     if (objData.edge.idx.size() != k.size()) {
         throw std::runtime_error("Mismatch between number of edges in ObjectData and the size of the constraint.");
     }
 
-    // Fill the stiffness vector
+    // Fill the stiffness and damping vector
     std::fill(k.begin(), k.end(), stiffness);
+    std::fill(kd.begin(), kd.end(), damping);
 
     // Set up the node indices
     size_t numEdges = objData.edge.idx.size();
@@ -70,13 +71,38 @@ void DistanceConstraint::updateDerivatives(const ObjectData& objData)
         const V3f& xi = objData.nodes.p[ids[i]];
         const V3f& xj = objData.nodes.p[ids[j]];
         V3f x_ij = xi - xj;
-        const float r = x_ij.norm();
-        x_ij /= r;
-        f[i] =  x_ij * -k[c] * (r - rest[c]);
-        f[j] = f[i] * -1;
+        const float norm_x_ij = x_ij.norm();
+        x_ij /= norm_x_ij;
+
+        f[i] =  x_ij * -k[c] * (norm_x_ij - rest[c]);
+        f[j] = -f[i];
+        
+        // TODO: implement damping force for DistanceConstraint
     }
     
     // Set the jacobians (dfdx, dfdv)
-    // TODO - implement DistanceConstraint::updateDerivatives
+    for (size_t c = 0; c < numConstraints(); ++c)
+    {
+        const size_t i = c * 2;
+        const size_t j = i + 1;
+        const V3f& xi = objData.nodes.p[ids[i]];
+        const V3f& xj = objData.nodes.p[ids[j]];
+        V3f x_ij = xi - xj;
+        const float norm_x_ij = x_ij.norm();
+        x_ij /= norm_x_ij;
+
+        // -k . [(1 - rest / |x_ij|)(I - x_ij * x_ij^T) + (x_ij * x_ij^T)]
+        M33f I = M33f::Identity();
+        M33f outer = x_ij * x_ij.transpose();
+        M33f dfdx_c = (I - outer) * (1.0 - rest[c] / norm_x_ij) + outer;
+        dfdx_c = -k[c] * dfdx_c;
+        dfdx[i * 2 + 0] = dfdx_c;
+        dfdx[i * 2 + 1] = -dfdx_c;
+        dfdx[j * 2 + 0] = -dfdx_c;
+        dfdx[j * 2 + 1] = dfdx_c;
+
+        // TODO: implement damping jacobian for DistanceConstraint
+    }
+
 }
 

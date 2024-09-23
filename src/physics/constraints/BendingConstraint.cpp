@@ -6,7 +6,7 @@ BendingConstraint::BendingConstraint(size_t numConstraints)
 {
 }
 
-void BendingConstraint::setupConstraint(const ObjectData& objData, float stiffness)
+void BendingConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // TODO: implement function to get edges with 2 adjacent triangles
     // Raise an error if the number of edges in objData doesn't match the number of constraints
@@ -16,6 +16,7 @@ void BendingConstraint::setupConstraint(const ObjectData& objData, float stiffne
 
     // Fill the stiffness vector
     std::fill(k.begin(), k.end(), stiffness);
+    std::fill(kd.begin(), kd.end(), damping);
 
     // TODO: Set up the node indices
 }

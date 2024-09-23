@@ -12,7 +12,8 @@ App::App()
     // TODO: add VolumeConstraint
     // TODO: add BendingConstraint
     const float stiffness = 10.0;
-    data->ctns[0]->setupConstraint(*data->obj, stiffness);
+    const float damping = 0.0;
+    data->ctns[0]->setupConstraint(*data->obj, stiffness, damping);
 
     solver = std::make_shared<Solver>();
     solver->initialize(*data);
