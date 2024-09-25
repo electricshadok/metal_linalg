@@ -31,9 +31,9 @@ void AreaConstraint::setupConstraint(const ObjectData& objData, float stiffness,
         ids[i * 3 + 1] = tri[1];
         ids[i * 3 + 2] = tri[2];
 
-        const V3f& x0 = objData.nodes.p[tri[0]];
-        const V3f& x1 = objData.nodes.p[tri[1]];
-        const V3f& x2 = objData.nodes.p[tri[2]];
+        const V3f& x0 = objData.nodes.x[tri[0]];
+        const V3f& x1 = objData.nodes.x[tri[1]];
+        const V3f& x2 = objData.nodes.x[tri[2]];
 
         const float area = Geometry::area(x0, x1, x2);
         rest[i] = area;

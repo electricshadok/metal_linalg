@@ -1,18 +1,18 @@
 #include "ObjectData.hpp"
 #include <unordered_set>
 
-Nodes::Nodes(size_t size) : p(size), vel(size), acc(size), f(size), m(size)
+Nodes::Nodes(size_t size) : x(size), v(size), a(size), f(size), m(size)
 {}
 
 size_t Nodes::numNodes() const
 {
-    return p.size();
+    return x.size();
 }
 
 void Nodes::append(const Nodes& other) {
-    p.insert(p.end(), other.p.begin(), other.p.end());
-    vel.insert(vel.end(), other.vel.begin(), other.vel.end());
-    acc.insert(acc.end(), other.acc.begin(), other.acc.end());
+    x.insert(x.end(), other.x.begin(), other.x.end());
+    v.insert(v.end(), other.v.begin(), other.v.end());
+    a.insert(a.end(), other.a.begin(), other.a.end());
     f.insert(f.end(), other.f.begin(), other.f.end());
     m.insert(m.end(), other.m.begin(), other.m.end());
 }

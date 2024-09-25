@@ -55,14 +55,14 @@ void Solver::step(const float h, SolverData& data)
     std::vector<V3f> dx(dv.size());
     for (size_t i=0; i < dx.size();++i)
     {
-        dx[i] = (obj.nodes.vel[i] + dv[i]) * h;
+        dx[i] = (obj.nodes.v[i] + dv[i]) * h;
     }
 
     // Update states
     for (size_t i=0; i < dx.size();++i)
     {
-        obj.nodes.vel[i] += dv[i];
-        obj.nodes.p[i] += dx[i];
+        obj.nodes.v[i] += dv[i];
+        obj.nodes.x[i] += dx[i];
     }
 }
 
@@ -143,7 +143,7 @@ void Solver::assembleGlobalVector(const float h, const SolverData& data)
                     const M33f dfdx = ctn->dfdx[m_idx] *h*h;
                     const size_t node_vid = ctn->ids[c*n + j];
 
-                    const V3f& v0 = obj.nodes.vel[node_vid];
+                    const V3f& v0 = obj.nodes.v[node_vid];
 
                     system->addToVector(dfdx*v0, node_id);
                 }

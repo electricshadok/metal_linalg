@@ -12,9 +12,9 @@ struct Nodes
     
     void append(const Nodes& other);
     
-    PositionList p; // TODO: rename to x
-    VelocityList vel; // TODO: rename to v
-    AccelerationList acc; // TODO: rename to a
+    PositionList x;
+    VelocityList v;
+    AccelerationList a;
     ForceList f;
     MassList m;
 };

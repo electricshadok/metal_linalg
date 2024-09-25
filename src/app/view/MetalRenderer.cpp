@@ -86,9 +86,9 @@ void MetalRenderer::setupMetal()
 void MetalRenderer::setMesh(const ObjectData& obj)
 {
     // Convert vertices
-    std::vector<Vertex> vertices(obj.nodes.p.size());
-    for (size_t i = 0; i < obj.nodes.p.size(); ++i) {
-        vertices[i].position = {obj.nodes.p[i][0], obj.nodes.p[i][1], obj.nodes.p[i][2], 1.0f};
+    std::vector<Vertex> vertices(obj.nodes.x.size());
+    for (size_t i = 0; i < obj.nodes.x.size(); ++i) {
+        vertices[i].position = {obj.nodes.x[i][0], obj.nodes.x[i][1], obj.nodes.x[i][2], 1.0f};
         vertices[i].color = {0.5f, 0.5f, 0.5f, 1.0f};
     }
     
@@ -114,9 +114,9 @@ void MetalRenderer::updateMesh(const ObjectData& obj)
     if (!vertexBuffer) return;
 
     // Convert vertices
-    std::vector<Vertex> vertices(obj.nodes.p.size());
-    for (size_t i = 0; i < obj.nodes.p.size(); ++i) {
-        vertices[i].position = {obj.nodes.p[i][0], obj.nodes.p[i][1], obj.nodes.p[i][2], 1.0f};
+    std::vector<Vertex> vertices(obj.nodes.x.size());
+    for (size_t i = 0; i < obj.nodes.x.size(); ++i) {
+        vertices[i].position = {obj.nodes.x[i][0], obj.nodes.x[i][1], obj.nodes.x[i][2], 1.0f};
         vertices[i].color = {0.5f, 0.5f, 0.5f, 1.0f};
     }
     

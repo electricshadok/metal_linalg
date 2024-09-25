@@ -12,6 +12,7 @@ AnchorDistanceConstraint::AnchorDistanceConstraint(size_t numConstraints)
 void AnchorDistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // TODO - add AnchorDistanceConstraint::setupConstraint implementation
+    // TODO - implement (add class Anchor)
 }
 
 void AnchorDistanceConstraint::updateDerivatives(const ObjectData& objData)
@@ -50,8 +51,8 @@ void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffn
         ids[j] = edge[1];
 
         // Calculate the norm (rest length) for the edge
-        const V3f& xi = objData.nodes.p[ids[i]];
-        const V3f& xj = objData.nodes.p[ids[j]];
+        const V3f& xi = objData.nodes.x[ids[i]];
+        const V3f& xj = objData.nodes.x[ids[j]];
         rest[c] = (xi - xj).norm();
     }
 }
@@ -68,8 +69,8 @@ void DistanceConstraint::updateDerivatives(const ObjectData& objData)
     {
         const size_t i = c * 2;
         const size_t j = i + 1;
-        const V3f& xi = objData.nodes.p[ids[i]];
-        const V3f& xj = objData.nodes.p[ids[j]];
+        const V3f& xi = objData.nodes.x[ids[i]];
+        const V3f& xj = objData.nodes.x[ids[j]];
         V3f x_ij = xi - xj;
         const float norm_x_ij = x_ij.norm();
         x_ij /= norm_x_ij;
@@ -85,8 +86,8 @@ void DistanceConstraint::updateDerivatives(const ObjectData& objData)
     {
         const size_t i = c * 2;
         const size_t j = i + 1;
-        const V3f& xi = objData.nodes.p[ids[i]];
-        const V3f& xj = objData.nodes.p[ids[j]];
+        const V3f& xi = objData.nodes.x[ids[i]];
+        const V3f& xj = objData.nodes.x[ids[j]];
         V3f x_ij = xi - xj;
         const float norm_x_ij = x_ij.norm();
         x_ij /= norm_x_ij;

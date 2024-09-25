@@ -25,9 +25,9 @@ void CubeMesh::initializeNodes()
     };
 
     for (size_t i = 0; i < 8; ++i) {
-        nodes.p[i] = verticesData[i];
-        nodes.vel[i].setZero();
-        nodes.acc[i].setZero();
+        nodes.x[i] = verticesData[i];
+        nodes.v[i].setZero();
+        nodes.a[i].setZero();
         nodes.f[i].setZero();
         nodes.m[i] = 0.1f; // TODO: set mass on object level
     }

@@ -32,10 +32,10 @@ void VolumeConstraint::setupConstraint(const ObjectData& objData, float stiffnes
         ids[i * 4 + 2] = tet[2];
         ids[i * 4 + 3] = tet[3];
 
-        const V3f& x0 = objData.nodes.p[tet[0]];
-        const V3f& x1 = objData.nodes.p[tet[1]];
-        const V3f& x2 = objData.nodes.p[tet[2]];
-        const V3f& x3 = objData.nodes.p[tet[3]];
+        const V3f& x0 = objData.nodes.x[tet[0]];
+        const V3f& x1 = objData.nodes.x[tet[1]];
+        const V3f& x2 = objData.nodes.x[tet[2]];
+        const V3f& x3 = objData.nodes.x[tet[3]];
 
         const float volume = Geometry::volume(x0,x1,x2,x3);
         rest[i] = volume;
