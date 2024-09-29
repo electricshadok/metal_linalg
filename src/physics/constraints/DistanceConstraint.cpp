@@ -9,10 +9,14 @@ AnchorDistanceConstraint::AnchorDistanceConstraint(size_t numConstraints)
 {
 }
 
+V3f& AnchorDistanceConstraint::anchor(size_t anchor_idx)
+{
+    return anchors[anchor_idx];
+}
+
 void AnchorDistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // TODO - add AnchorDistanceConstraint::setupConstraint implementation
-    // TODO - implement (add class Anchor)
 }
 
 void AnchorDistanceConstraint::updateDerivatives(const ObjectData& objData)
