@@ -7,14 +7,29 @@ App::App()
     data = std::make_shared<SolverData>();
     data->obj = std::make_shared<CubeMesh>();
     size_t numEdges = data->obj->numEdges();
-    data->ctns.push_back(std::make_shared<DistanceConstraint>(numEdges));
+    
+    const float stiffness = 1000.0;
+    const float damping = 0.0;
+
+    // Distance constraint
+    auto distance_ctn(std::make_shared<DistanceConstraint>(numEdges));
+    distance_ctn->setupConstraint(*data->obj, stiffness, damping);
+    data->ctns.push_back(distance_ctn);
+    
+    // Anchor distance constraint on the top
+    auto anchor_distance_ctn(std::make_shared<AnchorDistanceConstraint>(4));
+    // 0,1,4,5 are the node ids of top face for the cube
+    anchor_distance_ctn->setupZeroAnchor(0, *data->obj, 0);
+    anchor_distance_ctn->setupZeroAnchor(1, *data->obj, 1);
+    anchor_distance_ctn->setupZeroAnchor(2, *data->obj, 4);
+    anchor_distance_ctn->setupZeroAnchor(3, *data->obj, 5);
+    data->ctns.push_back(anchor_distance_ctn);
+
     // TODO: add AreaConstraint
     // TODO: add VolumeConstraint
     // TODO: add BendingConstraint
-    const float stiffness = 10.0;
-    const float damping = 0.0;
-    data->ctns[0]->setupConstraint(*data->obj, stiffness, damping);
-
+    
+    // Set solver and render
     solver = std::make_shared<Solver>();
     solver->initialize(*data);
     
