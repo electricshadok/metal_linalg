@@ -9,8 +9,10 @@ class AnchorDistanceConstraint : public ConstraintData<1>
 public:
     AnchorDistanceConstraint(size_t numConstraints);
     
-    // Get anchor
-    V3f& anchor(size_t anchor_idx);
+    // Set/Get anchor
+    void setupZeroAnchor(size_t anchorId, const ObjectData& objData, size_t nodeId);
+    void setupAnchor(size_t anchorId, const V3f& anchorPos, const ObjectData& objData, size_t nodeId);
+    V3f& anchor(size_t anchorId);
 
     // Setup constraints based on objectData connectivity
     void setupConstraint(const ObjectData& objData, float stiffness, float damping) override;
@@ -21,6 +23,9 @@ public:
 private:
     // Fixed anchor points (size: numConstraints)
     std::vector<V3f> anchors;
+    
+    // node ids in the ObjectData
+    std::vector<size_t> nodeIds;
 
     // Rest lengths for each constraint (size: numConstraints)
     std::vector<float> rest;

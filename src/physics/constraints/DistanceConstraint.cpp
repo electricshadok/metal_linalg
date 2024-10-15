@@ -5,13 +5,34 @@
 AnchorDistanceConstraint::AnchorDistanceConstraint(size_t numConstraints)
     : ConstraintData<1>(numConstraints),
       anchors(numConstraints),
+      nodeIds(numConstraints),
       rest(numConstraints)
 {
 }
 
-V3f& AnchorDistanceConstraint::anchor(size_t anchor_idx)
+void AnchorDistanceConstraint::setupZeroAnchor(size_t anchorId, const ObjectData& objData, size_t nodeId)
 {
-    return anchors[anchor_idx];
+    // Set the anchor position and node ids
+    const V3f& nodePos = objData.nodes.x[nodeId];
+    anchors[anchorId] = nodePos;
+    nodeIds[anchorId] = nodeId;
+    rest[anchorId] = 0;
+}
+
+void AnchorDistanceConstraint::setupAnchor(size_t anchorId, const V3f& anchorPos, const ObjectData& objData, size_t nodeId)
+{
+    // Set the anchor position and node ids
+    anchors[anchorId] = anchorPos;
+    nodeIds[anchorId] = nodeId;
+    
+    // Get node id
+    const V3f& nodePos = objData.nodes.x[nodeId];
+    rest[anchorId] = (anchorPos - nodePos).norm();
+}
+
+V3f& AnchorDistanceConstraint::anchor(size_t anchorId)
+{
+    return anchors[anchorId];
 }
 
 void AnchorDistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
@@ -22,6 +43,12 @@ void AnchorDistanceConstraint::setupConstraint(const ObjectData& objData, float 
 void AnchorDistanceConstraint::updateDerivatives(const ObjectData& objData)
 {
     // TODO - add AnchorDistanceConstraint::updateDerivatives implementation
+    
+    // Fill the forces and jacobians
+    std::fill(f.begin(), f.end(), V3f::Zero());
+    std::fill(dfdx.begin(), dfdx.end(), M33f::Zero());
+    std::fill(dfdv.begin(), dfdv.end(), M33f::Zero());
+    
 }
 
 DistanceConstraint::DistanceConstraint(size_t numConstraints)
