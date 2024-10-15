@@ -149,7 +149,7 @@ void MetalRenderer::draw(CA::MetalDrawable* drawable)
     MTL::RenderPassDescriptor* passDescriptor = MTL::RenderPassDescriptor::alloc()->init();
     passDescriptor->colorAttachments()->object(0)->setTexture(drawable->texture());
     passDescriptor->colorAttachments()->object(0)->setLoadAction(MTL::LoadActionClear);
-    passDescriptor->colorAttachments()->object(0)->setClearColor(MTL::ClearColor::Make(0.0, 0.0, 1.0, 1.0));
+    passDescriptor->colorAttachments()->object(0)->setClearColor(MTL::ClearColor::Make(0.0, 0.0, 0.1, 1.0));
     passDescriptor->colorAttachments()->object(0)->setStoreAction(MTL::StoreActionStore);
 
     MTL::CommandBuffer* commandBuffer = commandQueue->commandBuffer();
