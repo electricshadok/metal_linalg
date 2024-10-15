@@ -15,7 +15,7 @@ public:
     V3f& anchor(size_t anchorId);
 
     // Setup constraints based on objectData connectivity
-    void setupConstraint(const ObjectData& objData, float stiffness, float damping) override;
+    void setupConstraint(float stiffness, float damping);
 
     // Compute forces and Jacobians
     void updateDerivatives(const ObjectData& objData) override;
@@ -37,7 +37,7 @@ public:
     DistanceConstraint(size_t numConstraints);
 
     // Setup constraints based on objectData connectivity
-    void setupConstraint(const ObjectData& objData, float stiffness, float damping) override;
+    void setupConstraint(const ObjectData& objData, float stiffness, float damping);
 
     // Compute forces and Jacobians
     void updateDerivatives(const ObjectData& objData) override;

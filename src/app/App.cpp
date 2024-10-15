@@ -23,6 +23,7 @@ App::App()
     anchor_distance_ctn->setupZeroAnchor(1, *data->obj, 1);
     anchor_distance_ctn->setupZeroAnchor(2, *data->obj, 4);
     anchor_distance_ctn->setupZeroAnchor(3, *data->obj, 5);
+    anchor_distance_ctn->setupConstraint(stiffness, damping);
     data->ctns.push_back(anchor_distance_ctn);
 
     // TODO: add AreaConstraint

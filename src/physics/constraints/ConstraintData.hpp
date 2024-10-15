@@ -12,9 +12,6 @@ struct ConstraintDataBase
     
     virtual size_t size() const = 0;
 
-    // Setup constraints based on objectData connectivity
-    virtual void setupConstraint(const ObjectData& objData, float stiffness, float damping) = 0;
-
     // Compute forces and Jacobians
     virtual void updateDerivatives(const ObjectData& objData) = 0;
     

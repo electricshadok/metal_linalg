@@ -9,7 +9,7 @@ public:
     AreaConstraint(size_t numConstraints);
 
     // Setup constraints based on objectData connectivity
-    void setupConstraint(const ObjectData& objData, float stiffness, float damping) override;
+    void setupConstraint(const ObjectData& objData, float stiffness, float damping);
 
     // Compute forces and Jacobians
     void updateDerivatives(const ObjectData& objData) override;

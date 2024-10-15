@@ -35,9 +35,10 @@ V3f& AnchorDistanceConstraint::anchor(size_t anchorId)
     return anchors[anchorId];
 }
 
-void AnchorDistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
+void AnchorDistanceConstraint::setupConstraint(float stiffness, float damping)
 {
-    // TODO - add AnchorDistanceConstraint::setupConstraint implementation
+    std::fill(k.begin(), k.end(), stiffness);
+    std::fill(kd.begin(), kd.end(), damping);
 }
 
 void AnchorDistanceConstraint::updateDerivatives(const ObjectData& objData)
