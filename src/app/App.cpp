@@ -8,7 +8,7 @@ App::App()
     data->obj = std::make_shared<CubeMesh>();
     size_t numEdges = data->obj->numEdges();
     
-    const float stiffness = 10000.0;
+    const float stiffness = 1000.0;
     const float damping = 0.0;
 
     // Distance constraint
@@ -45,6 +45,6 @@ void App::draw(CA::MetalDrawable* drawable)
 
 void App::step()
 {
-    solver->step(1.0/600.0, *data);
+    solver->step(1.0/60.0, *data);
     renderer->updateMesh(*data->obj);
 }
