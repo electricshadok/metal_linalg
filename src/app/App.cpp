@@ -8,15 +8,16 @@ App::App()
     data->obj = std::make_shared<CubeMesh>();
     size_t numEdges = data->obj->numEdges();
     
-    const float stiffness = 1000.0;
-    const float damping = 0.0;
-
     // Distance constraint
+    float stiffness = 1000.0;
+    float damping = 0.0;
     auto distance_ctn(std::make_shared<DistanceConstraint>(numEdges));
     distance_ctn->setupConstraint(*data->obj, stiffness, damping);
     data->ctns.push_back(distance_ctn);
     
     // Anchor distance constraint on the top
+    stiffness = 100000.0;
+    damping = 0.0;
     auto anchor_distance_ctn(std::make_shared<AnchorDistanceConstraint>(4));
     // 0,1,4,5 are the node ids of top face for the cube
     anchor_distance_ctn->setupZeroAnchor(0, *data->obj, 0);

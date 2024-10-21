@@ -48,7 +48,7 @@ void Solver::step(const float h, SolverData& data)
     assembleGlobalVector(h, data);
     
     // Solve system to get velocity deltas
-    CGSolver solver(PreconditionerType::None);
+    CGSolver solver(PreconditionerType::Diagonal);
     std::vector<V3f> dv(toV3f(solver.solve(*system)));
     
     // Compute position deltas
