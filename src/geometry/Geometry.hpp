@@ -15,6 +15,11 @@ float volume(const V3f& x0,
              const V3f& x2,
              const V3f& x3);
 
+V3f normal(const V3f& x0, 
+           const V3f& x1,
+           const V3f& x2);
+
+// TODO: barycentric coords
 // TODO: calculate deformation gradient
 
 } // namespace Geometry
