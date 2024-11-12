@@ -90,22 +90,22 @@ void Solver::assembleGlobalMatrix(const float h, const SolverData& data)
     {
         const size_t n_ctns = ctn->numConstraints();
         const size_t n = ctn->size();
-        const size_t m_offset = n*n;
 
         for (size_t c=0; c < n_ctns; ++c)
         {
+
             for (size_t i=0; i<n; ++i)
             {
                 for (size_t j=0; j<n; ++j)
                 {
-                    const size_t m_idx = c * m_offset + (i + j * n);
-                    const M33f dfdv = ctn->dfdv[m_idx] * h * -1;
-                    const M33f dfdx = ctn->dfdx[m_idx] * h*h * -1;
+                    const size_t m_idx = (i + j * n);
+                    const M33f dfdv_c = ctn->dfdv(c)[m_idx] * h * -1;
+                    const M33f dfdx_c = ctn->dfdx(c)[m_idx] * h*h * -1;
 
-                    const size_t ii = ctn->ids[(c * n) + i];
-                    const size_t jj = ctn->ids[(c * n) + j];
+                    const size_t ii = ctn->ids(c)[i];
+                    const size_t jj = ctn->ids(c)[j];
                     
-                    system->addToMatrix(dfdv+dfdx, jj, ii);
+                    system->addToMatrix(dfdv_c+dfdx_c, jj, ii);
                 }
             }
         }
@@ -130,18 +130,17 @@ void Solver::assembleGlobalVector(const float h, const SolverData& data)
     {
         const size_t n_ctns = ctn->numConstraints();
         const size_t n = ctn->size();
-        const size_t m_offset = n*n;
 
         for (size_t c=0; c < n_ctns; ++c)
         {
             for (size_t i=0; i<n; ++i)
             {
-                const size_t node_id = ctn->ids[c*n + i];
+                const size_t node_id = ctn->ids(c)[i];
                 for (size_t j=0; j<n; ++j)
                 {
-                    const size_t m_idx = c * m_offset + (i + j * n);
-                    const M33f dfdx = ctn->dfdx[m_idx] *h*h;
-                    const size_t node_vid = ctn->ids[c*n + j];
+                    const size_t m_idx = (i + j * n);
+                    const M33f dfdx = ctn->dfdx(c)[m_idx] *h*h;
+                    const size_t node_vid = ctn->ids(c)[j];
 
                     const V3f& v0 = obj.nodes.v[node_vid];
 

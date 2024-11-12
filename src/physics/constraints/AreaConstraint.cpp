@@ -26,10 +26,10 @@ void AreaConstraint::setupConstraint(const ObjectData& objData, float stiffness,
         const Triangle& tri = objData.tri.idx[i];
 
         // Set node indices
-        // TODO: add helper function in ConstraintData<3>
-        ids[i * 3] = tri[0];
-        ids[i * 3 + 1] = tri[1];
-        ids[i * 3 + 2] = tri[2];
+        int* triIds = ids(i);
+        triIds[0] = tri[0];
+        triIds[1] = tri[1];
+        triIds[2] = tri[2];
 
         const V3f& x0 = objData.nodes.x[tri[0]];
         const V3f& x1 = objData.nodes.x[tri[1]];
@@ -45,9 +45,9 @@ void AreaConstraint::updateDerivatives(const ObjectData& objData)
     // TODO - implement AreaConstraint::updateDerivatives
 
     // Reset the forces and jacobians
-    std::fill(f.begin(), f.end(), V3f::Zero());
-    std::fill(dfdx.begin(), dfdx.end(), M33f::Zero());
-    std::fill(dfdv.begin(), dfdv.end(), M33f::Zero());
+    std::fill(_f.begin(), _f.end(), V3f::Zero());
+    std::fill(_dfdx.begin(), _dfdx.end(), M33f::Zero());
+    std::fill(_dfdv.begin(), _dfdv.end(), M33f::Zero());
     
     // Set the forces (f)
     

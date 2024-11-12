@@ -26,9 +26,9 @@ void BendingConstraint::updateDerivatives(const ObjectData& objData)
     // TODO - implement VolumeConstraint::updateDerivatives
 
     // Reset the forces and jacobians
-    std::fill(f.begin(), f.end(), V3f::Zero());
-    std::fill(dfdx.begin(), dfdx.end(), M33f::Zero());
-    std::fill(dfdv.begin(), dfdv.end(), M33f::Zero());
+    std::fill(_f.begin(), _f.end(), V3f::Zero());
+    std::fill(_dfdx.begin(), _dfdx.end(), M33f::Zero());
+    std::fill(_dfdv.begin(), _dfdv.end(), M33f::Zero());
     
     // Set the forces (f)
     

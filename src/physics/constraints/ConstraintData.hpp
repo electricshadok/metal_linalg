@@ -11,7 +11,11 @@ struct ConstraintDataBase
     ConstraintDataBase(size_t num_c, size_t num_ids, size_t num_grad, size_t num_jac);
     
     virtual size_t size() const = 0;
-
+    virtual int* ids(size_t idx) = 0;
+    virtual V3f* f(size_t idx) = 0;
+    virtual M33f* dfdx(size_t idx) = 0;
+    virtual M33f* dfdv(size_t idx) = 0;
+    
     // Compute forces and Jacobians
     virtual void updateDerivatives(const ObjectData& objData) = 0;
     
@@ -25,18 +29,18 @@ struct ConstraintDataBase
     std::vector<float> kd;
 
     // Node indices associated with each constraint (size: num_c * N)
-    std::vector<int> ids;
+    std::vector<int> _ids;
 
     // Forces applied to each node under each constraint (size: num_c * N)
-    std::vector<V3f> f;
+    std::vector<V3f> _f;
 
     // Jacobian matrices with respect to positions (size: num_c * N * N)
     // TODO: constraints are most likely symmetric, we could optimize this code
-    std::vector<M33f> dfdx;
+    std::vector<M33f> _dfdx;
 
     // Jacobian matrices with respect to velocities (size: num_c * N * N)
     // TODO: constraints are most likely symmetric, we could optimize this code
-    std::vector<M33f> dfdv;
+    std::vector<M33f> _dfdv;
 };
 
 // Structure to hold data related to constraints in a simulation.
@@ -52,6 +56,11 @@ struct ConstraintData : public ConstraintDataBase
     ConstraintData(size_t numConstraints);
     
     size_t size() const override;
+    
+    int* ids(size_t idx) override {return &_ids[idx * N];}
+    V3f* f(size_t idx) override {return &_f[idx * N];}
+    M33f* dfdx(size_t idx) override {return &_dfdx[idx * N * N];}
+    M33f* dfdv(size_t idx) override {return &_dfdv[idx * N * N];}
     
     // Virtual destructor to ensure proper cleanup of derived classes
     virtual ~ConstraintData() = default;
