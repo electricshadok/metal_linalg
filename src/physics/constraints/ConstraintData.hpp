@@ -8,13 +8,16 @@
 // Base class for all ConstraintData
 struct ConstraintDataBase
 {
-    ConstraintDataBase(size_t num_c, size_t num_ids, size_t num_grad, size_t num_jac);
+    ConstraintDataBase(size_t num_c, size_t size);
     
-    virtual size_t size() const = 0;
-    virtual int* ids(size_t idx) = 0;
-    virtual V3f* f(size_t idx) = 0;
-    virtual M33f* dfdx(size_t idx) = 0;
-    virtual M33f* dfdv(size_t idx) = 0;
+    size_t size() const {return _size;}
+    
+    float k(size_t idx) {return _k[idx];}
+    float kd(size_t idx) {return _kd[idx];}
+    int* ids(size_t idx) {return &_ids[idx * _size];}
+    V3f* f(size_t idx) {return &_f[idx * _size];}
+    M33f* dfdx(size_t idx) {return &_dfdx[idx * _size * _size];}
+    M33f* dfdv(size_t idx) {return &_dfdv[idx * _size * _size];}
     
     // Compute forces and Jacobians
     virtual void updateDerivatives(const ObjectData& objData) = 0;
@@ -22,17 +25,26 @@ struct ConstraintDataBase
     // Return the number of constraints
     size_t numConstraints() const;
     
-    // Stiffness values for each constraint (size: num_c)
-    std::vector<float> k;
+    // Set properties
+    void setProperties(float stiffness, float damping);
+    
+    // Reset derivatives
+    void resetDerivatives();
     
     // Stiffness values for each constraint (size: num_c)
-    std::vector<float> kd;
+    std::vector<float> _k;
+    
+    // Stiffness values for each constraint (size: num_c)
+    std::vector<float> _kd;
 
     // Node indices associated with each constraint (size: num_c * N)
     std::vector<int> _ids;
 
     // Forces applied to each node under each constraint (size: num_c * N)
     std::vector<V3f> _f;
+    
+    // Constraint size
+    size_t _size;
 
     // Jacobian matrices with respect to positions (size: num_c * N * N)
     // TODO: constraints are most likely symmetric, we could optimize this code
@@ -54,13 +66,6 @@ template<size_t N>
 struct ConstraintData : public ConstraintDataBase
 {
     ConstraintData(size_t numConstraints);
-    
-    size_t size() const override;
-    
-    int* ids(size_t idx) override {return &_ids[idx * N];}
-    V3f* f(size_t idx) override {return &_f[idx * N];}
-    M33f* dfdx(size_t idx) override {return &_dfdx[idx * N * N];}
-    M33f* dfdv(size_t idx) override {return &_dfdv[idx * N * N];}
     
     // Virtual destructor to ensure proper cleanup of derived classes
     virtual ~ConstraintData() = default;

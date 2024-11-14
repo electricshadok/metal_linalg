@@ -38,16 +38,13 @@ V3f& AnchorDistanceConstraint::anchor(size_t anchorId)
 
 void AnchorDistanceConstraint::setupConstraint(float stiffness, float damping)
 {
-    std::fill(k.begin(), k.end(), stiffness);
-    std::fill(kd.begin(), kd.end(), damping);
+    setProperties(stiffness, damping);
 }
 
 void AnchorDistanceConstraint::updateDerivatives(const ObjectData& objData)
 {
     // Fill the forces and jacobians
-    std::fill(_f.begin(), _f.end(), V3f::Zero());
-    std::fill(_dfdx.begin(), _dfdx.end(), M33f::Zero());
-    std::fill(_dfdv.begin(), _dfdv.end(), M33f::Zero());
+    resetDerivatives();
     
     // Set the forces (f)
     for (size_t c = 0; c < numConstraints(); ++c)
@@ -68,7 +65,7 @@ void AnchorDistanceConstraint::updateDerivatives(const ObjectData& objData)
         
         x_ij /= norm_x_ij;
 
-        f_c[0] =  x_ij * -k[c] * (norm_x_ij - rest[c]);
+        f_c[0] =  x_ij * -k(c) * (norm_x_ij - rest[c]);
         
         // TODO: implement damping force for DistanceConstraint
     }
@@ -96,7 +93,7 @@ void AnchorDistanceConstraint::updateDerivatives(const ObjectData& objData)
         M33f I = M33f::Identity();
         M33f outer = x_ij * x_ij.transpose();
         M33f dfdx_v = (I - outer) * (1.0 - rest[c] / norm_x_ij) + outer;
-        dfdx_c[0] = -k[c] * dfdx_v;
+        dfdx_c[0] = -k(c) * dfdx_v;
         
         // TODO: implement damping force for DistanceConstraint
     }
@@ -112,13 +109,12 @@ DistanceConstraint::DistanceConstraint(size_t numConstraints)
 void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // Raise an error if the number of edges in objData doesn't match the number of constraints
-    if (objData.edge.idx.size() != k.size()) {
+    if (objData.edge.idx.size() != numConstraints()) {
         throw std::runtime_error("Mismatch between number of edges in ObjectData and the size of the constraint.");
     }
 
     // Fill the stiffness and damping vector
-    std::fill(k.begin(), k.end(), stiffness);
-    std::fill(kd.begin(), kd.end(), damping);
+    setProperties(stiffness, damping);
 
     // Set up the node indices
     size_t numEdges = objData.edge.idx.size();
@@ -141,9 +137,7 @@ void DistanceConstraint::setupConstraint(const ObjectData& objData, float stiffn
 void DistanceConstraint::updateDerivatives(const ObjectData& objData)
 {
     // Fill the forces and jacobians
-    std::fill(_f.begin(), _f.end(), V3f::Zero());
-    std::fill(_dfdx.begin(), _dfdx.end(), M33f::Zero());
-    std::fill(_dfdv.begin(), _dfdv.end(), M33f::Zero());
+    resetDerivatives();
     
     // Set the forces (f)
     for (size_t c = 0; c < numConstraints(); ++c)
@@ -157,7 +151,7 @@ void DistanceConstraint::updateDerivatives(const ObjectData& objData)
         const float norm_x_ij = x_ij.norm();
         x_ij /= norm_x_ij;
 
-        f_c[0] =  x_ij * -k[c] * (norm_x_ij - rest[c]);
+        f_c[0] =  x_ij * -k(c) * (norm_x_ij - rest[c]);
         f_c[1] = -f_c[0];
         
         // TODO: implement damping force for DistanceConstraint
@@ -179,7 +173,7 @@ void DistanceConstraint::updateDerivatives(const ObjectData& objData)
         M33f I = M33f::Identity();
         M33f outer = x_ij * x_ij.transpose();
         M33f dfdx_v = (I - outer) * (1.0 - rest[c] / norm_x_ij) + outer;
-        dfdx_v =  dfdx_v * -k[c];
+        dfdx_v =  dfdx_v * -k(c);
         
         dfdx_c[0] = dfdx_v;
         dfdx_c[1] = -dfdx_v;

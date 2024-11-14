@@ -11,13 +11,12 @@ VolumeConstraint::VolumeConstraint(size_t numConstraints)
 void VolumeConstraint::setupConstraint(const ObjectData& objData, float stiffness, float damping)
 {
     // Raise an error if the number of edges in objData doesn't match the number of constraints
-    if (objData.tet.idx.size() != k.size()) {
+    if (objData.tet.idx.size() != numConstraints()) {
         throw std::runtime_error("Mismatch between number of tetrahedra in ObjectData and the size of the constraint.");
     }
 
     // Fill the stiffness vector
-    std::fill(k.begin(), k.end(), stiffness);
-    std::fill(kd.begin(), kd.end(), damping);
+    setProperties(stiffness, damping);
 
     // Set up the node indices
     size_t numTets = objData.tet.idx.size();
@@ -47,9 +46,7 @@ void VolumeConstraint::updateDerivatives(const ObjectData& objData)
     // TODO - implement VolumeConstraint::updateDerivatives
 
     // Reset the forces and jacobians
-    std::fill(_f.begin(), _f.end(), V3f::Zero());
-    std::fill(_dfdx.begin(), _dfdx.end(), M33f::Zero());
-    std::fill(_dfdv.begin(), _dfdv.end(), M33f::Zero());
+    resetDerivatives();
     
     // Set the forces (f)
     
